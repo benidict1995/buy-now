@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.benidict.buy_now"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.benidict.buy_now"
@@ -48,6 +48,9 @@ android {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
+    }
+    hilt {
+        enableAggregatingTask = false
     }
 }
 

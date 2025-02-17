@@ -10,7 +10,7 @@ activityCompose = "1.10.0"
 composeBom = "2024.04.01"
 appcompat = "1.7.0"
 material = "1.12.0"
-dagger = "2.48"
+dagger = "2.52"
 gson = "2.11.0"
 
 [libraries]

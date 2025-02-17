@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.benidict.network"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -31,6 +31,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    hilt {
+        enableAggregatingTask = false
     }
 }
 
