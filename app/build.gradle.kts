@@ -53,7 +53,6 @@ android {
 
 dependencies {
     implementation(project(":model"))
-    implementation(project(":domain"))
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.core.ktx)

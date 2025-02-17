@@ -21,8 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "buy-now"
 include(":app")
-include(":domain")
 include(":model")
-include(":data")
 include(":network")
 include(":persistence")
