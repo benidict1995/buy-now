@@ -4,4 +4,7 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
-object LoginRoute
+object LandingRoute
+
+@Serializable
+object SignInRoute

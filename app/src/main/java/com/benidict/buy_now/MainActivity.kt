@@ -4,15 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.benidict.buy_now.ui.theme.BuynowTheme
 import com.benidict.common_ui.navigation.graph.MainGraph
-import com.benidict.common_ui.navigation.route.LoginRoute
-import com.benidict.feature_login.ui.LoginScreen
+import com.benidict.common_ui.navigation.route.LandingRoute
+import com.benidict.common_ui.navigation.route.SignInRoute
+import com.benidict.feature_login.ui.landing.LandingScreen
+import com.benidict.feature_login.ui.signin.SignInScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,8 +25,13 @@ class MainActivity : ComponentActivity() {
             BuynowTheme {
                 MainGraph(navController) { navBackStackEntry, route ->
                     when (route) {
-                        LoginRoute -> {
-                            LoginScreen()
+                        LandingRoute -> {
+                            LandingScreen(onContinue = {
+                                navController.navigate(SignInRoute)
+                            })
+                        }
+                        SignInRoute -> {
+                            SignInScreen()
                         }
                     }
                 }
