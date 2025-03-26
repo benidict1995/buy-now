@@ -1,7 +1,10 @@
 package com.benidict.common_ui.layout
 
+import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -12,11 +15,16 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.benidict.common_ui.R
+import com.benidict.common_ui.theme.GrayDisabled
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,16 +32,23 @@ fun MainLayout(
     hasBackButton: Boolean = false,
     hasTopBar: Boolean = false,
     hasBottomBar: Boolean = false,
+    hasNextButton: Boolean = false,
+    enableNextButton: Boolean = false,
     titleTopBar: String = "",
-    onBackPressed: (() -> Unit)?= null,
+    containerColor: Color = MaterialTheme.colorScheme.primaryContainer,
+    onBackPressed: (() -> Unit)? = null,
+    onNextPressed: (() -> Unit)? = null,
     content: @Composable (PaddingValues) -> Unit
 ) {
+    LaunchedEffect(key1 = Unit) {
+        Log.d("makerChecker", "enableNextButton:$enableNextButton")
+    }
     Scaffold(
         topBar = {
             if (hasTopBar) {
                 CenterAlignedTopAppBar(
                     colors = topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primaryContainer,
+                        containerColor = containerColor,
                         titleContentColor = MaterialTheme.colorScheme.primary,
                     ),
                     title = {
@@ -46,6 +61,25 @@ fun MainLayout(
                                     painter = painterResource(R.drawable.baseline_arrow_back_24),
                                     contentDescription = "",
                                     tint = MaterialTheme.colorScheme.onSurface
+                                )
+                            }
+                        }
+                    },
+                    actions = {
+                        if (hasNextButton) {
+                            IconButton(onClick = {
+                                if (enableNextButton) {
+                                    onNextPressed?.let {
+                                        it()
+                                    }
+                                }
+                            }) {
+                                Text(
+                                    text = "Next",
+                                    fontSize = 16.sp,
+                                    fontWeight = FontWeight.SemiBold,
+                                    color = if (enableNextButton)
+                                    Color.Black else GrayDisabled
                                 )
                             }
                         }
