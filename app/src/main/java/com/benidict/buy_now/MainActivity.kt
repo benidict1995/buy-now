@@ -11,8 +11,10 @@ import com.benidict.buy_now.ui.theme.BuynowTheme
 import com.benidict.common_ui.navigation.graph.MainGraph
 import com.benidict.common_ui.navigation.route.LandingRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
+import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
 import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
+import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,7 +33,12 @@ class MainActivity : ComponentActivity() {
                             })
                         }
                         SignInRoute -> {
-                            SignInScreen(navController)
+                            SignInScreen(navController, onNext = {
+                                navController.navigate(UserDetailsFormRoute)
+                            })
+                        }
+                        UserDetailsFormRoute -> {
+                            UserDetailsFormScreen(navController)
                         }
                     }
                 }

@@ -38,6 +38,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":common-utils"))
     implementation(libs.navigationCompose)
     implementation(libs.hiltNavigationCompose)
     implementation(libs.androidx.core.ktx)

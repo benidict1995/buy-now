@@ -8,3 +8,6 @@ object LandingRoute
 
 @Serializable
 object SignInRoute
+
+@Serializable
+object UserDetailsFormRoute
