@@ -1,0 +1,451 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:2:1-29:12
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:2:1-29:12
+MERGED from [:feature-login] /Users/benidictdulce/Desktop/benidict/buy-now/feature-login/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:feature-signup] /Users/benidictdulce/Desktop/benidict/buy-now/feature-signup/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [:common-ui] /Users/benidictdulce/Desktop/benidict/buy-now/common-ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/36c0ff0222a296e331b8b288243f3dff/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/2db63faa5c45b3e8ea87bf8ac21b9fad/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-common:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/56c3af93076bcbc75fd6f316b3431f9b/transformed/navigation-common-2.8.8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e5305d38d8e0480bacdaade65a1a74f2/transformed/navigation-runtime-2.8.8/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/30b407f879fc8c305f2962e724fee42a/transformed/navigation-common-ktx-2.8.8/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fabd5da08c23ff96eb247dac09e86538/transformed/navigation-runtime-ktx-2.8.8/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.navigation:navigation-compose:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/79336d6de5ad9df1da600d62229777ad/transformed/navigation-compose-2.8.8/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:hilt-android:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5d9216186b9b8c670c8c1d614a1e3af0/transformed/hilt-android-2.52/AndroidManifest.xml:16:1-19:12
+MERGED from [:common-utils] /Users/benidictdulce/Desktop/benidict/buy-now/common-utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.material:material:1.12.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/22772ea902f07e180f5245887353318f/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0ddf0f8c8b0e878c06e54b79832f143b/transformed/constraintlayout-2.0.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bbac435890dba079083d1cf750463946/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/909ca6ea76f8ac803a1be567f57b9c94/transformed/material-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fcef0d443f468aa9480d690e72700ba5/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c300d32941dbc239a7f4a74201ddda2f/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5827ab98b7f740ec94bf815d80a5eb6e/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/451129773c45e4980467bd7fa739a546/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6532fb0ab0e16577baa7039e3a9c5d08/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c04b69d6f7a3cacdc54b1bb0395e9c07/transformed/ui-tooling-data-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d91a501367e376944ba7561d1e502e5c/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/26b1bad739bf4931f8476cd580eee047/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a5c91c741edc9fac8b1724aecc8cfbaa/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f118578cc4fff78998d19ff82392f0a7/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a855383f27ce3d5399fa514cd9dd6496/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/eb5d0d9d4dcf2d23e47890eef9d607dd/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.animation:animation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/42abd8b41f707e2b7e8946b38d5c8e45/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/68bfb2c56b859656f62bb23692b5abc4/transformed/viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d8e1df8426649fc71514eb2f747e31a9/transformed/fragment-1.5.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/54186135d90c8b98746caf0b42a6a1d4/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/72b1f66c7dc8ddb131d261910d19cbf4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c1296af4f9940bba09f8b97ddc5c34b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.5.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8f050f2090d94886d2acb8c26755d77e/transformed/transition-1.5.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5db04908550bf9f947ce42c96a664898/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/768e5d8012fb2e91142bf9c6fcf01bd4/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8d663355c6744c6d6672efe0804510e6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/b044f5c232772ed597c833f0033e1642/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/936eddb458837106dde556b8c0e01716/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ddf97d243d22187c24e17f97a70c780a/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/132212fed10d83f21197a1e9f1413760/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e844219a8d8147d38ef8ea5f360642ea/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6d0ed872b26ebe5c4180f4a06286fc72/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e571b834a098f838ce7f88c9363bea5c/transformed/graphics-path-1.0.1/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/9c72ec01549e9351c4d9a2cbd2def4c0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c215bfd8c11a9c9cc0e38cf5c875c586/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc73f010d426903af6615a2a5ecc5de8/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/728ecb1bf5a9c1fe52865876fad4424c/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c3313cee68883b24a022e32fe08c793b/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bd2b239b59851cd32f7e8637678b4bdd/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:2:1-5:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/3273ae338f06d48b72ffc347cd656116/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c67941bb0683c448400cd118fee2764e/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/193c4c7178dc8e7ff0d3856ce4d0e704/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ab607a2eaaeb50fa0a2c9c3e7a752386/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c950db0fcc1df1eb348f5a89136d7da6/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc01dcce494de2ec727f0f287148bf03/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a02abf7f22f94e9e301b2a663e642c38/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fe558c34fabb13874f5bb01a9995ef0f/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/28899ee5a237c611548a2136156a6180/transformed/activity-ktx-1.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c5698e57ea92066a80834d24dba84ed9/transformed/activity-1.10.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/75b6d4c306e5d19dfecbbba132415fcd/transformed/activity-compose-1.10.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/003f5162fefc905d773ae49bdcec42a7/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e4113a24ac5e883f76ee8362ac51f2f1/transformed/core-ktx-1.15.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/03477be9a17f4dc403ed5006e4bd5bad/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4061ac4207e6cedf16368b3bf8255bdc/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f6dcb5e8fd902f38574fc12ca7445ee3/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c4dbfb9155e900519c0f1bed03947686/transformed/tracing-1.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f3b6052f9eb7f72b4fb27e958bdc8c5f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.compose.runtime:runtime-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c698e788a990c8d34810e489a7f65367/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/352aed642de3bed8570a43d2fc08e4fe/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/aa5f771167037d19a945dabe3704ad9e/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/793145df7cc01b420a4794d16d838ffd/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/db5ed3daafe10bd5098e082d014dd767/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/01c32602a43fe5f2dca5d4bb3122515f/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/37998ab7e920904044c685c2c4ede7d1/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.dagger:dagger-lint-aar:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0f8ef0a0948842d105b4cee95dce83e4/transformed/dagger-lint-aar-2.52/AndroidManifest.xml:16:1-19:12
+	package
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:5:5-27:19
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:5:5-27:19
+MERGED from [com.google.android.material:material:1.12.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.12.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0ddf0f8c8b0e878c06e54b79832f143b/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0ddf0f8c8b0e878c06e54b79832f143b/transformed/constraintlayout-2.0.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f3b6052f9eb7f72b4fb27e958bdc8c5f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f3b6052f9eb7f72b4fb27e958bdc8c5f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+	android:extractNativeLibs
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:13:9-35
+	android:label
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:11:9-41
+	android:fullBackupContent
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:9:9-54
+	android:roundIcon
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:12:9-54
+	tools:targetApi
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:15:9-29
+	android:icon
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:10:9-43
+	android:allowBackup
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:14:9-44
+	android:dataExtractionRules
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:8:9-65
+	android:name
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:7:9-37
+activity#com.benidict.buy_now.MainActivity
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:16:9-26:20
+	android:label
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:19:13-45
+	android:exported
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:18:13-36
+	android:theme
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:20:13-48
+	android:name
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:17:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:21:13-25:29
+action#android.intent.action.MAIN
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:22:17-69
+	android:name
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:22:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:24:17-77
+	android:name
+		ADDED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml:24:27-74
+uses-sdk
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+MERGED from [:feature-login] /Users/benidictdulce/Desktop/benidict/buy-now/feature-login/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature-login] /Users/benidictdulce/Desktop/benidict/buy-now/feature-login/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature-signup] /Users/benidictdulce/Desktop/benidict/buy-now/feature-signup/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:feature-signup] /Users/benidictdulce/Desktop/benidict/buy-now/feature-signup/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:common-ui] /Users/benidictdulce/Desktop/benidict/buy-now/common-ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:common-ui] /Users/benidictdulce/Desktop/benidict/buy-now/common-ui/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/36c0ff0222a296e331b8b288243f3dff/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation-compose:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/36c0ff0222a296e331b8b288243f3dff/transformed/hilt-navigation-compose-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/2db63faa5c45b3e8ea87bf8ac21b9fad/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.hilt:hilt-navigation:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/2db63faa5c45b3e8ea87bf8ac21b9fad/transformed/hilt-navigation-1.2.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/56c3af93076bcbc75fd6f316b3431f9b/transformed/navigation-common-2.8.8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/56c3af93076bcbc75fd6f316b3431f9b/transformed/navigation-common-2.8.8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e5305d38d8e0480bacdaade65a1a74f2/transformed/navigation-runtime-2.8.8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e5305d38d8e0480bacdaade65a1a74f2/transformed/navigation-runtime-2.8.8/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/30b407f879fc8c305f2962e724fee42a/transformed/navigation-common-ktx-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/30b407f879fc8c305f2962e724fee42a/transformed/navigation-common-ktx-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fabd5da08c23ff96eb247dac09e86538/transformed/navigation-runtime-ktx-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fabd5da08c23ff96eb247dac09e86538/transformed/navigation-runtime-ktx-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/79336d6de5ad9df1da600d62229777ad/transformed/navigation-compose-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [androidx.navigation:navigation-compose:2.8.8] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/79336d6de5ad9df1da600d62229777ad/transformed/navigation-compose-2.8.8/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:hilt-android:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5d9216186b9b8c670c8c1d614a1e3af0/transformed/hilt-android-2.52/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:hilt-android:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5d9216186b9b8c670c8c1d614a1e3af0/transformed/hilt-android-2.52/AndroidManifest.xml:18:3-42
+MERGED from [:common-utils] /Users/benidictdulce/Desktop/benidict/buy-now/common-utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:common-utils] /Users/benidictdulce/Desktop/benidict/buy-now/common-utils/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.12.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/22772ea902f07e180f5245887353318f/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/22772ea902f07e180f5245887353318f/transformed/appcompat-resources-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0ddf0f8c8b0e878c06e54b79832f143b/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0ddf0f8c8b0e878c06e54b79832f143b/transformed/constraintlayout-2.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.appcompat:appcompat:1.7.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bbac435890dba079083d1cf750463946/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bbac435890dba079083d1cf750463946/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/909ca6ea76f8ac803a1be567f57b9c94/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/909ca6ea76f8ac803a1be567f57b9c94/transformed/material-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fcef0d443f468aa9480d690e72700ba5/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fcef0d443f468aa9480d690e72700ba5/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c300d32941dbc239a7f4a74201ddda2f/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.6] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c300d32941dbc239a7f4a74201ddda2f/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5827ab98b7f740ec94bf815d80a5eb6e/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5827ab98b7f740ec94bf815d80a5eb6e/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/451129773c45e4980467bd7fa739a546/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/451129773c45e4980467bd7fa739a546/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6532fb0ab0e16577baa7039e3a9c5d08/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6532fb0ab0e16577baa7039e3a9c5d08/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c04b69d6f7a3cacdc54b1bb0395e9c07/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c04b69d6f7a3cacdc54b1bb0395e9c07/transformed/ui-tooling-data-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d91a501367e376944ba7561d1e502e5c/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d91a501367e376944ba7561d1e502e5c/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/26b1bad739bf4931f8476cd580eee047/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/26b1bad739bf4931f8476cd580eee047/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a5c91c741edc9fac8b1724aecc8cfbaa/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a5c91c741edc9fac8b1724aecc8cfbaa/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f118578cc4fff78998d19ff82392f0a7/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f118578cc4fff78998d19ff82392f0a7/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a855383f27ce3d5399fa514cd9dd6496/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a855383f27ce3d5399fa514cd9dd6496/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/eb5d0d9d4dcf2d23e47890eef9d607dd/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/eb5d0d9d4dcf2d23e47890eef9d607dd/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/42abd8b41f707e2b7e8946b38d5c8e45/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/42abd8b41f707e2b7e8946b38d5c8e45/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/68bfb2c56b859656f62bb23692b5abc4/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/68bfb2c56b859656f62bb23692b5abc4/transformed/viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d8e1df8426649fc71514eb2f747e31a9/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.5.4] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d8e1df8426649fc71514eb2f747e31a9/transformed/fragment-1.5.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/54186135d90c8b98746caf0b42a6a1d4/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2-views-helper:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/54186135d90c8b98746caf0b42a6a1d4/transformed/emoji2-views-helper-1.3.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/72b1f66c7dc8ddb131d261910d19cbf4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/72b1f66c7dc8ddb131d261910d19cbf4/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c1296af4f9940bba09f8b97ddc5c34b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c1296af4f9940bba09f8b97ddc5c34b7/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.5.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8f050f2090d94886d2acb8c26755d77e/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.transition:transition:1.5.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8f050f2090d94886d2acb8c26755d77e/transformed/transition-1.5.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5db04908550bf9f947ce42c96a664898/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5db04908550bf9f947ce42c96a664898/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/768e5d8012fb2e91142bf9c6fcf01bd4/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/768e5d8012fb2e91142bf9c6fcf01bd4/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8d663355c6744c6d6672efe0804510e6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/8d663355c6744c6d6672efe0804510e6/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/b044f5c232772ed597c833f0033e1642/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/b044f5c232772ed597c833f0033e1642/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/936eddb458837106dde556b8c0e01716/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/936eddb458837106dde556b8c0e01716/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ddf97d243d22187c24e17f97a70c780a/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ddf97d243d22187c24e17f97a70c780a/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/132212fed10d83f21197a1e9f1413760/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/132212fed10d83f21197a1e9f1413760/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e844219a8d8147d38ef8ea5f360642ea/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e844219a8d8147d38ef8ea5f360642ea/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6d0ed872b26ebe5c4180f4a06286fc72/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/6d0ed872b26ebe5c4180f4a06286fc72/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e571b834a098f838ce7f88c9363bea5c/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.graphics:graphics-path:1.0.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e571b834a098f838ce7f88c9363bea5c/transformed/graphics-path-1.0.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/9c72ec01549e9351c4d9a2cbd2def4c0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/9c72ec01549e9351c4d9a2cbd2def4c0/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c215bfd8c11a9c9cc0e38cf5c875c586/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c215bfd8c11a9c9cc0e38cf5c875c586/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc73f010d426903af6615a2a5ecc5de8/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc73f010d426903af6615a2a5ecc5de8/transformed/lifecycle-livedata-core-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/728ecb1bf5a9c1fe52865876fad4424c/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/728ecb1bf5a9c1fe52865876fad4424c/transformed/lifecycle-runtime-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c3313cee68883b24a022e32fe08c793b/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c3313cee68883b24a022e32fe08c793b/transformed/lifecycle-livedata-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bd2b239b59851cd32f7e8637678b4bdd/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bd2b239b59851cd32f7e8637678b4bdd/transformed/lifecycle-viewmodel-2.8.7/AndroidManifest.xml:4:5-43
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/3273ae338f06d48b72ffc347cd656116/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/3273ae338f06d48b72ffc347cd656116/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c67941bb0683c448400cd118fee2764e/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c67941bb0683c448400cd118fee2764e/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/193c4c7178dc8e7ff0d3856ce4d0e704/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/193c4c7178dc8e7ff0d3856ce4d0e704/transformed/lifecycle-livedata-core-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ab607a2eaaeb50fa0a2c9c3e7a752386/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/ab607a2eaaeb50fa0a2c9c3e7a752386/transformed/lifecycle-viewmodel-ktx-2.8.7/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c950db0fcc1df1eb348f5a89136d7da6/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c950db0fcc1df1eb348f5a89136d7da6/transformed/lifecycle-viewmodel-savedstate-2.8.7/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc01dcce494de2ec727f0f287148bf03/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/bc01dcce494de2ec727f0f287148bf03/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a02abf7f22f94e9e301b2a663e642c38/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a02abf7f22f94e9e301b2a663e642c38/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fe558c34fabb13874f5bb01a9995ef0f/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/fe558c34fabb13874f5bb01a9995ef0f/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/28899ee5a237c611548a2136156a6180/transformed/activity-ktx-1.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/28899ee5a237c611548a2136156a6180/transformed/activity-ktx-1.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c5698e57ea92066a80834d24dba84ed9/transformed/activity-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c5698e57ea92066a80834d24dba84ed9/transformed/activity-1.10.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/75b6d4c306e5d19dfecbbba132415fcd/transformed/activity-compose-1.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.10.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/75b6d4c306e5d19dfecbbba132415fcd/transformed/activity-compose-1.10.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/003f5162fefc905d773ae49bdcec42a7/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/003f5162fefc905d773ae49bdcec42a7/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e4113a24ac5e883f76ee8362ac51f2f1/transformed/core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/e4113a24ac5e883f76ee8362ac51f2f1/transformed/core-ktx-1.15.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/03477be9a17f4dc403ed5006e4bd5bad/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/03477be9a17f4dc403ed5006e4bd5bad/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4061ac4207e6cedf16368b3bf8255bdc/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4061ac4207e6cedf16368b3bf8255bdc/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f6dcb5e8fd902f38574fc12ca7445ee3/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f6dcb5e8fd902f38574fc12ca7445ee3/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c4dbfb9155e900519c0f1bed03947686/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.tracing:tracing:1.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c4dbfb9155e900519c0f1bed03947686/transformed/tracing-1.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f3b6052f9eb7f72b4fb27e958bdc8c5f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/f3b6052f9eb7f72b4fb27e958bdc8c5f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.runtime:runtime-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c698e788a990c8d34810e489a7f65367/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/c698e788a990c8d34810e489a7f65367/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/352aed642de3bed8570a43d2fc08e4fe/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/352aed642de3bed8570a43d2fc08e4fe/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/aa5f771167037d19a945dabe3704ad9e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/aa5f771167037d19a945dabe3704ad9e/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/793145df7cc01b420a4794d16d838ffd/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/793145df7cc01b420a4794d16d838ffd/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/db5ed3daafe10bd5098e082d014dd767/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/db5ed3daafe10bd5098e082d014dd767/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/01c32602a43fe5f2dca5d4bb3122515f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/01c32602a43fe5f2dca5d4bb3122515f/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/37998ab7e920904044c685c2c4ede7d1/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/37998ab7e920904044c685c2c4ede7d1/transformed/annotation-experimental-1.4.1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.dagger:dagger-lint-aar:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0f8ef0a0948842d105b4cee95dce83e4/transformed/dagger-lint-aar-2.52/AndroidManifest.xml:18:3-42
+MERGED from [com.google.dagger:dagger-lint-aar:2.52] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/0f8ef0a0948842d105b4cee95dce83e4/transformed/dagger-lint-aar-2.52/AndroidManifest.xml:18:3-42
+	android:targetSdkVersion
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/benidictdulce/Desktop/benidict/buy-now/app/src/main/AndroidManifest.xml
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/753122a6ba17c22b0cc011a09f55825c/transformed/ui-test-manifest-1.7.2/AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling-android:1.7.2] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/4e002d0406253abb1bac069cb00e315c/transformed/ui-tooling-release/AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/a48dd1a9ce2be6af61819ed0bd63cb83/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/16139f697fbaf575b43b23f0cd4af2ff/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+permission#com.benidict.buy_now.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+uses-permission#com.benidict.buy_now.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.15.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/d56616cfdb05a8edb206229732483040/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.7] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/cc493b50fbc2edea698279d83c509894/transformed/lifecycle-process-2.8.7/AndroidManifest.xml:30:17-78
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.4.0] /Users/benidictdulce/.gradle/caches/8.10.2/transforms/5c1437c5c469f8cb916d578a5a009ba1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92

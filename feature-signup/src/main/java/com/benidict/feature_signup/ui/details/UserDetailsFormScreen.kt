@@ -18,12 +18,14 @@ import androidx.navigation.NavController
 import com.benidict.common_ui.field.CommonOutlinedTextFieldView
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
-import com.benidict.common_utils.validation.isPhoneValid
+import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun UserDetailsFormScreen(
     navController: NavController
 ) {
+    val viewModel = hiltViewModel<UserDetailsFormViewModel>()
+
     val firstName = remember { mutableStateOf("") }
     val lastName = remember { mutableStateOf("") }
     val email = remember { mutableStateOf("") }
@@ -31,7 +33,11 @@ fun UserDetailsFormScreen(
         hasTopBar = true,
         hasBackButton = true,
         hasNextButton = true,
-        enableNextButton = false,
+        enableNextButton = viewModel.isFormFieldsValid(
+            email = email.value,
+            firstName = firstName.value,
+            lastName = lastName.value
+        ),
         onNextPressed = {
 
         },

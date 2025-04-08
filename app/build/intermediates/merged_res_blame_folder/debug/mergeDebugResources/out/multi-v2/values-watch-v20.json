@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-67:/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

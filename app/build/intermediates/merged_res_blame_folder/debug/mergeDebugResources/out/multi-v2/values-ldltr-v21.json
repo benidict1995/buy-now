@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-67:/values-ldltr-v21/values-ldltr-v21.xml",
+            "map": [
+                {
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "112",
+                        "endOffsets": "163"
+                    }
+                }
+            ]
+        }
+    ]
+}
