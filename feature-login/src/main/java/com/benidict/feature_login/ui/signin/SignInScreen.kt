@@ -31,12 +31,13 @@ fun SignInScreen(
     navController: NavController,
     onNext: () -> Unit
 ) {
+    val isMobileNumberIncorrect = remember { mutableStateOf(false) }
     val mobileNumber = remember { mutableStateOf("") }
     MainLayout(
         hasTopBar = true,
         hasBackButton = true,
         hasNextButton = true,
-        enableNextButton = isPhoneValid(mobileNumber.value),
+        enableNextButton = isMobileNumberIncorrect.value,
         onNextPressed = {
             onNext()
         },
@@ -63,7 +64,10 @@ fun SignInScreen(
                 text = mobileNumber.value,
                 onTextChanged = {
                     mobileNumber.value = it
+                    isMobileNumberIncorrect.value = isPhoneValid(mobileNumber.value).not()
                 },
+                hasError = isMobileNumberIncorrect.value,
+                errorMessage = "Incorrect mobile number.",
                 keyboardOptions = KeyboardType.Number,
                 maxCharacter = 10,
                 modifier = Modifier.fillMaxWidth(),

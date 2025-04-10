@@ -2,6 +2,7 @@ package com.benidict.buy_now.base;
 
 import com.benidict.buy_now.MainActivity_GeneratedInjector;
 import com.benidict.feature_login.ui.landing.LandingViewModel_HiltModules;
+import com.benidict.feature_signup.ui.details.UserDetailsFormViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -147,7 +148,8 @@ public final class BaseApp_HiltComponents {
           ViewModelCBuilderModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
           HiltWrapper_SavedStateHandleModule.class,
-          LandingViewModel_HiltModules.KeyModule.class
+          LandingViewModel_HiltModules.KeyModule.class,
+          UserDetailsFormViewModel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -184,7 +186,8 @@ public final class BaseApp_HiltComponents {
   @Subcomponent(
       modules = {
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
-          LandingViewModel_HiltModules.BindsModule.class
+          LandingViewModel_HiltModules.BindsModule.class,
+          UserDetailsFormViewModel_HiltModules.BindsModule.class
       }
   )
   @ViewModelScoped

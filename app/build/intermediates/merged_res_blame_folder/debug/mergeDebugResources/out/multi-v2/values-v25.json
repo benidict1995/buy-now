@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-67:/values-v25/values-v25.xml",
+            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-70:/values-v25/values-v25.xml",
             "map": [
                 {
-                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/res/values-v25/values-v25.xml",
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/e7ee773fc9976c54b3ad13126261b1a1/transformed/appcompat-1.7.0/res/values-v25/values-v25.xml",
                     "from": {
                         "startLines": "2,3,4,6",
                         "startColumns": "4,4,4,4",

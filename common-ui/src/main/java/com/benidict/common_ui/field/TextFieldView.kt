@@ -8,8 +8,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.unit.sp
 import kotlin.math.sin
 
 @Composable
@@ -35,6 +37,8 @@ fun CommonTextFieldView(
 @Composable
 fun CommonOutlinedTextFieldView(
     text: String = "",
+    errorMessage: String = "",
+    hasError: Boolean = false,
     label: String,
     suffix: String = "",
     prefix: String = "",
@@ -63,4 +67,11 @@ fun CommonOutlinedTextFieldView(
             keyboardType = keyboardOptions
         )
     )
+    if (hasError) {
+        Text(
+            text = errorMessage,
+            color = Color.Red,
+            fontSize = 12.sp
+        )
+    }
 }

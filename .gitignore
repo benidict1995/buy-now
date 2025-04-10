@@ -1,0 +1,71 @@
+# Built application files
+*.apk
+*.ap_
+*.aab
+
+# Build folders
+/build/
+**/build/
+
+# Gradle files
+.gradle/
+**/gradle-app.setting
+
+# Local configuration file (SDK path, etc.)
+local.properties
+
+# Log/IDE/cache files
+.idea/
+*.iml
+*.log
+*.swp
+
+# Cache and temporary files
+.cxx/
+.externalNativeBuild/
+.cinterop/
+.kotlinc/
+.navigation/
+captures/
+outputs/
+*.hprof
+
+# Android Studio specific
+/.idea/
+*.iws
+*.ipr
+*.iml
+
+# IntelliJ
+out/
+
+# Keystore files (if any, be careful)
+*.jks
+
+# Generated files by Compose or Kotlin Symbol Processing
+.ksp/
+.kapt/
+.ksp-cache/
+build/
+
+# Ignore crashlytics and firebase stuff (if applicable)
+crashlytics.properties
+firebase-*.json
+
+# Others
+*.db
+*.db-journal
+.DS_Store
+*.tmp
+*.bak
+*.orig
+*.rej
+
+# Test reports and coverage
+/test-results/
+*/test-results/
+*/reports/
+*/coverage/
+
+# Ignore specific modules' generated files if needed
+app/build/

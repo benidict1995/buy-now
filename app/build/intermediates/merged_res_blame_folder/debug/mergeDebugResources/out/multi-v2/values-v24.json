@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-67:/values-v24/values-v24.xml",
+            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-70:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/a79fab8c00fdf0beda9d90f54e4d55a9/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/e7ee773fc9976c54b3ad13126261b1a1/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/res/values-v24/values-v24.xml",
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/acf3b87e6b7427028f2a9033f7ed6784/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

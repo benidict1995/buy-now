@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-67:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "outputFile": "com.benidict.buy_now.app-mergeDebugResources-70:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/199e3f835fe1515e4808e91605b5288d/transformed/material-1.12.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+                    "source": "/Users/benidictdulce/.gradle/caches/8.10.2/transforms/acf3b87e6b7427028f2a9033f7ed6784/transformed/material-1.12.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

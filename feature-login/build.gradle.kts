@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.benidict.feature_login"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -41,6 +41,7 @@ android {
 dependencies {
     implementation(project(":common-ui"))
     implementation(project(":common-utils"))
+    implementation(libs.androidx.ui.test.junit4.android)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.dagger.hilt.android)
     implementation(libs.hiltNavigationCompose)

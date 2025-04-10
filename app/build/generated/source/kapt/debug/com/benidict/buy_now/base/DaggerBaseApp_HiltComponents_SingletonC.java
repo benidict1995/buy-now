@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModel;
 import com.benidict.buy_now.MainActivity;
 import com.benidict.feature_login.ui.landing.LandingViewModel;
 import com.benidict.feature_login.ui.landing.LandingViewModel_HiltModules;
+import com.benidict.feature_signup.ui.details.UserDetailsFormViewModel;
+import com.benidict.feature_signup.ui.details.UserDetailsFormViewModel_HiltModules;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.ViewModelLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
@@ -29,6 +31,7 @@ import dagger.internal.DoubleCheck;
 import dagger.internal.IdentifierNameString;
 import dagger.internal.KeepFieldType;
 import dagger.internal.LazyClassKeyMap;
+import dagger.internal.MapBuilder;
 import dagger.internal.Preconditions;
 import dagger.internal.Provider;
 import java.util.Collections;
@@ -369,7 +372,7 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
 
     @Override
     public Map<Class<?>, Boolean> getViewModelKeys() {
-      return LazyClassKeyMap.<Boolean>of(Collections.<String, Boolean>singletonMap(LazyClassKeyProvider.com_benidict_feature_login_ui_landing_LandingViewModel, LandingViewModel_HiltModules.KeyModule.provide()));
+      return LazyClassKeyMap.<Boolean>of(MapBuilder.<String, Boolean>newMapBuilder(2).put(LazyClassKeyProvider.com_benidict_feature_login_ui_landing_LandingViewModel, LandingViewModel_HiltModules.KeyModule.provide()).put(LazyClassKeyProvider.com_benidict_feature_signup_ui_details_UserDetailsFormViewModel, UserDetailsFormViewModel_HiltModules.KeyModule.provide()).build());
     }
 
     @Override
@@ -389,7 +392,12 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
 
     @IdentifierNameString
     private static final class LazyClassKeyProvider {
+      static String com_benidict_feature_signup_ui_details_UserDetailsFormViewModel = "com.benidict.feature_signup.ui.details.UserDetailsFormViewModel";
+
       static String com_benidict_feature_login_ui_landing_LandingViewModel = "com.benidict.feature_login.ui.landing.LandingViewModel";
+
+      @KeepFieldType
+      UserDetailsFormViewModel com_benidict_feature_signup_ui_details_UserDetailsFormViewModel2;
 
       @KeepFieldType
       LandingViewModel com_benidict_feature_login_ui_landing_LandingViewModel2;
@@ -405,6 +413,8 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
 
     private Provider<LandingViewModel> landingViewModelProvider;
 
+    private Provider<UserDetailsFormViewModel> userDetailsFormViewModelProvider;
+
     private ViewModelCImpl(SingletonCImpl singletonCImpl,
         ActivityRetainedCImpl activityRetainedCImpl, SavedStateHandle savedStateHandleParam,
         ViewModelLifecycle viewModelLifecycleParam) {
@@ -419,11 +429,12 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
     private void initialize(final SavedStateHandle savedStateHandleParam,
         final ViewModelLifecycle viewModelLifecycleParam) {
       this.landingViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 0);
+      this.userDetailsFormViewModelProvider = new SwitchingProvider<>(singletonCImpl, activityRetainedCImpl, viewModelCImpl, 1);
     }
 
     @Override
     public Map<Class<?>, javax.inject.Provider<ViewModel>> getHiltViewModelMap() {
-      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(Collections.<String, javax.inject.Provider<ViewModel>>singletonMap(LazyClassKeyProvider.com_benidict_feature_login_ui_landing_LandingViewModel, ((Provider) landingViewModelProvider)));
+      return LazyClassKeyMap.<javax.inject.Provider<ViewModel>>of(MapBuilder.<String, javax.inject.Provider<ViewModel>>newMapBuilder(2).put(LazyClassKeyProvider.com_benidict_feature_login_ui_landing_LandingViewModel, ((Provider) landingViewModelProvider)).put(LazyClassKeyProvider.com_benidict_feature_signup_ui_details_UserDetailsFormViewModel, ((Provider) userDetailsFormViewModelProvider)).build());
     }
 
     @Override
@@ -435,8 +446,13 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
     private static final class LazyClassKeyProvider {
       static String com_benidict_feature_login_ui_landing_LandingViewModel = "com.benidict.feature_login.ui.landing.LandingViewModel";
 
+      static String com_benidict_feature_signup_ui_details_UserDetailsFormViewModel = "com.benidict.feature_signup.ui.details.UserDetailsFormViewModel";
+
       @KeepFieldType
       LandingViewModel com_benidict_feature_login_ui_landing_LandingViewModel2;
+
+      @KeepFieldType
+      UserDetailsFormViewModel com_benidict_feature_signup_ui_details_UserDetailsFormViewModel2;
     }
 
     private static final class SwitchingProvider<T> implements Provider<T> {
@@ -462,6 +478,9 @@ public final class DaggerBaseApp_HiltComponents_SingletonC {
         switch (id) {
           case 0: // com.benidict.feature_login.ui.landing.LandingViewModel 
           return (T) new LandingViewModel();
+
+          case 1: // com.benidict.feature_signup.ui.details.UserDetailsFormViewModel 
+          return (T) new UserDetailsFormViewModel();
 
           default: throw new AssertionError(id);
         }
