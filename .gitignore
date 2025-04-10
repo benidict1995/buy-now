@@ -36,6 +36,12 @@ outputs/
 *.ipr
 *.iml
 
+# Gradle lock files
+**/*.lock
+*.lock
+gradle.lockfile
+dependency-locks/
+
 # IntelliJ
 out/
 
