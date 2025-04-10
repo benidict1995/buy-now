@@ -31,7 +31,9 @@ class LandingScreenTest {
     @Before
     fun setup() {
         rule.setContent {
-            LandingScreen {}
+            LandingScreen {
+
+            }
 
             CommonButtonView(
                 modifier = Modifier
@@ -50,7 +52,7 @@ class LandingScreenTest {
                     .testTag("guestButton"),
                 buttonLabel = "Continue as a Guest"
             ) {
-                guestButtonWasClicked = true
+                guestButtonWasClicked = false
             }
         }
     }
@@ -79,7 +81,7 @@ class LandingScreenTest {
 
     @Test
     fun checkIf_GuestButton_isWorking_As_Expected() {
-        // Assert text display
+        //Assert text display
         rule.onNodeWithTag("guestButton")
             .assertIsDisplayed()
             .assertTextEquals("Continue as a Guest")
@@ -89,7 +91,7 @@ class LandingScreenTest {
             .assertHasClickAction()
             .performClick()
 
-        // Assert the click changed the state
+        //Assert the click changed the state
         //assert(guestButtonWasClicked)
     }
 }
