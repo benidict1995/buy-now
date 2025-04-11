@@ -79,3 +79,18 @@ test-output/
 
 # Ignore APKs
 **/build/outputs/apk/
+
+# === Kotlin compiler session files ===
+.kotlin/
+.kotlin/**
+
+# Optional: If you want to be more specific (in case you want to track some Gradle stuff), you can also just ignore these:
+.gradle/**/checksums/
+.gradle/**/executionHistory/
+.gradle/**/fileHashes/
+.gradle/**/buildOutputCleanup/
+.gradle/**/*.lock
+.gradle/**/*.bin
+
+# Kotlin session files with .salive extension
+*.salive
