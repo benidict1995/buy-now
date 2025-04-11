@@ -1,2 +1,0 @@
-com.benidict.common_ui
-drawable baseline_arrow_back_24

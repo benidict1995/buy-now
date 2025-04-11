@@ -1,85 +1,81 @@
-# Built application files
-*.apk
-*.ap_
-*.aab
-
-# Build folders
-/build/
-**/build/
-
-# Gradle files
-.gradle/
-**/gradle-app.setting
-
-# Local configuration file (SDK path, etc.)
-local.properties
-
-# Log/IDE/cache files
+# === Android Studio / IntelliJ IDEA ===
 .idea/
 *.iml
-*.log
-*.swp
-
-# Cache and temporary files
-.cxx/
-.externalNativeBuild/
-.cinterop/
-.kotlinc/
-.navigation/
-captures/
-outputs/
-*.hprof
-
-# Android Studio specific
-/.idea/
-*.iws
 *.ipr
-*.iml
+*.iws
 
-# Ignore from build or idea
-**/build/**/*.bin
-.idea/**/*.bin
-.idea/**/*.xml
+# === Gradle ===
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
 
-# Ignore all .bin files
+# Gradle cache and logs
+.gradle/**
+*.log
+*.lock
 *.bin
 
-# Gradle lock files
-**/*.lock
-*.lock
-gradle.lockfile
-dependency-locks/
-
-# IntelliJ
-out/
-
-# Keystore files (if any, be careful)
-*.jks
-
-# Generated files by Compose or Kotlin Symbol Processing
-.ksp/
-.kapt/
-.ksp-cache/
-build/
-
-# Ignore crashlytics and firebase stuff (if applicable)
-crashlytics.properties
-firebase-*.json
-
-# Others
-*.db
-*.db-journal
+# === OS files ===
 .DS_Store
-*.tmp
-*.bak
-*.orig
-*.rej
+Thumbs.db
 
-# Test reports and coverage
-/test-results/
-*/test-results/
-*/reports/
-*/coverage/
+# === Android Build Artifacts ===
+*.apk
+*.ap_
+*.dex
+*.class
+*.o
+*.so
+*.jar
+*.aar
 
-# Ignore specific modules' generated files if needed
-app/build/
+# === Captures & Generated ===
+captures/
+output.json
+output-metadata.json
+.cxx/
+.externalNativeBuild/
+navigation.json
+
+# === Local Configuration ===
+local.properties
+
+# === Room, Hilt, kapt, etc ===
+**/build/generated/
+
+# === Test outputs ===
+test-results/
+test-output/
+
+# === Sign-in credentials or keys ===
+*.keystore
+
+# Ignore KAPT-generated sources
+**/build/generated/source/kapt/
+**/build/tmp/kapt/
+
+# Ignore Hilt and Dagger generated sources
+**/build/generated/source/kaptKotlin/
+**/build/generated/source/kapt/debug/
+
+# Ignore Dagger/Hilt internal generated files
+**/Dagger*.java
+**/*_GeneratedInjector.java
+**/*_ComponentTreeDeps.java
+**/*_HiltComponents*.java
+**/*Hilt_*.java
+
+# Ignore codegen (used by Hilt/Dagger/Room/KSP/etc.)
+**/build/tmp/kapt/codegen/
+**/build/tmp/ksp/codegen/
+**/build/tmp/kotlin-classes/
+
+# Ignore annotation processor output
+**/build/tmp/kapt/debug/stubs/
+**/build/intermediates/javac/
+**/build/intermediates/javaPreCompile*/annotationProcessors.json
+
+# Ignore APKs
+**/build/outputs/apk/

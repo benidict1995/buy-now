@@ -1,1 +1,0 @@
-int drawable baseline_arrow_back_24 0x0
