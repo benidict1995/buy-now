@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.benidict.common_ui"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
