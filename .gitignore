@@ -39,6 +39,7 @@ outputs/
 # Ignore from build or idea
 **/build/**/*.bin
 .idea/**/*.bin
+.idea/**/*.xml
 
 # Ignore all .bin files
 *.bin
