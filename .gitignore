@@ -36,6 +36,13 @@ outputs/
 *.ipr
 *.iml
 
+# Ignore from build or idea
+**/build/**/*.bin
+.idea/**/*.bin
+
+# Ignore all .bin files
+*.bin
+
 # Gradle lock files
 **/*.lock
 *.lock
