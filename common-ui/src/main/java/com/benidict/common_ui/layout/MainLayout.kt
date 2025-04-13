@@ -40,9 +40,6 @@ fun MainLayout(
     onNextPressed: (() -> Unit)? = null,
     content: @Composable (PaddingValues) -> Unit
 ) {
-    LaunchedEffect(key1 = Unit) {
-        Log.d("makerChecker", "enableNextButton:$enableNextButton")
-    }
     Scaffold(
         topBar = {
             if (hasTopBar) {

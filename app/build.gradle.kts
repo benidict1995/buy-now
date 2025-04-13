@@ -57,6 +57,7 @@ android {
 
 dependencies {
     implementation(project(":common-ui"))
+    implementation(project(":feature-home"))
     implementation(project(":feature-login"))
     implementation(project(":feature-signup"))
     implementation(libs.navigationCompose)

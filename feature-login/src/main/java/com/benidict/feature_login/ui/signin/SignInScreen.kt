@@ -37,7 +37,7 @@ fun SignInScreen(
         hasTopBar = true,
         hasBackButton = true,
         hasNextButton = true,
-        enableNextButton = isMobileNumberIncorrect.value,
+        enableNextButton = isMobileNumberIncorrect.value.not(),
         onNextPressed = {
             onNext()
         },

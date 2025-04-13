@@ -11,3 +11,6 @@ object SignInRoute
 
 @Serializable
 object UserDetailsFormRoute
+
+@Serializable
+object HomeRoute

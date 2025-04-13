@@ -18,8 +18,10 @@ kotlinSerialization = "1.7.3"
 navigationCompose = "2.8.9"
 hiltAndroid = "2.52"
 uiTestJunit4Android = "1.7.8"
+lottie = "6.1.0"
 
 [libraries]
+lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie"}
 code-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 dagger-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
 dagger-hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
