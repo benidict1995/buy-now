@@ -42,6 +42,8 @@ dependencies {
     implementation(project(":common-ui"))
     implementation(project(":common-utils"))
     kapt(libs.dagger.hilt.compiler)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
     implementation(libs.dagger.hilt.android)
     implementation(libs.hiltNavigationCompose)
     implementation(libs.androidx.material3)

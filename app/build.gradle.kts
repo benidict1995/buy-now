@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.compose.compiler)
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -60,6 +61,8 @@ dependencies {
     implementation(project(":feature-home"))
     implementation(project(":feature-login"))
     implementation(project(":feature-signup"))
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
     implementation(libs.navigationCompose)
     implementation(libs.hiltNavigationCompose)
     kapt(libs.dagger.hilt.compiler)

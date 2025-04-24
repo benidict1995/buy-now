@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "532169486378",
+    "project_id": "buy-now-1c39c",
+    "storage_bucket": "buy-now-1c39c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532169486378:android:a0c4ce7fcacbbd79c71353",
+        "android_client_info": {
+          "package_name": "com.benidict.buy_now"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlBCEwvaPR2gHPfCP4zEzU8P8NYc_7sD4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

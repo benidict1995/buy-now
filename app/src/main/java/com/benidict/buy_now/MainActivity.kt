@@ -43,7 +43,11 @@ class MainActivity : ComponentActivity() {
 
                         UserDetailsFormRoute -> {
                             UserDetailsFormScreen(navController, onNext = {
-                                navController.navigate(HomeRoute)
+                                navController.navigate(HomeRoute) {
+                                    popUpTo(0) {
+                                        inclusive = true
+                                    }
+                                }
                             })
                         }
 
