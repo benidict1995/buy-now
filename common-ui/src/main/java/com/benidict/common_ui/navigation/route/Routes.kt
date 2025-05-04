@@ -10,7 +10,10 @@ object LandingRoute
 object SignInRoute
 
 @Serializable
-object UserDetailsFormRoute
+data class UserDetailsFormRoute(val email: String)
 
 @Serializable
 object HomeRoute
+
+@Serializable
+data class EnterPasswordRoute(val email: String)

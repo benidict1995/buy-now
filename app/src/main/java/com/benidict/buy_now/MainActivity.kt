@@ -1,20 +1,24 @@
 package com.benidict.buy_now
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import com.benidict.buy_now.ui.theme.BuynowTheme
 import com.benidict.common_ui.navigation.graph.MainGraph
+import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
 import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
 import com.benidict.feature_home.home.HomeScreen
 import com.benidict.feature_login.ui.landing.LandingScreen
+import com.benidict.feature_login.ui.password.EnterPasswordScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
 import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,13 +40,34 @@ class MainActivity : ComponentActivity() {
                         }
 
                         SignInRoute -> {
-                            SignInScreen(navController, onNext = {
-                                navController.navigate(UserDetailsFormRoute)
-                            })
+                            SignInScreen(navController,
+                                onNavigateToPassword = { email ->
+                                    navController.navigate(EnterPasswordRoute(email = email))
+                                },
+                                onNavigateToSignUp = { email ->
+                                    navController.navigate(UserDetailsFormRoute(email = email))
+                                })
                         }
 
                         UserDetailsFormRoute -> {
-                            UserDetailsFormScreen(navController, onNext = {
+                            val param: UserDetailsFormRoute = navBackStackEntry.toRoute()
+                            UserDetailsFormScreen(
+                                emailAddress = param.email,
+                                navController = navController,
+                                onNext = {
+                                    navController.navigate(HomeRoute) {
+                                        popUpTo(0) {
+                                            inclusive = true
+                                        }
+                                    }
+                                })
+                        }
+
+                        EnterPasswordRoute -> {
+                            val param: EnterPasswordRoute = navBackStackEntry.toRoute()
+                            EnterPasswordScreen(
+                                email = param.email,
+                                navController, onNext = {
                                 navController.navigate(HomeRoute) {
                                     popUpTo(0) {
                                         inclusive = true

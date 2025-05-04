@@ -5,6 +5,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
@@ -27,6 +28,16 @@ fun MainGraph(navController: NavHostController, navRoute: @Composable (NavBackSt
             }
         ) {
             navRoute(it, SignInRoute)
+        }
+        composable<EnterPasswordRoute>(
+            enterTransition = {
+                fadeInAnimation(this)
+            },
+            exitTransition = {
+                fadeOutAnimation(this)
+            }
+        ) {
+            navRoute(it, EnterPasswordRoute)
         }
         composable<UserDetailsFormRoute>(
             enterTransition = {

@@ -12,10 +12,16 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Snackbar
+import androidx.compose.material3.SnackbarDuration
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -25,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.benidict.common_ui.R
 import com.benidict.common_ui.theme.GrayDisabled
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -34,13 +41,28 @@ fun MainLayout(
     hasBottomBar: Boolean = false,
     hasNextButton: Boolean = false,
     enableNextButton: Boolean = false,
+    errorMessage: String = "",
     titleTopBar: String = "",
     containerColor: Color = MaterialTheme.colorScheme.primaryContainer,
+    onResetErrorMessage: (() -> Unit)? = null,
     onBackPressed: (() -> Unit)? = null,
     onNextPressed: (() -> Unit)? = null,
     content: @Composable (PaddingValues) -> Unit
 ) {
+    val snackBarHostState = remember { SnackbarHostState() }
+    val coroutineScope = rememberCoroutineScope()
+
+
     Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackBarHostState) { data ->
+                Snackbar(
+                    snackbarData = data,
+                    containerColor = Color.Red,
+                    contentColor = Color.White
+                )
+            }
+        },
         topBar = {
             if (hasTopBar) {
                 CenterAlignedTopAppBar(
@@ -102,5 +124,16 @@ fun MainLayout(
         }
     ) { paddingValues ->
         content(paddingValues)
+        LaunchedEffect(errorMessage.isNotEmpty()) {
+            if (errorMessage.isNotEmpty()) {
+                coroutineScope.launch {
+                    snackBarHostState.showSnackbar(
+                        message = errorMessage,
+                        duration = SnackbarDuration.Short
+                    )
+                    onResetErrorMessage?.invoke()
+                }
+            }
+        }
     }
 }

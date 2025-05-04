@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -21,12 +23,16 @@ import com.benidict.common_ui.field.CommonOutlinedTextFieldView
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.benidict.common_ui.field.PasswordCommonOutlinedTextFieldView
 import com.benidict.common_ui.loader.FullScreenLoaderView
 import com.benidict.common_utils.validation.isEmailValid
+import com.google.firebase.firestore.auth.User
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun UserDetailsFormScreen(
+    emailAddress: String,
     navController: NavController,
     onNext: () -> Unit
 ) {
@@ -34,17 +40,43 @@ fun UserDetailsFormScreen(
 
     val firstName = remember { mutableStateOf("") }
     val lastName = remember { mutableStateOf("") }
-    val email = remember { mutableStateOf("") }
+
+    val email = remember { mutableStateOf(emailAddress) }
     val isEmailHasError = remember { mutableStateOf(false) }
+
+    val password = remember { mutableStateOf("") }
+    val confirmPassword = remember { mutableStateOf("") }
+    var hasConfirmPasswordBeenTouched by remember { mutableStateOf(false) }
+    val isPasswordConfirmed = remember { mutableStateOf(false) }
+
     val showLoader = remember { mutableStateOf(false) }
+
+    val errorMessage = remember { mutableStateOf("") }
 
     LaunchedEffect(showLoader.value) {
         if (showLoader.value) {
             delay(5000)
-            onNext()
+            viewModel.createUser(
+                firstName = firstName.value,
+                lastName = lastName.value,
+                password = password.value,
+                email = email.value
+            )
         }
     }
 
+    LaunchedEffect(Unit) {
+        viewModel.state.collectLatest { state ->
+            when(state) {
+                UserDetailsState.NavigateToHome -> onNext()
+                is UserDetailsState.ShowError -> {
+                    showLoader.value = false
+                    errorMessage.value = state.message
+                    Log.d("makerChecker", "ShowError:${state.message}")
+                }
+            }
+        }
+    }
     if (showLoader.value) {
         FullScreenLoaderView()
     } else {
@@ -52,10 +84,12 @@ fun UserDetailsFormScreen(
             hasTopBar = true,
             hasBackButton = true,
             hasNextButton = true,
+            errorMessage = errorMessage.value,
             enableNextButton = viewModel.isFormFieldsValid(
                 email = email.value,
                 firstName = firstName.value,
-                lastName = lastName.value
+                lastName = lastName.value,
+                isPasswordConfirmed = isPasswordConfirmed.value
             ),
             onNextPressed = {
                 showLoader.value = true
@@ -115,6 +149,34 @@ fun UserDetailsFormScreen(
                     hasError = isEmailHasError.value,
                     errorMessage = "Invalid email address."
                 )
+
+                Spacer(modifier = Modifier.height(8.dp))
+                PasswordCommonOutlinedTextFieldView(
+                    text = password.value,
+                    onTextChanged = {
+                        password.value = it
+                    },
+                    maxCharacter = 50,
+                    modifier = Modifier.fillMaxWidth(),
+                    label = "Password"
+                )
+
+                Spacer(modifier = Modifier.height(8.dp))
+                PasswordCommonOutlinedTextFieldView(
+                    text = confirmPassword.value,
+                    onTextChanged = {
+                        hasConfirmPasswordBeenTouched = true
+                        confirmPassword.value = it
+                        isPasswordConfirmed.value =
+                            viewModel.isPasswordConfirmed(password.value, confirmPassword.value)
+                    },
+                    maxCharacter = 50,
+                    modifier = Modifier.fillMaxWidth(),
+                    label = "Confirm Password",
+                    hasError = isPasswordConfirmed.value.not() && hasConfirmPasswordBeenTouched,
+                    errorMessage = "Password and Confirm Password do not match."
+                )
+
             }
         }
     }

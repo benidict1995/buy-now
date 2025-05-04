@@ -1,45 +1,60 @@
 package com.benidict.feature_login.ui.signin
 
-import android.app.Activity
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.ViewModel
-import com.google.firebase.FirebaseException
-import com.google.firebase.FirebaseTooManyRequestsException
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.PhoneAuthCredential
-import com.google.firebase.auth.PhoneAuthOptions
-import com.google.firebase.auth.PhoneAuthProvider
+import androidx.lifecycle.viewModelScope
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.suspendCancellableCoroutine
 import javax.inject.Inject
+import kotlin.coroutines.resumeWithException
 
+@OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
-class SignInViewModel @Inject constructor(): ViewModel() {
+class SignInViewModel @Inject constructor() : ViewModel() {
 
-     private val auth: FirebaseAuth by lazy {
-        FirebaseAuth.getInstance()
+    private val _state: MutableSharedFlow<SignInState> = MutableSharedFlow()
+    val state = _state.asSharedFlow()
+
+    private val db: FirebaseFirestore by lazy {
+        FirebaseFirestore.getInstance()
     }
 
 
     fun checkEmailExists(email: String) {
         // Check if the email exists by trying to sign in
-        auth.fetchSignInMethodsForEmail(email)
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    val signInMethods = task.result?.signInMethods
-                    if (signInMethods.isNullOrEmpty()) {
-                        Log.d("makerChecker", "email is doesn't exists")
-                        // Email doesn't exist, show an error or guide the user to sign up
-                    } else {
-                        // Email exists, try to sign in
-                        Log.d("makerChecker", "email is exists")
-                    }
-                } else {
-                    // Failed to check the email, show an error
-                    Log.d("makerChecker", "Failed to check email: ${task.exception?.message}")
-                }
+        viewModelScope.launch {
+            try {
+                val exists = checkIfEmailExists(email)
+                Log.d(
+                    "makerChecker",
+                    "$email - ${if (exists) "Email exists!" else "Email does NOT exist."}"
+                )
+                _state.emit(
+                    if (exists) {
+                        SignInState.NavigateToPassword
+                    } else SignInState.NavigateToSignUp
+                )
+            } catch (e: Exception) {
+                Log.e("makerChecker", "Error checking email: ${e.message}")
             }
+        }
     }
+
+    private suspend fun checkIfEmailExists(email: String): Boolean =
+        suspendCancellableCoroutine { cont ->
+            db.collection("users")
+                .whereEqualTo("email", email)
+                .get()
+                .addOnSuccessListener { result ->
+                    cont.resume(result.isEmpty.not()) {}
+                }
+                .addOnFailureListener { exception ->
+                    cont.resumeWithException(exception)
+                }
+        }
 }

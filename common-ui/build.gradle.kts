@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":common-utils"))
     implementation(libs.lottie)
+    implementation(libs.androidx.material.icon)
     implementation(libs.navigationCompose)
     implementation(libs.hiltNavigationCompose)
     implementation(libs.androidx.core.ktx)
