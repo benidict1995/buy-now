@@ -142,6 +142,7 @@ fun UserDetailsFormScreen(
                         email.value = it
                         isEmailHasError.value = isEmailValid(email.value).not()
                     },
+                    enabled = false,
                     keyboardOptions = KeyboardType.Email,
                     maxCharacter = 50,
                     modifier = Modifier.fillMaxWidth(),

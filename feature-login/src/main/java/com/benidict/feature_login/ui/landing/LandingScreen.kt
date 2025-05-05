@@ -21,7 +21,7 @@ import com.benidict.common_ui.button.CommonButtonView
 import com.benidict.common_ui.button.CommonOutlinedButtonView
 
 @Composable
-fun LandingScreen(onContinue: () -> Unit) {
+fun LandingScreen(onContinue: () -> Unit, onContinueAsGuest: () -> Unit) {
     MainLayout { paddingValue ->
         Column(
             modifier = Modifier.padding(paddingValue)
@@ -56,7 +56,7 @@ fun LandingScreen(onContinue: () -> Unit) {
                     .height(56.dp),
                 buttonLabel = "Continue as a Guest"
             ) {
-
+                onContinueAsGuest()
             }
         }
     }

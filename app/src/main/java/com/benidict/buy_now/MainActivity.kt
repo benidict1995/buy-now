@@ -36,6 +36,12 @@ class MainActivity : ComponentActivity() {
                         LandingRoute -> {
                             LandingScreen(onContinue = {
                                 navController.navigate(SignInRoute)
+                            }, onContinueAsGuest = {
+                                navController.navigate(HomeRoute) {
+                                    popUpTo(0) {
+                                        inclusive = true
+                                    }
+                                }
                             })
                         }
 

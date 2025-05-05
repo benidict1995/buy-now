@@ -54,6 +54,7 @@ fun CommonOutlinedTextFieldView(
     suffix: String = "",
     prefix: String = "",
     maxCharacter: Int = 250,
+    enabled: Boolean = true,
     singleLine: Boolean = false,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardType = KeyboardType.Text,
@@ -68,6 +69,7 @@ fun CommonOutlinedTextFieldView(
                 onTextChanged(value)
             }
         },
+        enabled = enabled,
         singleLine = singleLine,
         prefix = { Text(prefix) },
         suffix = { Text(suffix) },
