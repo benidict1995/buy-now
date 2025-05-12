@@ -2,6 +2,7 @@ package com.benidict.common_ui.field
 
 import android.annotation.SuppressLint
 import android.util.Log
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
@@ -9,6 +10,7 @@ import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -18,11 +20,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.benidict.common_ui.R
 import kotlin.math.sin
 
 @Composable
@@ -56,32 +62,68 @@ fun CommonOutlinedTextFieldView(
     maxCharacter: Int = 250,
     enabled: Boolean = true,
     singleLine: Boolean = false,
+    hasLeadingIcon: Boolean = false,
+    leadingIconResId: Int?= null,
+    shape: Shape = RoundedCornerShape(8.dp),
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardType = KeyboardType.Text,
     @SuppressLint("ModifierParameter") modifier: Modifier = Modifier,
     textStyle: TextStyle = TextStyle(),
     onTextChanged: (String) -> Unit
 ) {
-    OutlinedTextField(
-        value = text,
-        onValueChange = { value ->
-            if (value.length <= maxCharacter) {
-                onTextChanged(value)
-            }
-        },
-        enabled = enabled,
-        singleLine = singleLine,
-        prefix = { Text(prefix) },
-        suffix = { Text(suffix) },
-        label = { Text(label) },
-        maxLines = 1,
-        visualTransformation = visualTransformation,
-        textStyle = textStyle,
-        modifier = modifier,
-        keyboardOptions = KeyboardOptions(
-            keyboardType = keyboardOptions
+    if (hasLeadingIcon) {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { value ->
+                if (value.length <= maxCharacter) {
+                    onTextChanged(value)
+                }
+            },
+            shape = shape,
+            enabled = enabled,
+            leadingIcon = {
+                leadingIconResId?.let { id ->
+                    Icon(
+                        painter = painterResource(id = id),
+                        contentDescription = ""
+                    )
+                }
+            },
+            singleLine = singleLine,
+            prefix = { Text(prefix) },
+            suffix = { Text(suffix) },
+            label = { Text(label) },
+            maxLines = 1,
+            visualTransformation = visualTransformation,
+            textStyle = textStyle,
+            modifier = modifier,
+            keyboardOptions = KeyboardOptions(
+                keyboardType = keyboardOptions
+            )
         )
-    )
+    } else {
+        OutlinedTextField(
+            value = text,
+            onValueChange = { value ->
+                if (value.length <= maxCharacter) {
+                    onTextChanged(value)
+                }
+            },
+            shape = shape,
+            enabled = enabled,
+            singleLine = singleLine,
+            prefix = { Text(prefix) },
+            suffix = { Text(suffix) },
+            label = { Text(label) },
+            maxLines = 1,
+            visualTransformation = visualTransformation,
+            textStyle = textStyle,
+            modifier = modifier,
+            keyboardOptions = KeyboardOptions(
+                keyboardType = keyboardOptions
+            )
+        )
+    }
     if (hasError) {
         Text(
             text = errorMessage,

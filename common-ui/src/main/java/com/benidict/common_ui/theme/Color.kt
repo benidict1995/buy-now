@@ -12,3 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 val GrayishWhite = Color(0xFFF7F9FF)
 val GrayDisabled = Color(0xFFA8A8A8)
+
+val MainBackground = Color(0xFFF4F2F0)

@@ -15,7 +15,7 @@ import com.benidict.common_utils.animation.fadeOutAnimation
 
 @Composable
 fun MainGraph(navController: NavHostController, navRoute: @Composable (NavBackStackEntry, route: Any) -> Unit) {
-    NavHost(navController, startDestination = LandingRoute) {
+    NavHost(navController, startDestination = HomeRoute) {
         composable<LandingRoute> {
             navRoute(it, LandingRoute)
         }

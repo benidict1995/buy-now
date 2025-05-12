@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.benidict.common_ui.R
 import com.benidict.common_ui.theme.GrayDisabled
+import com.benidict.common_ui.theme.MainBackground
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -43,7 +44,7 @@ fun MainLayout(
     enableNextButton: Boolean = false,
     errorMessage: String = "",
     titleTopBar: String = "",
-    containerColor: Color = MaterialTheme.colorScheme.primaryContainer,
+    containerColor: Color = MainBackground,
     onResetErrorMessage: (() -> Unit)? = null,
     onBackPressed: (() -> Unit)? = null,
     onNextPressed: (() -> Unit)? = null,
