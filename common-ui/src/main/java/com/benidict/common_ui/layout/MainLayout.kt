@@ -2,15 +2,20 @@ package com.benidict.common_ui.layout
 
 import android.util.Log
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarDuration
@@ -30,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.benidict.common_ui.R
+import com.benidict.common_ui.bottomnav.CustomBottomNavigationView
 import com.benidict.common_ui.theme.GrayDisabled
 import com.benidict.common_ui.theme.MainBackground
 import kotlinx.coroutines.launch
@@ -109,18 +115,15 @@ fun MainLayout(
         },
         bottomBar = {
             if (hasBottomBar) {
-                BottomAppBar(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    contentColor = MaterialTheme.colorScheme.primary,
-                ) {
-                    Text(
-                        modifier = Modifier
-                            .fillMaxWidth(),
-                        textAlign = TextAlign.Center,
-                        text = "Bottom app bar",
-                    )
+                CustomBottomNavigationView {
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Default.Home, contentDescription = "Home")
+                    }
+                    //Spacer(Modifier.width(56.dp))
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Default.Person, contentDescription = "Profile")
+                    }
                 }
-
             }
         }
     ) { paddingValues ->

@@ -64,7 +64,6 @@ fun BannerPager(
         modifier = Modifier.fillMaxWidth()
     ) {
         items.forEachIndexed { index, _ ->
-            Log.d("makerChecker", "visibleItemIndex:${visibleItemIndex.value}, index:$index")
             Box(
                 modifier = Modifier
                     .padding(4.dp)

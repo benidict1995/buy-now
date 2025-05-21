@@ -57,6 +57,7 @@ fun HomeScreen(navController: NavHostController) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
     MainLayout(
+        hasBottomBar = true,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,

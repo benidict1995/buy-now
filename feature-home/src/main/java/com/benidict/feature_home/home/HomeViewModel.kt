@@ -40,7 +40,6 @@ class HomeViewModel @Inject constructor(): ViewModel() {
                 add(HomeUiModel.Spacer(8))
                 add(HomeUiModel.ProductGridSection(products))
             }
-            Log.d("makerChecker", "uiList:$uiList")
             _homeUiModel.value = uiList
         }
     }
