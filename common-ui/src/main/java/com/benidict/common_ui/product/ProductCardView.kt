@@ -24,25 +24,30 @@ import com.benidict.common_ui.R
 
 @Composable
 fun ProductCardView(item: String) {
-    Column(
-        modifier = Modifier
-            .wrapContentWidth()
-            .padding(end = 16.dp)
-            .clip(RoundedCornerShape(8.dp))
-            .background(color = Color.White),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Image(
-            painter = painterResource(R.drawable.baseline_image_24),
-            modifier = Modifier.size(200.dp),
-            contentDescription = ""
-        )
+    Column {
         Spacer(modifier = Modifier
             .fillMaxWidth()
             .height(20.dp))
-        Text(text = item)
-        Spacer(modifier = Modifier
-            .fillMaxWidth()
-            .height(10.dp))
+        Column(
+            modifier = Modifier
+                .wrapContentWidth()
+                .padding(end = 16.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .background(color = Color.White),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(R.drawable.baseline_image_24),
+                modifier = Modifier.size(200.dp),
+                contentDescription = ""
+            )
+            Spacer(modifier = Modifier
+                .fillMaxWidth()
+                .height(20.dp))
+            Text(text = item)
+            Spacer(modifier = Modifier
+                .fillMaxWidth()
+                .height(10.dp))
+        }
     }
 }
