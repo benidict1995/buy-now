@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
@@ -56,6 +57,8 @@ import kotlinx.coroutines.flow.collectLatest
 fun HomeScreen(navController: NavHostController) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
+    val locationName by viewModel.locationNameState.collectAsState("")
+
     MainLayout(
         hasBottomBar = true,
         hasTopBar = true,
@@ -63,25 +66,29 @@ fun HomeScreen(navController: NavHostController) {
         hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
-        LazyColumn(
+        Column (
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
                 .fillMaxSize()
         ) {
-            items(homeUiModelList) { section ->
-                when (section) {
-                    is HomeUiModel.LocationHeader -> LocationHeaderView(section.locationName)
+            LocationHeaderView(locationName)
+            LazyColumn{
+                items(homeUiModelList) { section ->
+                    when (section) {
+                        is HomeUiModel.Spacer -> Spacer(
+                            modifier = Modifier.height(section.spaceSize.dp)
+                        )
 
-                    is HomeUiModel.Spacer -> Spacer(
-                        modifier = Modifier.height(section.spaceSize.dp)
-                    )
+                        is HomeUiModel.SearchFilterSection -> SearchFilterView()
+                        is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
+                        is HomeUiModel.CategorySection -> CategorySectionView(section.categories)
+                        is HomeUiModel.ProductFilterSection -> ProductFilterView(section.filters)
+                        is HomeUiModel.ProductGridSection -> ProductGridView(section.products)
+                        else -> {
 
-                    is HomeUiModel.SearchFilterSection -> SearchFilterView()
-                    is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
-                    is HomeUiModel.CategorySection -> CategorySectionView(section.categories)
-                    is HomeUiModel.ProductFilterSection -> ProductFilterView(section.filters)
-                    is HomeUiModel.ProductGridSection -> ProductGridView(section.products)
+                        }
+                    }
                 }
             }
         }

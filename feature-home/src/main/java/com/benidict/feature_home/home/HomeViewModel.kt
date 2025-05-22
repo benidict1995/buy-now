@@ -10,6 +10,7 @@ import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
@@ -22,13 +23,15 @@ class HomeViewModel @Inject constructor(): ViewModel() {
     private val _homeUiModel: MutableStateFlow<List<HomeUiModel>> = MutableStateFlow(emptyList())
     val homeUiModel = _homeUiModel.asSharedFlow()
 
+    private val _locationNameState: MutableStateFlow<String> = MutableStateFlow("Tanza, Cavite")
+    val locationNameState = _locationNameState.asStateFlow()
+
     init {
         renderHomeSections()
     }
     private fun renderHomeSections() {
         viewModelScope.launch {
             val uiList = buildList<HomeUiModel> {
-                add(HomeUiModel.LocationHeader("Tanza, Cavite"))
                 add(HomeUiModel.Spacer(10))
                 add(HomeUiModel.SearchFilterSection)
                 add(HomeUiModel.Spacer(20))

@@ -3,7 +3,6 @@ package com.benidict.feature_home.home.model
 import androidx.compose.ui.graphics.Color
 
 sealed class HomeUiModel {
-    data class LocationHeader(val locationName: String) : HomeUiModel()
     data class Spacer(val spaceSize: Int): HomeUiModel()
     object SearchFilterSection: HomeUiModel()
     data class BannerPagerSection(val colors: List<Color>): HomeUiModel()
