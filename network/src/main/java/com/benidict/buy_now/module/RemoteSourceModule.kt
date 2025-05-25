@@ -1,0 +1,19 @@
+package com.benidict.buy_now.module
+
+import com.benidict.buy_now.service.FirebaseService
+import com.benidict.buy_now.source.product.ProductRemoteSource
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
+@Module
+@InstallIn(SingletonComponent::class)
+object RemoteSourceModule {
+
+    @Provides
+    @Singleton
+    fun provideProductRemoteSource(firebaseService: FirebaseService) =
+        ProductRemoteSource(firebaseService)
+}

@@ -79,7 +79,6 @@ fun HomeScreen(navController: NavHostController) {
                         is HomeUiModel.Spacer -> Spacer(
                             modifier = Modifier.height(section.spaceSize.dp)
                         )
-
                         is HomeUiModel.SearchFilterSection -> SearchFilterView()
                         is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
                         is HomeUiModel.CategorySection -> CategorySectionView(section.categories)

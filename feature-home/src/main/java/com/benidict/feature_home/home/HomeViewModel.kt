@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.benidict.data.repository.product.ProductRepository
 import com.benidict.feature_home.home.model.HomeUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -14,7 +15,9 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(): ViewModel() {
+class HomeViewModel @Inject constructor(
+    private val productRepository: ProductRepository
+): ViewModel() {
     private val colors = listOf(Color.Cyan, Color.Red, Color.Blue, Color.Green)
     private val productFilter = listOf("All", "Popular", "New", "Price High", "Price Low")
     private val categories = listOf("Dog", "Cat", "Rat", "Chicken", "Bird", "Snake", "Tiger")
@@ -28,6 +31,18 @@ class HomeViewModel @Inject constructor(): ViewModel() {
 
     init {
         renderHomeSections()
+        loadProducts()
+    }
+
+    fun loadProducts() {
+        viewModelScope.launch {
+            try {
+                val products = productRepository.getAllProducts()
+                Log.d("makerChecker", "products:$products")
+            } catch (e: Exception) {
+                Log.d("makerChecker", "error-loadproducts:${e.message}")
+            }
+        }
     }
     private fun renderHomeSections() {
         viewModelScope.launch {

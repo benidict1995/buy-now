@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.benidict.network"
+    namespace = "com.benidict.data"
     compileSdk = 35
 
     defaultConfig {
@@ -26,11 +26,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
     hilt {
         enableAggregatingTask = false
@@ -38,6 +38,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":persistence"))
+    implementation(project(":network"))
     implementation(project(":model"))
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.firebase.store)

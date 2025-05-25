@@ -61,6 +61,8 @@ dependencies {
     implementation(project(":feature-home"))
     implementation(project(":feature-login"))
     implementation(project(":feature-signup"))
+    implementation(project(":network"))
+    implementation(project(":data"))
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.navigationCompose)

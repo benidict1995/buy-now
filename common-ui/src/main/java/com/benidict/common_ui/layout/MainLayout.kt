@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.BottomAppBar
@@ -119,9 +120,8 @@ fun MainLayout(
                     IconButton(onClick = {}) {
                         Icon(Icons.Default.Home, contentDescription = "Home")
                     }
-                    //Spacer(Modifier.width(56.dp))
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.Person, contentDescription = "Profile")
+                        Icon(Icons.Default.Favorite, contentDescription = "Profile")
                     }
                 }
             }
