@@ -25,7 +25,7 @@ import com.benidict.common_ui.theme.GrayishWhite
 import com.benidict.feature_home.home.model.HomeUiModel
 
 @Composable
-fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit) {
+fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit, onNavigateProductDetails: (Int) -> Unit) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
     val locationName by viewModel.locationNameState.collectAsState("")
@@ -48,6 +48,9 @@ fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit
                 .fillMaxSize()
         ) {
             LocationHeaderView(locationName)
+            Spacer(
+                modifier = Modifier.height(10.dp)
+            )
             LazyColumn {
                 items(homeUiModelList) { section ->
                     when (section) {
@@ -65,7 +68,9 @@ fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit
                             viewModel.filterProducts(it)
                         }
 
-                        is HomeUiModel.ProductGridSection -> ProductGridView(products)
+                        is HomeUiModel.ProductGridSection -> ProductGridView(products) { productId ->
+                            onNavigateProductDetails(productId)
+                        }
                     }
                 }
             }

@@ -12,6 +12,10 @@ class ProductRepository @Inject constructor(val productRemoteSource: ProductRemo
         return Product.productSortByFilter(filter = filter, products = products)
     }
 
+    suspend fun getProductById(productId: Int): Product {
+        return productRemoteSource.getProductById(productId)
+    }
+
 //    suspend fun getAllProducts(): List<Product> {
 //        return productRemoteSource.getProductsByCategory(2)
 //    }

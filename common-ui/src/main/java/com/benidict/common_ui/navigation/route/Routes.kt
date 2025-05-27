@@ -22,4 +22,4 @@ data class EnterPasswordRoute(val email: String)
 object ViewAllCategoryRoute
 
 @Serializable
-object ProductDetailsRoute
+data class ProductDetailsRoute(val productId: Int)

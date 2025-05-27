@@ -1,6 +1,7 @@
 package com.benidict.common_ui.product
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,8 +28,10 @@ import com.benidict.common_ui.text.NewTag
 import com.benidict.common_utils.transform.convertToPeso
 
 @Composable
-fun ProductCardView(item: Product) {
-    Column {
+fun ProductCardView(item: Product, modifier: Modifier, onClick: (Int) -> Unit) {
+    Column(modifier = modifier.clickable {
+        onClick(item.productId)
+    }) {
         Spacer(
             modifier = Modifier
                 .fillMaxWidth()

@@ -1,5 +1,6 @@
 package com.benidict.common_ui.banner
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -20,6 +21,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,11 +32,11 @@ import com.benidict.common_ui.image.ImageLoader
 
 @Composable
 fun BannerPager(
-    items: List<Banner>, // list of image URLs or identifiers
+    items: List<Banner>
 ) {
     val listState = rememberLazyListState()
 
-    Column(modifier = Modifier) {
+    Column {
         LazyRow(
             state = listState,
             modifier = Modifier
@@ -42,27 +44,22 @@ fun BannerPager(
                 .height(200.dp)
         ) {
             itemsIndexed(items) { _, item ->
-                Box(
+                ImageLoader(
+                    url = item.bannerUrl,
                     modifier = Modifier
                         .padding(end = 16.dp)
-                        .width(350.dp)
-                        .fillMaxHeight()
-
-                ) {
-                    ImageLoader(
-                        url = item.bannerUrl,
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .clip(RoundedCornerShape(16.dp))
-                    )
-                }
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(20.dp))
+                )
             }
         }
     }
 
     Spacer(modifier = Modifier.height(12.dp))
+
     // Dots Indicator
     val visibleItemIndex = remember { derivedStateOf { listState.firstVisibleItemIndex } }
+
     Row(
         horizontalArrangement = Arrangement.Center,
         modifier = Modifier.fillMaxWidth()

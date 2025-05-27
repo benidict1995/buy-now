@@ -3,6 +3,7 @@ package com.benidict.common_ui.search
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -31,7 +32,7 @@ fun SearchFilterView() {
             maxCharacter = 50,
             shape = RoundedCornerShape(30.dp),
             modifier = Modifier.fillMaxWidth(),
-            label = "Search Product"
+            label = "Search for groceries"
         )
     }
 }

@@ -1,12 +1,17 @@
 package com.benidict.feature_category
 
+import android.graphics.drawable.Icon
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.benidict.common_ui.icon.CircleBackButton
+import com.benidict.common_ui.image.ImageLoader
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 
@@ -19,13 +24,18 @@ fun CategoriesScreen(navController: NavHostController) {
         hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
+
         Column(
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
                 .fillMaxSize()
         ) {
-
+            Row(modifier = Modifier.fillMaxWidth()) {
+                CircleBackButton {
+                    navController.popBackStack()
+                }
+            }
         }
     }
 }

@@ -23,6 +23,7 @@ import com.benidict.feature_home.home.HomeScreen
 import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.password.EnterPasswordScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
+import com.benidict.feature_product.details.ProductDetailsScreen
 import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -88,6 +89,8 @@ class MainActivity : ComponentActivity() {
                         HomeRoute -> {
                             HomeScreen(navController, onViewAllCategories = {
                                 navController.navigate(ViewAllCategoryRoute)
+                            }, onNavigateProductDetails = { productId ->
+                                navController.navigate(ProductDetailsRoute(productId = productId))
                             })
                         }
 
@@ -96,7 +99,8 @@ class MainActivity : ComponentActivity() {
                         }
 
                         ProductDetailsRoute -> {
-
+                            val param: ProductDetailsRoute = navBackStackEntry.toRoute()
+                            ProductDetailsScreen(navController, param.productId)
                         }
                     }
                 }

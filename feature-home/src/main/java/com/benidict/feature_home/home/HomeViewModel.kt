@@ -1,7 +1,6 @@
 package com.benidict.feature_home.home
 
 import android.util.Log
-import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.benidict.buy_now.banner.Banner
@@ -16,7 +15,6 @@ import com.benidict.feature_home.home.model.HomeUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import javax.inject.Inject
-import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -86,7 +84,7 @@ class HomeViewModel @Inject constructor(
             val uiList = buildList<HomeUiModel> {
                 add(HomeUiModel.Spacer(10))
                 add(HomeUiModel.SearchFilterSection)
-                add(HomeUiModel.Spacer(20))
+                add(HomeUiModel.Spacer(30))
                 add(HomeUiModel.BannerPagerSection)
                 add(HomeUiModel.Spacer(20))
                 add(HomeUiModel.CategorySection)
