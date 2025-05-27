@@ -58,6 +58,8 @@ fun HomeScreen(navController: NavHostController) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
     val locationName by viewModel.locationNameState.collectAsState("")
+    val products by viewModel.productsState.collectAsState()
+    val productFilter by viewModel.productFilterState.collectAsState()
 
     MainLayout(
         hasBottomBar = true,
@@ -66,27 +68,28 @@ fun HomeScreen(navController: NavHostController) {
         hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
-        Column (
+        Column(
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
                 .fillMaxSize()
         ) {
             LocationHeaderView(locationName)
-            LazyColumn{
+            LazyColumn {
                 items(homeUiModelList) { section ->
                     when (section) {
                         is HomeUiModel.Spacer -> Spacer(
                             modifier = Modifier.height(section.spaceSize.dp)
                         )
+
                         is HomeUiModel.SearchFilterSection -> SearchFilterView()
                         is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
                         is HomeUiModel.CategorySection -> CategorySectionView(section.categories)
-                        is HomeUiModel.ProductFilterSection -> ProductFilterView(section.filters)
-                        is HomeUiModel.ProductGridSection -> ProductGridView(section.products)
-                        else -> {
-
+                        is HomeUiModel.ProductFilterSection -> ProductFilterView(productFilter) {
+                            viewModel.filterProducts(it)
                         }
+
+                        is HomeUiModel.ProductGridSection -> ProductGridView(products)
                     }
                 }
             }

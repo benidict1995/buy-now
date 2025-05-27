@@ -21,10 +21,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.benidict.buy_now.category.Category
 
 @Composable
 fun SmallBannerView(
-    items: List<String>
+    items: List<Category>
 ) {
     LazyRow(
         modifier = Modifier
@@ -48,7 +49,7 @@ fun SmallBannerView(
                 Spacer(modifier = Modifier
                     .fillMaxWidth()
                     .height(20.dp))
-                Text(text = item)
+                Text(text = item.categoryName)
                 Spacer(modifier = Modifier
                     .fillMaxWidth()
                     .height(10.dp))

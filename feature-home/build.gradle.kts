@@ -39,6 +39,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":model"))
     implementation(project(":data"))
     implementation(project(":common-ui"))
     implementation(project(":common-utils"))

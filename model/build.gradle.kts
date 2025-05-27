@@ -33,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.firebase.store)
     implementation(libs.code.gson)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

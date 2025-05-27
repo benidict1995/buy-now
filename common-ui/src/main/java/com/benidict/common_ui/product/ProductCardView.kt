@@ -19,11 +19,15 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.benidict.buy_now.product.Product
 import com.benidict.common_ui.R
 
 @Composable
-fun ProductCardView(item: String) {
+fun ProductCardView(item: Product) {
     Column {
         Spacer(modifier = Modifier
             .fillMaxWidth()
@@ -44,7 +48,13 @@ fun ProductCardView(item: String) {
             Spacer(modifier = Modifier
                 .fillMaxWidth()
                 .height(20.dp))
-            Text(text = item)
+            Text(text = item.productName,
+                maxLines = 1,
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                overflow = TextOverflow.Ellipsis,
+                modifier = Modifier.padding(horizontal = 10.dp))
+
             Spacer(modifier = Modifier
                 .fillMaxWidth()
                 .height(10.dp))

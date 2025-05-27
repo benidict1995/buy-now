@@ -11,11 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.benidict.buy_now.category.Category
 import com.benidict.common_ui.banner.SmallBannerView
 
 @Composable
 fun CategorySectionView(
-    items: List<String>
+    items: List<Category>
 ) {
     Column(
         modifier = Modifier.fillMaxWidth()

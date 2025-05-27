@@ -12,10 +12,10 @@ class FirebaseService {
         FirebaseFirestore.getInstance()
     }
 
-    fun getCollectionsWhereCondition(
+    fun <T> getCollectionsWhereCondition(
         key: String,
         field: String,
-        fieldValue: String,
+        fieldValue: T,
         onSuccess: (QuerySnapshot) -> Unit,
         onError: (Exception) -> Unit
     ) {

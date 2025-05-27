@@ -11,10 +11,11 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.benidict.buy_now.product.Product
 import com.benidict.common_ui.product.ProductCardView
 
 @Composable
-fun ProductGridView(items: List<String>) {
+fun ProductGridView(items: List<Product>) {
     Box(
         modifier = Modifier
             .fillMaxWidth()

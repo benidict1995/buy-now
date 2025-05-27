@@ -1,6 +1,7 @@
 package com.benidict.buy_now.module
 
 import com.benidict.buy_now.service.FirebaseService
+import com.benidict.buy_now.source.category.CategoryRemoteSource
 import com.benidict.buy_now.source.product.ProductRemoteSource
 import dagger.Module
 import dagger.Provides
@@ -16,4 +17,9 @@ object RemoteSourceModule {
     @Singleton
     fun provideProductRemoteSource(firebaseService: FirebaseService) =
         ProductRemoteSource(firebaseService)
+
+    @Provides
+    @Singleton
+    fun provideCategoryRemoteSource(firebaseService: FirebaseService) =
+        CategoryRemoteSource(firebaseService)
 }
