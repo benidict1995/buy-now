@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":common-utils"))
     implementation(project(":model"))
+    implementation(libs.coil.compose)
     implementation(libs.lottie)
     implementation(libs.androidx.material.icon)
     implementation(libs.navigationCompose)

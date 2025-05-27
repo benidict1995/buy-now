@@ -3,6 +3,7 @@ package com.benidict.common_ui.filter
 import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -20,7 +21,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -40,19 +43,24 @@ fun ProductFilterView(
         itemsIndexed(items) { index, item ->
             Text(
                 modifier = Modifier
-                    .clickable {
+                    .clickable(
+                        indication = null,
+                        interactionSource = remember { MutableInteractionSource() }
+                    ) {
                         onFilter(item.filterName)
                     }
                     .wrapContentWidth()
                     .height(40.dp)
                     .padding(end = 16.dp)
                     .background(
-                        color = if (item.isSelected) Color.Cyan else Color.White,
+                        color = if (item.isSelected) Color.Black else Color.White,
                         shape = RoundedCornerShape(50)
                     )
                     .padding(horizontal = 20.dp, vertical = 10.dp),
                 text = item.filterName,
                 fontSize = 16.sp,
+                fontWeight = if (item.isSelected) FontWeight.Bold else FontWeight.Normal,
+                color = if (item.isSelected) Color.White else Color.Black,
                 textAlign = TextAlign.Center
             )
         }

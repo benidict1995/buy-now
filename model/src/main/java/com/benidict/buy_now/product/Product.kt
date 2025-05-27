@@ -38,6 +38,7 @@ data class Product(
                         productId = doc.getField<Int>("productId") ?: 0,
                         categoryId = doc.getField<Int>("categoryId") ?: 0,
                         productName = doc.getString("productName") ?: "",
+                        productImageUrl = doc.getString("productImageUrl") ?: "",
                         productDescription = doc.getString("productDescription") ?: "",
                         weight = doc.getString("weight") ?: "",
                         price = doc.getField<Int>("price") ?: 0,

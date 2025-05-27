@@ -3,6 +3,7 @@ package com.benidict.common_ui.product
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -29,6 +30,7 @@ import androidx.compose.ui.unit.sp
 import com.benidict.buy_now.product.Product
 import com.benidict.common_ui.R
 import com.benidict.common_ui.icon.HotIcon
+import com.benidict.common_ui.image.ImageLoader
 import com.benidict.common_ui.text.NewTag
 import com.benidict.common_utils.transform.convertToPeso
 
@@ -48,18 +50,21 @@ fun ProductCardView(item: Product) {
                 .clip(RoundedCornerShape(8.dp))
                 .background(color = Color.White)
         ) {
-            Row(
-                modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.spacedBy(4.dp)
-            ) {
-                if(item.isHot) HotIcon()
-                if(item.isNew) NewTag()
+            Column {
+                Row(
+                    modifier = Modifier.padding(horizontal = 8.dp, vertical = 8.dp),
+                    horizontalArrangement = Arrangement.spacedBy(4.dp)
+                ) {
+                    if(item.isHot) HotIcon()
+                    if(item.isNew) NewTag()
+                }
+                ImageLoader(item.productImageUrl)
+//                Image(
+//                    painter = painterResource(R.drawable.baseline_image_24),
+//                    modifier = Modifier.size(200.dp).padding(top = 20.dp),
+//                    contentDescription = ""
+//                )
             }
-            Image(
-                painter = painterResource(R.drawable.baseline_image_24),
-                modifier = Modifier.size(200.dp),
-                contentDescription = ""
-            )
             Text(
                 text = item.productName,
                 maxLines = 1,
