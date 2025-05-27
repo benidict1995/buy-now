@@ -18,6 +18,7 @@ import com.benidict.common_ui.navigation.route.ProductDetailsRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
 import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryRoute
+import com.benidict.feature_category.CategoriesScreen
 import com.benidict.feature_home.home.HomeScreen
 import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.password.EnterPasswordScreen
@@ -85,11 +86,13 @@ class MainActivity : ComponentActivity() {
                         }
 
                         HomeRoute -> {
-                            HomeScreen(navController)
+                            HomeScreen(navController, onViewAllCategories = {
+                                navController.navigate(ViewAllCategoryRoute)
+                            })
                         }
 
                         ViewAllCategoryRoute -> {
-
+                            CategoriesScreen(navController)
                         }
 
                         ProductDetailsRoute -> {

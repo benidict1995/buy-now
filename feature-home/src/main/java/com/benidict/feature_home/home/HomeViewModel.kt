@@ -4,10 +4,12 @@ import android.util.Log
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.benidict.buy_now.banner.Banner
 import com.benidict.buy_now.category.Category
 import com.benidict.buy_now.filter.Filter
 import com.benidict.buy_now.filter.ProductFilter
 import com.benidict.buy_now.product.Product
+import com.benidict.data.repository.banner.BannerRepository
 import com.benidict.data.repository.category.CategoryRepository
 import com.benidict.data.repository.product.ProductRepository
 import com.benidict.feature_home.home.model.HomeUiModel
@@ -23,10 +25,9 @@ import kotlinx.coroutines.launch
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository,
-    private val categoryRepository: CategoryRepository
+    private val categoryRepository: CategoryRepository,
+    private val bannerRepository: BannerRepository
 ): ViewModel() {
-    private val colors = listOf(Color.Cyan, Color.Red, Color.Blue, Color.Green)
-
     private val _productFilterState: MutableStateFlow<List<Filter>> = MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
     val productFilterState = _productFilterState.asStateFlow()
 
@@ -35,6 +36,9 @@ class HomeViewModel @Inject constructor(
 
     private val _productsState: MutableStateFlow<List<Product>> = MutableStateFlow(emptyList())
     val productsState = _productsState.asStateFlow()
+
+    private val _bannersState: MutableStateFlow<List<Banner>> = MutableStateFlow(emptyList())
+    val bannersState = _bannersState.asStateFlow()
 
     private val _homeUiModel: MutableStateFlow<List<HomeUiModel>> = MutableStateFlow(emptyList())
     val homeUiModel = _homeUiModel.asSharedFlow()
@@ -64,7 +68,9 @@ class HomeViewModel @Inject constructor(
             try {
                 val resultCategories = async { categoryRepository.getAllCategory() }
                 val resultProducts = async { productRepository.getProducts(ProductFilter.ALL) }
+                val resultBanners = async { bannerRepository.getBanners() }
 
+                _bannersState.value = resultBanners.await()
                 _categoriesState.value = resultCategories.await()
                 _productsState.value = resultProducts.await()
                 renderHomeSections()
@@ -81,7 +87,7 @@ class HomeViewModel @Inject constructor(
                 add(HomeUiModel.Spacer(10))
                 add(HomeUiModel.SearchFilterSection)
                 add(HomeUiModel.Spacer(20))
-                add(HomeUiModel.BannerPagerSection(colors))
+                add(HomeUiModel.BannerPagerSection)
                 add(HomeUiModel.Spacer(20))
                 add(HomeUiModel.CategorySection)
                 add(HomeUiModel.Spacer(30))

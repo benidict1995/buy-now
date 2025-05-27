@@ -25,13 +25,14 @@ import com.benidict.common_ui.theme.GrayishWhite
 import com.benidict.feature_home.home.model.HomeUiModel
 
 @Composable
-fun HomeScreen(navController: NavHostController) {
+fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
     val locationName by viewModel.locationNameState.collectAsState("")
     val products by viewModel.productsState.collectAsState()
     val productFilter by viewModel.productFilterState.collectAsState()
     val categories by viewModel.categoriesState.collectAsState()
+    val banners by viewModel.bannersState.collectAsState()
 
     MainLayout(
         hasBottomBar = true,
@@ -55,9 +56,9 @@ fun HomeScreen(navController: NavHostController) {
                         )
 
                         is HomeUiModel.SearchFilterSection -> SearchFilterView()
-                        is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
+                        is HomeUiModel.BannerPagerSection -> BannerPager(banners)
                         is HomeUiModel.CategorySection -> CategorySectionView(categories) {
-
+                            onViewAllCategories()
                         }
 
                         is HomeUiModel.ProductFilterSection -> ProductFilterView(productFilter) {
