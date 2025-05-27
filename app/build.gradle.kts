@@ -58,6 +58,8 @@ android {
 
 dependencies {
     implementation(project(":common-ui"))
+    implementation(project(":feature-product"))
+    implementation(project(":feature-category"))
     implementation(project(":feature-home"))
     implementation(project(":feature-login"))
     implementation(project(":feature-signup"))

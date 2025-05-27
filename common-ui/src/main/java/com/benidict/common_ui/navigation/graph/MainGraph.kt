@@ -8,8 +8,10 @@ import androidx.navigation.compose.composable
 import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
+import com.benidict.common_ui.navigation.route.ProductDetailsRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
 import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
+import com.benidict.common_ui.navigation.route.ViewAllCategoryRoute
 import com.benidict.common_utils.animation.fadeInAnimation
 import com.benidict.common_utils.animation.fadeOutAnimation
 
@@ -58,6 +60,26 @@ fun MainGraph(navController: NavHostController, navRoute: @Composable (NavBackSt
             }
         ) {
             navRoute(it, HomeRoute)
+        }
+        composable<ViewAllCategoryRoute>(
+            enterTransition = {
+                fadeInAnimation(this)
+            },
+            exitTransition = {
+                fadeOutAnimation(this)
+            }
+        ) {
+            navRoute(it, ViewAllCategoryRoute)
+        }
+        composable<ProductDetailsRoute>(
+            enterTransition = {
+                fadeInAnimation(this)
+            },
+            exitTransition = {
+                fadeOutAnimation(this)
+            }
+        ) {
+            navRoute(it, ProductDetailsRoute)
         }
     }
 }

@@ -17,3 +17,9 @@ object HomeRoute
 
 @Serializable
 data class EnterPasswordRoute(val email: String)
+
+@Serializable
+object ViewAllCategoryRoute
+
+@Serializable
+object ProductDetailsRoute
