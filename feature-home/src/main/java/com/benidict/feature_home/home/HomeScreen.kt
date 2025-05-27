@@ -41,7 +41,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.benidict.common_ui.banner.BannerPager
-import com.benidict.common_ui.banner.SmallBannerView
 import com.benidict.common_ui.filter.ProductFilterView
 import com.benidict.common_ui.grid.ProductGridView
 import com.benidict.common_ui.layout.MainLayout
@@ -60,6 +59,7 @@ fun HomeScreen(navController: NavHostController) {
     val locationName by viewModel.locationNameState.collectAsState("")
     val products by viewModel.productsState.collectAsState()
     val productFilter by viewModel.productFilterState.collectAsState()
+    val categories by viewModel.categoriesState.collectAsState()
 
     MainLayout(
         hasBottomBar = true,
@@ -84,7 +84,10 @@ fun HomeScreen(navController: NavHostController) {
 
                         is HomeUiModel.SearchFilterSection -> SearchFilterView()
                         is HomeUiModel.BannerPagerSection -> BannerPager(section.colors)
-                        is HomeUiModel.CategorySection -> CategorySectionView(section.categories)
+                        is HomeUiModel.CategorySection -> CategorySectionView(categories) {
+
+                        }
+
                         is HomeUiModel.ProductFilterSection -> ProductFilterView(productFilter) {
                             viewModel.filterProducts(it)
                         }

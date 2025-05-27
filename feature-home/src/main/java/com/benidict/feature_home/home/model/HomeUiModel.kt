@@ -9,7 +9,7 @@ sealed class HomeUiModel {
     data class Spacer(val spaceSize: Int): HomeUiModel()
     object SearchFilterSection: HomeUiModel()
     data class BannerPagerSection(val colors: List<Color>): HomeUiModel()
-    data class CategorySection(val categories: List<Category>): HomeUiModel()
+    object CategorySection: HomeUiModel()
     object ProductFilterSection: HomeUiModel()
     object ProductGridSection: HomeUiModel()
 }

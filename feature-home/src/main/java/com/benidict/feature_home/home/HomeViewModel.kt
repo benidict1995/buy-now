@@ -30,7 +30,8 @@ class HomeViewModel @Inject constructor(
     private val _productFilterState: MutableStateFlow<List<Filter>> = MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
     val productFilterState = _productFilterState.asStateFlow()
 
-    private var categories = listOf<Category>()
+    private val _categoriesState: MutableStateFlow<List<Category>> = MutableStateFlow(emptyList())
+    val categoriesState = _categoriesState.asStateFlow()
 
     private val _productsState: MutableStateFlow<List<Product>> = MutableStateFlow(emptyList())
     val productsState = _productsState.asStateFlow()
@@ -64,7 +65,7 @@ class HomeViewModel @Inject constructor(
                 val resultCategories = async { categoryRepository.getAllCategory() }
                 val resultProducts = async { productRepository.getProducts(ProductFilter.ALL) }
 
-                categories = resultCategories.await()
+                _categoriesState.value = resultCategories.await()
                 _productsState.value = resultProducts.await()
                 renderHomeSections()
             } catch (e: Exception) {
@@ -82,7 +83,7 @@ class HomeViewModel @Inject constructor(
                 add(HomeUiModel.Spacer(20))
                 add(HomeUiModel.BannerPagerSection(colors))
                 add(HomeUiModel.Spacer(20))
-                add(HomeUiModel.CategorySection(categories))
+                add(HomeUiModel.CategorySection)
                 add(HomeUiModel.Spacer(30))
                 add(HomeUiModel.ProductFilterSection)
                 add(HomeUiModel.Spacer(8))

@@ -20,8 +20,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.benidict.buy_now.category.Category
+import com.benidict.common_ui.image.ImageLoader
 
 @Composable
 fun SmallBannerView(
@@ -40,16 +44,18 @@ fun SmallBannerView(
                 .clip(RoundedCornerShape(8.dp))
                 .background(color = Color.White),
                 horizontalAlignment = Alignment.CenterHorizontally) {
-                Box(
+                ImageLoader(
+                    url = item.categoryUrl,
                     modifier = Modifier
+                        .padding(top = 2.dp)
                         .fillMaxWidth()
                         .height(60.dp)
-                        .background(color = Color.Cyan)
                 )
                 Spacer(modifier = Modifier
                     .fillMaxWidth()
                     .height(20.dp))
-                Text(text = item.categoryName)
+                Text(text = item.categoryName, fontWeight = FontWeight.Bold,
+                    overflow = TextOverflow.Ellipsis, maxLines = 1)
                 Spacer(modifier = Modifier
                     .fillMaxWidth()
                     .height(10.dp))

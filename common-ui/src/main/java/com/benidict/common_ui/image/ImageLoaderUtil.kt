@@ -8,10 +8,11 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 
 @Composable
-fun ImageLoader(url: String) {
+fun ImageLoader(url: String, modifier: Modifier) {
     AsyncImage(
         model = url,
-        modifier = Modifier.requiredSize(200.dp).padding(top = 20.dp),
+        modifier = modifier,
         contentDescription = ""
     )
 }
+
