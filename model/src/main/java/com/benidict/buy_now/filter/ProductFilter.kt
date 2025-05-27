@@ -4,6 +4,6 @@ enum class ProductFilter(val displayName: String) {
     ALL("All"),
     POPULAR("Popular"),
     NEW("New"),
-    PRICE_HIGH("Price High"),
-    PRICE_LOW("Price Low")
+    PRICE_HIGH("Price: High to Low"),
+    PRICE_LOW("Price: Low to High")
 }
