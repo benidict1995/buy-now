@@ -1,10 +1,7 @@
 package com.benidict.buy_now.product
 
-import android.util.Log
-import androidx.annotation.Keep
 import com.benidict.buy_now.filter.ProductFilter
 import com.google.firebase.firestore.DocumentSnapshot
-import com.google.firebase.firestore.IgnoreExtraProperties
 import com.google.firebase.firestore.ktx.getField
 
 data class Product(

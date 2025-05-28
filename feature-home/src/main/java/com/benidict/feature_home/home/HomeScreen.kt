@@ -3,6 +3,7 @@ package com.benidict.feature_home.home
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -13,7 +14,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
 import com.benidict.common_ui.banner.BannerPager
 import com.benidict.common_ui.filter.ProductFilterView
 import com.benidict.common_ui.grid.ProductGridView
@@ -25,7 +25,11 @@ import com.benidict.common_ui.theme.GrayishWhite
 import com.benidict.feature_home.home.model.HomeUiModel
 
 @Composable
-fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit, onNavigateProductDetails: (Int) -> Unit) {
+fun HomeScreen(
+    onViewAllCategories: () -> Unit,
+    onNavigateProductDetails: (Int) -> Unit,
+    onNavigateProductByCategory: (Int, String) -> Unit
+) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
     val locationName by viewModel.locationNameState.collectAsState("")
@@ -60,15 +64,22 @@ fun HomeScreen(navController: NavHostController, onViewAllCategories: () -> Unit
 
                         is HomeUiModel.SearchFilterSection -> SearchFilterView()
                         is HomeUiModel.BannerPagerSection -> BannerPager(banners)
-                        is HomeUiModel.CategorySection -> CategorySectionView(categories) {
+                        is HomeUiModel.CategorySection -> CategorySectionView(categories, onNavigateProductByCategory = { categoryId, categoryName ->
+                            onNavigateProductByCategory(categoryId, categoryName)
+                        }, onViewAll =  {
                             onViewAllCategories()
-                        }
+                        })
 
                         is HomeUiModel.ProductFilterSection -> ProductFilterView(productFilter) {
                             viewModel.filterProducts(it)
                         }
 
-                        is HomeUiModel.ProductGridSection -> ProductGridView(products) { productId ->
+                        is HomeUiModel.ProductGridSection -> ProductGridView(
+                            products, modifier = Modifier
+                                .height(600.dp)
+                                .fillMaxWidth()
+                                .padding(bottom = 8.dp)
+                        ) { productId ->
                             onNavigateProductDetails(productId)
                         }
                     }

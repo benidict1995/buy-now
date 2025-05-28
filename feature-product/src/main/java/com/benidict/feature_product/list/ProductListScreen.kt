@@ -1,17 +1,14 @@
-package com.benidict.feature_category
+package com.benidict.feature_product.list
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,15 +17,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.benidict.common_ui.grid.CategoryGridView
+import com.benidict.common_ui.grid.ProductGridView
 import com.benidict.common_ui.icon.CircleBackButton
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
-fun CategoriesScreen(navController: NavHostController, onNavigateToProductList: (Int, String) -> Unit) {
-    val viewModel = hiltViewModel<CategoriesViewModel>()
-    val categories = viewModel.categoriesState.collectAsState()
+fun ProductListScreen(navController: NavHostController, categoryId: Int, categoryName: String, onNavigateToProductDetails: (Int) -> Unit) {
+    val viewModel = hiltViewModel<ProductListViewModel>()
+    val products = viewModel.productsState.collectAsState()
+
+    LaunchedEffect(Unit) {
+        viewModel.loadProductsByCategoryId(categoryId)
+    }
 
     MainLayout(
         hasBottomBar = false,
@@ -37,7 +38,6 @@ fun CategoriesScreen(navController: NavHostController, onNavigateToProductList: 
         hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
-
         Column(
             modifier = Modifier
                 .padding(paddingValues)
@@ -48,24 +48,14 @@ fun CategoriesScreen(navController: NavHostController, onNavigateToProductList: 
                 CircleBackButton {
                     navController.popBackStack()
                 }
-                Text(text = "Categories", fontSize = 20.sp, fontWeight = FontWeight.Bold,
+                Text(text = categoryName, fontSize = 20.sp, fontWeight = FontWeight.Bold,
                     modifier = Modifier.align(Alignment.Center))
             }
-            Spacer(
-                modifier = Modifier.height(30.dp)
-            )
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
-                modifier = Modifier
-                    .fillMaxSize()
-
-            ) {
-                items(categories.value) { item ->
-                    CategoryGridView(item, onClick = { categoryId, categoryName ->
-                        onNavigateToProductList(categoryId, categoryName)
-                    })
-                }
+            ProductGridView(products.value, modifier = Modifier.fillMaxSize()
+                .padding(bottom = 8.dp)) { productId ->
+                onNavigateToProductDetails(productId)
             }
         }
     }
+
 }

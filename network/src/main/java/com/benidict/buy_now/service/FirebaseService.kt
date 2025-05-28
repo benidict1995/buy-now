@@ -2,9 +2,6 @@ package com.benidict.buy_now.service
 
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
-import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.suspendCancellableCoroutine
-import kotlin.coroutines.resumeWithException
 
 class FirebaseService {
 
@@ -26,7 +23,6 @@ class FirebaseService {
             .addOnFailureListener { exception -> onError(exception) }
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     fun getCollection(
         key: String,
         onSuccess: (QuerySnapshot) -> Unit,

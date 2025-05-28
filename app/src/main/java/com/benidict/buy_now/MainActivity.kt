@@ -15,6 +15,7 @@ import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsRoute
+import com.benidict.common_ui.navigation.route.ProductListRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
 import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryRoute
@@ -24,6 +25,7 @@ import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.password.EnterPasswordScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
+import com.benidict.feature_product.list.ProductListScreen
 import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -87,20 +89,34 @@ class MainActivity : ComponentActivity() {
                         }
 
                         HomeRoute -> {
-                            HomeScreen(navController, onViewAllCategories = {
+                            HomeScreen(onViewAllCategories = {
                                 navController.navigate(ViewAllCategoryRoute)
                             }, onNavigateProductDetails = { productId ->
                                 navController.navigate(ProductDetailsRoute(productId = productId))
+                            }, onNavigateProductByCategory = { categoryId, categoryName ->
+                                navController.navigate(ProductListRoute(
+                                    categoryId = categoryId,
+                                    categoryName = categoryName
+                                ))
                             })
                         }
 
                         ViewAllCategoryRoute -> {
-                            CategoriesScreen(navController)
+                            CategoriesScreen(navController, onNavigateToProductList = { categoryId, categoryName ->
+                                navController.navigate(ProductListRoute(categoryId = categoryId, categoryName = categoryName))
+                            })
                         }
 
                         ProductDetailsRoute -> {
                             val param: ProductDetailsRoute = navBackStackEntry.toRoute()
                             ProductDetailsScreen(navController, param.productId)
+                        }
+
+                        ProductListRoute -> {
+                            val param: ProductListRoute = navBackStackEntry.toRoute()
+                            ProductListScreen(navController, categoryId = param.categoryId, categoryName = param.categoryName) { productId ->
+                                navController.navigate(ProductDetailsRoute(productId = productId))
+                            }
                         }
                     }
                 }

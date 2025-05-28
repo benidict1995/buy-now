@@ -1,6 +1,7 @@
 package com.benidict.common_ui.banner
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,7 +30,8 @@ import com.benidict.common_ui.image.ImageLoader
 
 @Composable
 fun SmallBannerView(
-    items: List<Category>
+    items: List<Category>,
+    onClick: (Int, String) -> Unit
 ) {
     LazyRow(
         modifier = Modifier
@@ -39,6 +41,9 @@ fun SmallBannerView(
     ) {
         itemsIndexed(items) { index, item ->
             Column(modifier = Modifier
+                .clickable {
+                    onClick(item.categoryId, item.categoryName)
+                }
                 .width(100.dp)
                 .padding(end = 16.dp)
                 .clip(RoundedCornerShape(8.dp))

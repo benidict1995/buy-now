@@ -9,6 +9,7 @@ import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsRoute
+import com.benidict.common_ui.navigation.route.ProductListRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
 import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryRoute
@@ -16,7 +17,10 @@ import com.benidict.common_utils.animation.fadeInAnimation
 import com.benidict.common_utils.animation.fadeOutAnimation
 
 @Composable
-fun MainGraph(navController: NavHostController, navRoute: @Composable (NavBackStackEntry, route: Any) -> Unit) {
+fun MainGraph(
+    navController: NavHostController,
+    navRoute: @Composable (NavBackStackEntry, route: Any) -> Unit
+) {
     NavHost(navController, startDestination = HomeRoute) {
         composable<LandingRoute> {
             navRoute(it, LandingRoute)
@@ -80,6 +84,16 @@ fun MainGraph(navController: NavHostController, navRoute: @Composable (NavBackSt
             }
         ) {
             navRoute(it, ProductDetailsRoute)
+        }
+        composable<ProductListRoute>(
+            enterTransition = {
+                fadeInAnimation(this)
+            },
+            exitTransition = {
+                fadeOutAnimation(this)
+            }
+        ) {
+            navRoute(it, ProductListRoute)
         }
     }
 }

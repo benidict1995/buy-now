@@ -23,3 +23,6 @@ object ViewAllCategoryRoute
 
 @Serializable
 data class ProductDetailsRoute(val productId: Int)
+
+@Serializable
+data class ProductListRoute(val categoryId: Int, val categoryName: String)

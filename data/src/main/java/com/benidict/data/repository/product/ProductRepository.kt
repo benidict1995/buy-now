@@ -16,7 +16,7 @@ class ProductRepository @Inject constructor(val productRemoteSource: ProductRemo
         return productRemoteSource.getProductById(productId)
     }
 
-//    suspend fun getAllProducts(): List<Product> {
-//        return productRemoteSource.getProductsByCategory(2)
-//    }
+    suspend fun getProductsByCategoryId(categoryId: Int): List<Product> {
+        return productRemoteSource.getProductsByCategory(categoryId)
+    }
 }

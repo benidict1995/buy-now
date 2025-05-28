@@ -22,6 +22,7 @@ import com.benidict.common_ui.banner.SmallBannerView
 @Composable
 fun CategorySectionView(
     items: List<Category>,
+    onNavigateProductByCategory: (Int, String) -> Unit,
     onViewAll: () -> Unit
 ) {
     Column(
@@ -43,6 +44,8 @@ fun CategorySectionView(
                 })
         }
         Spacer(modifier =  Modifier.height(10.dp).fillMaxWidth())
-        SmallBannerView(items)
+        SmallBannerView(items, onClick = { categoryId, categoryName ->
+            onNavigateProductByCategory(categoryId, categoryName)
+        })
     }
 }
