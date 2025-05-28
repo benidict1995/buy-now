@@ -1,31 +1,31 @@
 package com.benidict.common_ui.icon
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Remove
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
 fun CircleMinus(onClick: () -> Unit) {
-    IconButton(
-        onClick = onClick,
+    Icon(
         modifier = Modifier
-            .size(18.dp)
-            .background(color = Color.Gray, shape = CircleShape)
-    ) {
-        Icon(
-            imageVector = Icons.Default.Remove,
-            contentDescription = "Minus",
-            tint = Color.White
-        )
-    }
+            .size(32.dp)
+            .background(color = Color.Black, shape = CircleShape)
+            .clickable(
+                indication = null,
+                interactionSource = remember { MutableInteractionSource() }
+            ) { onClick() },
+        imageVector = Icons.Default.Remove,
+        contentDescription = "Minus",
+        tint = Color.White
+    )
 }

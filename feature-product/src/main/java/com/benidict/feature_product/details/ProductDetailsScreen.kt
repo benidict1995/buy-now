@@ -15,6 +15,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -40,6 +42,7 @@ import com.benidict.common_utils.view.transparentVerticalBrush
 fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
     val viewModel = hiltViewModel<ProductDetailsViewModel>()
     val product = viewModel.productState.collectAsState()
+    val quantity = remember { mutableIntStateOf(0) }
 
     LaunchedEffect(Unit) {
         viewModel.loadProductDetails(productId)
@@ -169,9 +172,9 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                         .padding(vertical = 10.dp)
                         .fillMaxWidth()
                         .padding(horizontal = 16.dp),
-                    1,
-                    onClickMinus = {},
-                    onClickPlus = {},
+                    onUpdateQuantity = {
+                        quantity.intValue = it
+                    },
                     onAddToCart = {})
             }
         }
