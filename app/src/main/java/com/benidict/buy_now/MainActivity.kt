@@ -14,6 +14,7 @@ import com.benidict.common_ui.navigation.graph.MainGraph
 import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
+import com.benidict.common_ui.navigation.route.NotificationListRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsRoute
 import com.benidict.common_ui.navigation.route.ProductListRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
@@ -24,6 +25,7 @@ import com.benidict.feature_home.home.HomeScreen
 import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.password.EnterPasswordScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
+import com.benidict.feature_notification.list.NotificationListScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
 import com.benidict.feature_product.list.ProductListScreen
 import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
@@ -117,6 +119,10 @@ class MainActivity : ComponentActivity() {
                             ProductListScreen(navController, categoryId = param.categoryId, categoryName = param.categoryName) { productId ->
                                 navController.navigate(ProductDetailsRoute(productId = productId))
                             }
+                        }
+
+                        NotificationListRoute -> {
+                            NotificationListScreen(navController)
                         }
                     }
                 }

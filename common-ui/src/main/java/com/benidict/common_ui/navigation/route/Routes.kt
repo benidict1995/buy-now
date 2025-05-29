@@ -19,6 +19,9 @@ object HomeRoute
 data class EnterPasswordRoute(val email: String)
 
 @Serializable
+object NotificationListRoute
+
+@Serializable
 object ViewAllCategoryRoute
 
 @Serializable

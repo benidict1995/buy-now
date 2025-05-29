@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.benidict.common_ui.navigation.route.EnterPasswordRoute
 import com.benidict.common_ui.navigation.route.HomeRoute
 import com.benidict.common_ui.navigation.route.LandingRoute
+import com.benidict.common_ui.navigation.route.NotificationListRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsRoute
 import com.benidict.common_ui.navigation.route.ProductListRoute
 import com.benidict.common_ui.navigation.route.SignInRoute
@@ -55,6 +56,8 @@ fun MainGraph(
         ) {
             navRoute(it, UserDetailsFormRoute)
         }
+
+        //Start Tab
         composable<HomeRoute>(
             enterTransition = {
                 fadeInAnimation(this)
@@ -65,6 +68,12 @@ fun MainGraph(
         ) {
             navRoute(it, HomeRoute)
         }
+        composable<NotificationListRoute> {
+            navRoute(it, NotificationListRoute)
+        }
+        //End Tab
+
+
         composable<ViewAllCategoryRoute>(
             enterTransition = {
                 fadeInAnimation(this)
