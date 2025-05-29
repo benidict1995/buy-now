@@ -12,8 +12,8 @@ import androidx.compose.ui.unit.dp
 import com.benidict.common_ui.R
 
 @Composable
-fun LocationSelectorView(locationName: String) {
-    Row {
+fun LocationSelectorView(locationName: String, modifier: Modifier) {
+    Row(modifier = modifier) {
        Text(text = locationName)
        Spacer(modifier = Modifier.width(10.dp))
        Image(

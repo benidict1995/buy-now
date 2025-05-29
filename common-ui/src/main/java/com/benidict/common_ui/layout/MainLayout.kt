@@ -1,22 +1,18 @@
 package com.benidict.common_ui.layout
 
-import android.util.Log
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.BottomAppBar
+import androidx.compose.material.icons.outlined.Favorite
+import androidx.compose.material.icons.outlined.FavoriteBorder
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Notifications
+import androidx.compose.material.icons.outlined.ShoppingBasket
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Snackbar
 import androidx.compose.material3.SnackbarDuration
@@ -32,8 +28,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.benidict.common_ui.R
 import com.benidict.common_ui.bottomnav.CustomBottomNavigationView
@@ -62,6 +56,7 @@ fun MainLayout(
 
 
     Scaffold(
+        modifier = Modifier.background(color = containerColor),
         snackbarHost = {
             SnackbarHost(hostState = snackBarHostState) { data ->
                 Snackbar(
@@ -118,10 +113,16 @@ fun MainLayout(
             if (hasBottomBar) {
                 CustomBottomNavigationView {
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.Home, contentDescription = "Home")
+                        Icon(Icons.Outlined.Home, contentDescription = "Home")
                     }
                     IconButton(onClick = {}) {
-                        Icon(Icons.Default.Favorite, contentDescription = "Profile")
+                        Icon(Icons.Outlined.FavoriteBorder, contentDescription = "Favorite")
+                    }
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Outlined.ShoppingBasket, contentDescription = "Cart")
+                    }
+                    IconButton(onClick = {}) {
+                        Icon(Icons.Outlined.Notifications, contentDescription = "Notification")
                     }
                 }
             }

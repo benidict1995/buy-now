@@ -1,8 +1,10 @@
 package com.benidict.feature_product.details
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +30,8 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.benidict.common_ui.addtocart.QuantityPickerView
 import com.benidict.common_ui.icon.CircleClose
+import com.benidict.common_ui.icon.CircleFavorite
+import com.benidict.common_ui.icon.CircleShare
 import com.benidict.common_ui.image.ImageLoader
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
@@ -68,6 +72,17 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                 ) {
                     CircleClose {
                         navController.popBackStack()
+                    }
+
+                    Row(
+                        modifier = Modifier.align(Alignment.CenterEnd),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        CircleShare {
+
+                        }
+                        CircleFavorite {
+                        }
                     }
                 }
                 Spacer(modifier = Modifier.height(16.dp))
@@ -144,10 +159,10 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
             Box(
                 modifier = Modifier
                     .background(
-                       brush = transparentLinearBrush(
-                           colors = listOf(Color.White, Color.White),
-                           alphaPercent = .80f
-                       )
+                        brush = transparentLinearBrush(
+                            colors = listOf(Color.White, Color.White),
+                            alphaPercent = .80f
+                        )
                     )
                     .align(Alignment.BottomCenter)
             ) {
@@ -159,7 +174,7 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                         .background(
                             brush = transparentVerticalBrush(
                                 colors = listOf(Color.Black, Color.Transparent),
-                                alphaPercent =  0.15f
+                                alphaPercent = 0.15f
                             )
                         )
                 )

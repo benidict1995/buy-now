@@ -35,7 +35,7 @@ fun CategorySectionView(
                 modifier = Modifier.align(Alignment.CenterStart))
             Text(text = "See all",
                 fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
+                fontWeight = FontWeight.Normal,
                 modifier = Modifier.align(Alignment.CenterEnd).clickable(
                     indication = null,
                     interactionSource = remember { MutableInteractionSource() }
