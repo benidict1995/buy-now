@@ -5,6 +5,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
@@ -15,14 +17,21 @@ import com.benidict.common_ui.bottomnav.AppBottomNavigation
 fun MainScreen(){
     Surface(modifier = Modifier.fillMaxSize()) {
         val navController = rememberNavController()
-        MainNavGraph(navController = navController)
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .systemBarsPadding(),
-            contentAlignment = Alignment.BottomCenter
-        ) {
-            AppBottomNavigation(navController)
+        val isMainScreen = remember {
+            mutableStateOf(true)
+        }
+        MainNavGraph(navController = navController) { mainScreen ->
+            isMainScreen.value = mainScreen
+        }
+        if(isMainScreen.value) {
+            Box(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .systemBarsPadding(),
+                contentAlignment = Alignment.BottomCenter
+            ) {
+                AppBottomNavigation(navController)
+            }
         }
     }
 }

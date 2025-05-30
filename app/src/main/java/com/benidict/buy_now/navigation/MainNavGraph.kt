@@ -26,10 +26,12 @@ import com.benidict.feature_product.list.ProductListScreen
 
 @Composable
 fun MainNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    onMainScreen: (Boolean) -> Unit
 ) {
     NavHost(navController = navController, startDestination = HomeGraph) {
         homeNavGraph { navBackStackEntry, route ->
+            onMainScreen(route == HomeScreenRoute)
             when (route) {
                 HomeScreenRoute -> {
                     HomeScreen(onViewAllCategories = {
@@ -82,6 +84,7 @@ fun MainNavGraph(
             }
         }
         favoriteNavGraph { navBackStackEntry, route ->
+            onMainScreen(route == FavoriteScreenRoute)
             when(route) {
                 FavoriteScreenRoute -> {
                     DefaultScreen("Favorite Screen")
@@ -89,6 +92,7 @@ fun MainNavGraph(
             }
         }
         cartNavGraph { navBackStackEntry, route ->
+            onMainScreen(route == CartScreenRoute)
             when(route) {
                 CartScreenRoute -> {
                     DefaultScreen("Cart Screen")
@@ -96,6 +100,7 @@ fun MainNavGraph(
             }
         }
         notificationNavGraph { navBackStackEntry, route ->
+            onMainScreen(route == NotificationScreenRoute)
             when(route) {
                 NotificationScreenRoute -> {
                     DefaultScreen("Notification Screen")
