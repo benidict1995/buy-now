@@ -31,13 +31,13 @@ data class UserDetailsFormScreenRoute(val email: String)
 data class EnterPasswordScreenRoute(val email: String)
 
 @Serializable
-object CartScreeRoute
+object CartScreenRoute
 
 @Serializable
 object FavoriteScreenRoute
 
 @Serializable
-object NotificationRoute
+object NotificationScreenRoute
 
 @Serializable
 object HomeScreenRoute

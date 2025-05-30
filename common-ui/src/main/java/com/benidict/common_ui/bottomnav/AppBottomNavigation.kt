@@ -42,7 +42,7 @@ fun AppBottomNavigation(navController: NavController) {
                     icon = {
                         Icon(
                             modifier = Modifier.size(24.dp),
-                            imageVector = if(isSelected) Icons.Filled.Home else Icons.Outlined.Home,
+                            imageVector = if(isSelected) screen.selectedIcon else screen.unselectedIcon,
                             contentDescription = screen.name
                         )
 

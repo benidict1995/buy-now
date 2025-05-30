@@ -2,7 +2,6 @@ package com.benidict.common_ui.navigation.graph
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavBackStackEntry
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation

@@ -7,12 +7,12 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.benidict.common_ui.navigation.route.NotificationGraph
-import com.benidict.common_ui.navigation.route.NotificationRoute
+import com.benidict.common_ui.navigation.route.NotificationScreenRoute
 
 fun NavGraphBuilder.notificationNavGraph(navRoute: @Composable (NavBackStackEntry, route: Any) -> Unit) {
-    navigation<NotificationGraph>(startDestination = NotificationRoute) {
-        composable<NotificationRoute> {
-            navRoute(it, NotificationRoute)
+    navigation<NotificationGraph>(startDestination = NotificationScreenRoute) {
+        composable<NotificationScreenRoute> {
+            navRoute(it, NotificationScreenRoute)
         }
     }
 }

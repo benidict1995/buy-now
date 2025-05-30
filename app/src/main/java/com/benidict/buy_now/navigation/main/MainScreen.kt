@@ -1,4 +1,4 @@
-package com.benidict.common_ui.navigation.main
+package com.benidict.buy_now.navigation.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -7,20 +7,15 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavBackStackEntry
 import androidx.navigation.compose.rememberNavController
+import com.benidict.buy_now.navigation.MainNavGraph
 import com.benidict.common_ui.bottomnav.AppBottomNavigation
-import com.benidict.common_ui.navigation.graph.MainNavGraph
 
 @Composable
-fun MainScreen(
-    navRoute: @Composable (NavBackStackEntry, route: Any, graph: Any) -> Unit
-){
+fun MainScreen(){
     Surface(modifier = Modifier.fillMaxSize()) {
         val navController = rememberNavController()
-        MainNavGraph(navController = navController) { navBackStackEntry, route, graph ->
-            navRoute(navBackStackEntry, route, graph)
-        }
+        MainNavGraph(navController = navController)
         Box(
             modifier = Modifier
                 .fillMaxSize()

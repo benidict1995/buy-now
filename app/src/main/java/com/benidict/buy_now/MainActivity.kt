@@ -8,9 +8,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.benidict.buy_now.navigation.BaseNavGraph
 import com.benidict.buy_now.ui.theme.BuynowTheme
-import com.benidict.common_ui.navigation.graph.BaseNavGraph
-import com.benidict.common_ui.navigation.main.MainScreen
 import com.benidict.common_ui.navigation.route.CartGraph
 import com.benidict.common_ui.navigation.route.EnterPasswordScreenRoute
 import com.benidict.common_ui.navigation.route.FavoriteGraph
@@ -44,128 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             BuynowTheme {
-                BaseNavGraph(navController) { navBackStackEntry, route, graph ->
-
-                    when (graph) {
-                        LandingGraph -> {
-                            when (route) {
-                                LandingScreenRoute -> {
-                                    LandingScreen(onContinue = {
-                                        navController.navigate(SignInScreenRoute)
-                                    }, onContinueAsGuest = {
-                                        navController.navigate(MainRoute) {
-                                            popUpTo(0) {
-                                                inclusive = true
-                                            }
-                                        }
-                                    })
-                                }
-
-                                SignInScreenRoute -> {
-                                    SignInScreen(navController,
-                                        onNavigateToPassword = { email ->
-                                            navController.navigate(EnterPasswordScreenRoute(email = email))
-                                        },
-                                        onNavigateToSignUp = { email ->
-                                            navController.navigate(UserDetailsFormScreenRoute(email = email))
-                                        })
-                                }
-
-                                UserDetailsFormScreenRoute -> {
-                                    val param: UserDetailsFormScreenRoute = navBackStackEntry.toRoute()
-                                    UserDetailsFormScreen(
-                                        emailAddress = param.email,
-                                        navController = navController,
-                                        onNext = {
-                                            navController.navigate(MainRoute) {
-                                                popUpTo(0) {
-                                                    inclusive = true
-                                                }
-                                            }
-                                        })
-                                }
-
-                                EnterPasswordScreenRoute -> {
-                                    val param: EnterPasswordScreenRoute = navBackStackEntry.toRoute()
-                                    EnterPasswordScreen(
-                                        email = param.email,
-                                        navController, onNext = {
-                                            navController.navigate(MainRoute) {
-                                                popUpTo(0) {
-                                                    inclusive = true
-                                                }
-                                            }
-                                        })
-                                }
-                            }
-                        }
-
-                        MainGraph -> {
-                            if (route == MainRoute) {
-                                MainScreen { mainNavBackStackEntry, mainRoute, mainGraph ->
-                                    when (mainGraph) {
-                                        HomeGraph -> {
-                                            when(mainRoute) {
-                                                HomeScreenRoute -> {
-                                                    HomeScreen(onViewAllCategories = {
-                                                        navController.navigate(
-                                                            ViewAllCategoryScreenRoute
-                                                        )
-                                                    }, onNavigateProductDetails = { productId ->
-                                                        navController.navigate(
-                                                            ProductDetailsScreenRoute(productId = productId)
-                                                        )
-                                                    }, onNavigateProductByCategory = { categoryId, categoryName ->
-                                                        navController.navigate(
-                                                            ProductListScreenRoute(
-                                                                categoryId = categoryId,
-                                                                categoryName = categoryName
-                                                            )
-                                                        )
-                                                    })
-                                                }
-                                                ViewAllCategoryScreenRoute -> {
-                                                    CategoriesScreen(
-                                                        navController,
-                                                        onNavigateToProductList = { categoryId, categoryName ->
-                                                            navController.navigate(
-                                                                ProductListScreenRoute(
-                                                                    categoryId = categoryId,
-                                                                    categoryName = categoryName
-                                                                )
-                                                            )
-                                                        })
-                                                }
-                                                ProductListScreenRoute -> {
-                                                    val param: ProductListScreenRoute = mainNavBackStackEntry.toRoute()
-                                                    ProductListScreen(
-                                                        navController,
-                                                        categoryId = param.categoryId,
-                                                        categoryName = param.categoryName
-                                                    ) { productId ->
-                                                        navController.navigate(ProductDetailsScreenRoute(productId = productId))
-                                                    }
-                                                }
-                                                ProductDetailsScreenRoute -> {
-                                                    val param: ProductDetailsScreenRoute = mainNavBackStackEntry.toRoute()
-                                                    ProductDetailsScreen(navController, param.productId)
-                                                }
-                                            }
-                                        }
-
-                                        FavoriteGraph -> {
-
-                                        }
-
-                                        CartGraph -> {
-
-                                        }
-
-                                    }
-                                }
-                            }
-                        }
-                    }
+                BaseNavGraph(navController)
 
                   /**  when (route) {
                         HomeRoute -> {
@@ -216,7 +94,6 @@ class MainActivity : ComponentActivity() {
                             NotificationListScreen(navController)
                         }
                     } **/
-                }
             }
         }
     }
