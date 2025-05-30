@@ -39,7 +39,6 @@ fun HomeScreen(
     val banners by viewModel.bannersState.collectAsState()
 
     MainLayout(
-        hasBottomBar = true,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,

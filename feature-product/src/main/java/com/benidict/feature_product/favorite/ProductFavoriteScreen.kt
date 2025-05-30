@@ -21,7 +21,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 @Composable
 fun ProductFavoriteScreen(navController: NavHostController, onNavigateToProductDetails: (Int) -> Unit) {
     MainLayout (
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,
@@ -40,10 +39,10 @@ fun ProductFavoriteScreen(navController: NavHostController, onNavigateToProductD
                 Text(text = "Favorites", fontSize = 20.sp, fontWeight = FontWeight.Bold,
                     modifier = Modifier.align(Alignment.Center))
             }
-            ProductGridView(products.value, modifier = Modifier.fillMaxSize()
-                .padding(bottom = 8.dp)) { productId ->
-                onNavigateToProductDetails(productId)
-            }
+//            ProductGridView(products.value, modifier = Modifier.fillMaxSize()
+//                .padding(bottom = 8.dp)) { productId ->
+//                onNavigateToProductDetails(productId)
+//            }
         }
 
     }

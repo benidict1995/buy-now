@@ -21,7 +21,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 @Composable
 fun NotificationListScreen(navController: NavHostController) {
     MainLayout(
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,

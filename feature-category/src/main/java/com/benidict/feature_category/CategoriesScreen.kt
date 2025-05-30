@@ -31,7 +31,6 @@ fun CategoriesScreen(navController: NavHostController, onNavigateToProductList: 
     val categories = viewModel.categoriesState.collectAsState()
 
     MainLayout(
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,

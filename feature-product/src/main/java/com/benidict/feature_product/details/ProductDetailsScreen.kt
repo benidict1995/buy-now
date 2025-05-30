@@ -49,7 +49,6 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
         viewModel.loadProductDetails(productId)
     }
     MainLayout(
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,

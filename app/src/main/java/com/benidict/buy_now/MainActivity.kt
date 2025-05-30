@@ -1,7 +1,6 @@
 package com.benidict.buy_now
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -10,22 +9,28 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.benidict.buy_now.ui.theme.BuynowTheme
-import com.benidict.common_ui.navigation.graph.MainGraph
-import com.benidict.common_ui.navigation.route.EnterPasswordRoute
+import com.benidict.common_ui.navigation.graph.BaseNavGraph
+import com.benidict.common_ui.navigation.main.MainScreen
+import com.benidict.common_ui.navigation.route.CartGraph
+import com.benidict.common_ui.navigation.route.EnterPasswordScreenRoute
+import com.benidict.common_ui.navigation.route.FavoriteGraph
+import com.benidict.common_ui.navigation.route.HomeGraph
 import com.benidict.common_ui.navigation.route.HomeRoute
-import com.benidict.common_ui.navigation.route.LandingRoute
-import com.benidict.common_ui.navigation.route.NotificationListRoute
-import com.benidict.common_ui.navigation.route.ProductDetailsRoute
-import com.benidict.common_ui.navigation.route.ProductListRoute
-import com.benidict.common_ui.navigation.route.SignInRoute
-import com.benidict.common_ui.navigation.route.UserDetailsFormRoute
-import com.benidict.common_ui.navigation.route.ViewAllCategoryRoute
+import com.benidict.common_ui.navigation.route.HomeScreenRoute
+import com.benidict.common_ui.navigation.route.LandingGraph
+import com.benidict.common_ui.navigation.route.LandingScreenRoute
+import com.benidict.common_ui.navigation.route.MainGraph
+import com.benidict.common_ui.navigation.route.MainRoute
+import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
+import com.benidict.common_ui.navigation.route.ProductListScreenRoute
+import com.benidict.common_ui.navigation.route.SignInScreenRoute
+import com.benidict.common_ui.navigation.route.UserDetailsFormScreenRoute
+import com.benidict.common_ui.navigation.route.ViewAllCategoryScreenRoute
 import com.benidict.feature_category.CategoriesScreen
 import com.benidict.feature_home.home.HomeScreen
 import com.benidict.feature_login.ui.landing.LandingScreen
 import com.benidict.feature_login.ui.password.EnterPasswordScreen
 import com.benidict.feature_login.ui.signin.SignInScreen
-import com.benidict.feature_notification.list.NotificationListScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
 import com.benidict.feature_product.list.ProductListScreen
 import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
@@ -39,74 +44,156 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             BuynowTheme {
-                MainGraph(navController) { navBackStackEntry, route ->
-                    when (route) {
-                        LandingRoute -> {
-                            LandingScreen(onContinue = {
-                                navController.navigate(SignInRoute)
-                            }, onContinueAsGuest = {
-                                navController.navigate(HomeRoute) {
-                                    popUpTo(0) {
-                                        inclusive = true
-                                    }
-                                }
-                            })
-                        }
+                BaseNavGraph(navController) { navBackStackEntry, route, graph ->
 
-                        SignInRoute -> {
-                            SignInScreen(navController,
-                                onNavigateToPassword = { email ->
-                                    navController.navigate(EnterPasswordRoute(email = email))
-                                },
-                                onNavigateToSignUp = { email ->
-                                    navController.navigate(UserDetailsFormRoute(email = email))
-                                })
-                        }
-
-                        UserDetailsFormRoute -> {
-                            val param: UserDetailsFormRoute = navBackStackEntry.toRoute()
-                            UserDetailsFormScreen(
-                                emailAddress = param.email,
-                                navController = navController,
-                                onNext = {
-                                    navController.navigate(HomeRoute) {
-                                        popUpTo(0) {
-                                            inclusive = true
+                    when (graph) {
+                        LandingGraph -> {
+                            when (route) {
+                                LandingScreenRoute -> {
+                                    LandingScreen(onContinue = {
+                                        navController.navigate(SignInScreenRoute)
+                                    }, onContinueAsGuest = {
+                                        navController.navigate(MainRoute) {
+                                            popUpTo(0) {
+                                                inclusive = true
+                                            }
                                         }
-                                    }
-                                })
+                                    })
+                                }
+
+                                SignInScreenRoute -> {
+                                    SignInScreen(navController,
+                                        onNavigateToPassword = { email ->
+                                            navController.navigate(EnterPasswordScreenRoute(email = email))
+                                        },
+                                        onNavigateToSignUp = { email ->
+                                            navController.navigate(UserDetailsFormScreenRoute(email = email))
+                                        })
+                                }
+
+                                UserDetailsFormScreenRoute -> {
+                                    val param: UserDetailsFormScreenRoute = navBackStackEntry.toRoute()
+                                    UserDetailsFormScreen(
+                                        emailAddress = param.email,
+                                        navController = navController,
+                                        onNext = {
+                                            navController.navigate(MainRoute) {
+                                                popUpTo(0) {
+                                                    inclusive = true
+                                                }
+                                            }
+                                        })
+                                }
+
+                                EnterPasswordScreenRoute -> {
+                                    val param: EnterPasswordScreenRoute = navBackStackEntry.toRoute()
+                                    EnterPasswordScreen(
+                                        email = param.email,
+                                        navController, onNext = {
+                                            navController.navigate(MainRoute) {
+                                                popUpTo(0) {
+                                                    inclusive = true
+                                                }
+                                            }
+                                        })
+                                }
+                            }
                         }
 
-                        EnterPasswordRoute -> {
-                            val param: EnterPasswordRoute = navBackStackEntry.toRoute()
-                            EnterPasswordScreen(
-                                email = param.email,
-                                navController, onNext = {
-                                navController.navigate(HomeRoute) {
-                                    popUpTo(0) {
-                                        inclusive = true
+                        MainGraph -> {
+                            if (route == MainRoute) {
+                                MainScreen { mainNavBackStackEntry, mainRoute, mainGraph ->
+                                    when (mainGraph) {
+                                        HomeGraph -> {
+                                            when(mainRoute) {
+                                                HomeScreenRoute -> {
+                                                    HomeScreen(onViewAllCategories = {
+                                                        navController.navigate(
+                                                            ViewAllCategoryScreenRoute
+                                                        )
+                                                    }, onNavigateProductDetails = { productId ->
+                                                        navController.navigate(
+                                                            ProductDetailsScreenRoute(productId = productId)
+                                                        )
+                                                    }, onNavigateProductByCategory = { categoryId, categoryName ->
+                                                        navController.navigate(
+                                                            ProductListScreenRoute(
+                                                                categoryId = categoryId,
+                                                                categoryName = categoryName
+                                                            )
+                                                        )
+                                                    })
+                                                }
+                                                ViewAllCategoryScreenRoute -> {
+                                                    CategoriesScreen(
+                                                        navController,
+                                                        onNavigateToProductList = { categoryId, categoryName ->
+                                                            navController.navigate(
+                                                                ProductListScreenRoute(
+                                                                    categoryId = categoryId,
+                                                                    categoryName = categoryName
+                                                                )
+                                                            )
+                                                        })
+                                                }
+                                                ProductListScreenRoute -> {
+                                                    val param: ProductListScreenRoute = mainNavBackStackEntry.toRoute()
+                                                    ProductListScreen(
+                                                        navController,
+                                                        categoryId = param.categoryId,
+                                                        categoryName = param.categoryName
+                                                    ) { productId ->
+                                                        navController.navigate(ProductDetailsScreenRoute(productId = productId))
+                                                    }
+                                                }
+                                                ProductDetailsScreenRoute -> {
+                                                    val param: ProductDetailsScreenRoute = mainNavBackStackEntry.toRoute()
+                                                    ProductDetailsScreen(navController, param.productId)
+                                                }
+                                            }
+                                        }
+
+                                        FavoriteGraph -> {
+
+                                        }
+
+                                        CartGraph -> {
+
+                                        }
+
                                     }
                                 }
-                            })
+                            }
                         }
+                    }
 
+                  /**  when (route) {
                         HomeRoute -> {
                             HomeScreen(onViewAllCategories = {
                                 navController.navigate(ViewAllCategoryRoute)
                             }, onNavigateProductDetails = { productId ->
                                 navController.navigate(ProductDetailsRoute(productId = productId))
                             }, onNavigateProductByCategory = { categoryId, categoryName ->
-                                navController.navigate(ProductListRoute(
-                                    categoryId = categoryId,
-                                    categoryName = categoryName
-                                ))
+                                navController.navigate(
+                                    ProductListRoute(
+                                        categoryId = categoryId,
+                                        categoryName = categoryName
+                                    )
+                                )
                             })
                         }
 
                         ViewAllCategoryRoute -> {
-                            CategoriesScreen(navController, onNavigateToProductList = { categoryId, categoryName ->
-                                navController.navigate(ProductListRoute(categoryId = categoryId, categoryName = categoryName))
-                            })
+                            CategoriesScreen(
+                                navController,
+                                onNavigateToProductList = { categoryId, categoryName ->
+                                    navController.navigate(
+                                        ProductListRoute(
+                                            categoryId = categoryId,
+                                            categoryName = categoryName
+                                        )
+                                    )
+                                })
                         }
 
                         ProductDetailsRoute -> {
@@ -116,7 +203,11 @@ class MainActivity : ComponentActivity() {
 
                         ProductListRoute -> {
                             val param: ProductListRoute = navBackStackEntry.toRoute()
-                            ProductListScreen(navController, categoryId = param.categoryId, categoryName = param.categoryName) { productId ->
+                            ProductListScreen(
+                                navController,
+                                categoryId = param.categoryId,
+                                categoryName = param.categoryName
+                            ) { productId ->
                                 navController.navigate(ProductDetailsRoute(productId = productId))
                             }
                         }
@@ -124,7 +215,7 @@ class MainActivity : ComponentActivity() {
                         NotificationListRoute -> {
                             NotificationListScreen(navController)
                         }
-                    }
+                    } **/
                 }
             }
         }

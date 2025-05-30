@@ -32,7 +32,6 @@ fun ProductListScreen(navController: NavHostController, categoryId: Int, categor
     }
 
     MainLayout(
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,
