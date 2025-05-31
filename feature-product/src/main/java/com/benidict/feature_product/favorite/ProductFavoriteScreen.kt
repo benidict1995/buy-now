@@ -14,7 +14,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.benidict.common_ui.grid.ProductGridView
 import com.benidict.common_ui.icon.CircleBackButton
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
@@ -22,9 +21,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 @Composable
 fun ProductFavoriteScreen(navController: NavHostController, onNavigateToProductDetails: (Int) -> Unit) {
     MainLayout (
-        hasTopBar = true,
-        hasBackButton = false,
-        hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
         Column(

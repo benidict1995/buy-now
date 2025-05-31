@@ -49,9 +49,6 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
         viewModel.loadProductDetails(productId)
     }
     MainLayout(
-        hasTopBar = true,
-        hasBackButton = false,
-        hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
         Box(

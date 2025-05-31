@@ -40,9 +40,6 @@ fun HomeScreen(
     val banners by viewModel.bannersState.collectAsState()
 
     MainLayout(
-        hasTopBar = true,
-        hasBackButton = false,
-        hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
         Column(

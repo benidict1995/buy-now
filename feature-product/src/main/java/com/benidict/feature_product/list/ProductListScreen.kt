@@ -32,9 +32,6 @@ fun ProductListScreen(navController: NavHostController, categoryId: Int, categor
     }
 
     MainLayout(
-        hasTopBar = true,
-        hasBackButton = false,
-        hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
         Column(
