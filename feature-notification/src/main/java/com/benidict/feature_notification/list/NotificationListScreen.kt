@@ -22,9 +22,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 @Composable
 fun NotificationListScreen(navController: NavHostController) {
     MainLayout(
-        hasTopBar = true,
-        hasBackButton = false,
-        hasNextButton = false,
         containerColor = GrayishWhite
     ) { paddingValues ->
         Column(
