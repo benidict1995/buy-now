@@ -1,4 +1,4 @@
-package com.benidict.feature_product.favorite
+package com.benidict.feature_cart
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,14 +14,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.benidict.common_ui.grid.ProductGridView
 import com.benidict.common_ui.icon.CircleBackButton
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
-fun ProductFavoriteScreen(navController: NavHostController, onNavigateToProductDetails: (Int) -> Unit) {
-    MainLayout (
+fun CartScreen(navController: NavHostController) {
+    MainLayout(
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,
@@ -39,14 +38,10 @@ fun ProductFavoriteScreen(navController: NavHostController, onNavigateToProductD
                 CircleBackButton {
                     navController.popBackStack()
                 }
-                Text(text = "Favorites", fontSize = 20.sp, fontWeight = FontWeight.Bold,
+                Text(text = "Cart", fontSize = 20.sp, fontWeight = FontWeight.Bold,
                     modifier = Modifier.align(Alignment.Center))
             }
-//            ProductGridView(products.value, modifier = Modifier.fillMaxSize()
-//                .padding(bottom = 8.dp)) { productId ->
-//                onNavigateToProductDetails(productId)
-//            }
-        }
 
+        }
     }
 }

@@ -58,6 +58,8 @@ android {
 
 dependencies {
     implementation(project(":common-ui"))
+    implementation(project(":feature-favorite"))
+    implementation(project(":feature-cart"))
     implementation(project(":feature-notification"))
     implementation(project(":feature-product"))
     implementation(project(":feature-category"))

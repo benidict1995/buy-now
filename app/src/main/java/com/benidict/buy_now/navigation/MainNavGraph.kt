@@ -19,8 +19,11 @@ import com.benidict.common_ui.navigation.route.NotificationScreenRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.ProductListScreenRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryScreenRoute
+import com.benidict.feature_cart.CartScreen
 import com.benidict.feature_category.CategoriesScreen
+import com.benidict.feature_favorite.FavoriteScreen
 import com.benidict.feature_home.home.HomeScreen
+import com.benidict.feature_notification.list.NotificationListScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
 import com.benidict.feature_product.list.ProductListScreen
 
@@ -87,7 +90,7 @@ fun MainNavGraph(
             onMainScreen(route == FavoriteScreenRoute)
             when(route) {
                 FavoriteScreenRoute -> {
-                    DefaultScreen("Favorite Screen")
+                    FavoriteScreen(navController)
                 }
             }
         }
@@ -95,7 +98,7 @@ fun MainNavGraph(
             onMainScreen(route == CartScreenRoute)
             when(route) {
                 CartScreenRoute -> {
-                    DefaultScreen("Cart Screen")
+                    CartScreen(navController)
                 }
             }
         }
@@ -103,7 +106,7 @@ fun MainNavGraph(
             onMainScreen(route == NotificationScreenRoute)
             when(route) {
                 NotificationScreenRoute -> {
-                    DefaultScreen("Notification Screen")
+                    NotificationListScreen(navController)
                 }
             }
         }

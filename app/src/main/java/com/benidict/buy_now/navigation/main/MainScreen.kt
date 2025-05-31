@@ -14,7 +14,7 @@ import com.benidict.buy_now.navigation.MainNavGraph
 import com.benidict.common_ui.bottomnav.AppBottomNavigation
 
 @Composable
-fun MainScreen(){
+fun MainScreen() {
     Surface(modifier = Modifier.fillMaxSize()) {
         val navController = rememberNavController()
         val isMainScreen = remember {
@@ -23,11 +23,11 @@ fun MainScreen(){
         MainNavGraph(navController = navController) { mainScreen ->
             isMainScreen.value = mainScreen
         }
-        if(isMainScreen.value) {
+        //   .systemBarsPadding()
+        if (isMainScreen.value) {
             Box(
                 modifier = Modifier
-                    .fillMaxSize()
-                    .systemBarsPadding(),
+                    .fillMaxSize(),
                 contentAlignment = Alignment.BottomCenter
             ) {
                 AppBottomNavigation(navController)

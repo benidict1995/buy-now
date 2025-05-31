@@ -33,33 +33,33 @@ fun AppBottomNavigation(navController: NavController) {
 
     NavigationBar {
         val currentDestination = navController.currentBackStackEntryAsState().value?.destination
-        CustomBottomNavigationView {
+        // CustomBottomNavigationView {
 
-            bottomScreens.forEach { screen ->
-                val isSelected =
-                    currentDestination?.hierarchy?.any { it.hasRoute(screen.route::class) } == true
-                NavigationBarItem(
-                    icon = {
-                        Icon(
-                            modifier = Modifier.size(24.dp),
-                            imageVector = if(isSelected) screen.selectedIcon else screen.unselectedIcon,
-                            contentDescription = screen.name
-                        )
+        bottomScreens.forEach { screen ->
+            val isSelected =
+                currentDestination?.hierarchy?.any { it.hasRoute(screen.route::class) } == true
+            NavigationBarItem(
+                icon = {
+                    Icon(
+                        modifier = Modifier.size(24.dp),
+                        imageVector = if (isSelected) screen.selectedIcon else screen.unselectedIcon,
+                        contentDescription = screen.name
+                    )
 
-                    },
-                    label = { Text(screen.name) },
-                    selected = isSelected,
-                    onClick = {
-                        navController.navigate(screen.route) {
-                            popUpTo(navController.graph.findStartDestination().id) {
-                                saveState = true
-                            }
-                            launchSingleTop = true
-                            restoreState = true
+                },
+                label = { Text(screen.name) },
+                selected = isSelected,
+                onClick = {
+                    navController.navigate(screen.route) {
+                        popUpTo(navController.graph.findStartDestination().id) {
+                            saveState = true
                         }
+                        launchSingleTop = true
+                        restoreState = true
                     }
-                )
-            }
+                }
+            )
         }
+        // }
     }
 }
