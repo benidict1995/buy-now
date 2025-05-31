@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +22,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 @Composable
 fun NotificationListScreen(navController: NavHostController) {
     MainLayout(
-        hasBottomBar = false,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,
@@ -31,6 +31,8 @@ fun NotificationListScreen(navController: NavHostController) {
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
+                .systemBarsPadding()
+                .padding(bottom = 46.dp)
                 .fillMaxSize()
         ) {
             Box(modifier = Modifier.fillMaxWidth()) {

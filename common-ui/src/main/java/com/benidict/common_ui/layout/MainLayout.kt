@@ -40,7 +40,6 @@ import kotlinx.coroutines.launch
 fun MainLayout(
     hasBackButton: Boolean = false,
     hasTopBar: Boolean = false,
-    hasBottomBar: Boolean = false,
     hasNextButton: Boolean = false,
     enableNextButton: Boolean = false,
     errorMessage: String = "",
@@ -110,22 +109,6 @@ fun MainLayout(
             }
         },
         bottomBar = {
-            if (hasBottomBar) {
-                CustomBottomNavigationView {
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Outlined.Home, contentDescription = "Home")
-                    }
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Outlined.FavoriteBorder, contentDescription = "Favorite")
-                    }
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Outlined.ShoppingBasket, contentDescription = "Cart")
-                    }
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Outlined.Notifications, contentDescription = "Notification")
-                    }
-                }
-            }
         }
     ) { paddingValues ->
         content(paddingValues)

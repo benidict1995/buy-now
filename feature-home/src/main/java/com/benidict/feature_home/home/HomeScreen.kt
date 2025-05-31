@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -39,7 +40,6 @@ fun HomeScreen(
     val banners by viewModel.bannersState.collectAsState()
 
     MainLayout(
-        hasBottomBar = true,
         hasTopBar = true,
         hasBackButton = false,
         hasNextButton = false,
@@ -49,6 +49,8 @@ fun HomeScreen(
             modifier = Modifier
                 .padding(paddingValues)
                 .padding(horizontal = 16.dp)
+                .systemBarsPadding()
+                .padding(bottom = 46.dp)
                 .fillMaxSize()
         ) {
             LocationHeaderView(locationName)
