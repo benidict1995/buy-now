@@ -2,7 +2,6 @@ package com.benidict.buy_now.navigation.main
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -23,7 +22,6 @@ fun MainScreen() {
         MainNavGraph(navController = navController) { mainScreen ->
             isMainScreen.value = mainScreen
         }
-        //   .systemBarsPadding()
         if (isMainScreen.value) {
             Box(
                 modifier = Modifier
