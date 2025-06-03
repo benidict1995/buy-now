@@ -3,6 +3,7 @@ package com.benidict.buy_now.module
 import com.benidict.buy_now.service.FirebaseService
 import com.benidict.buy_now.source.banner.BannerRemoteSource
 import com.benidict.buy_now.source.category.CategoryRemoteSource
+import com.benidict.buy_now.source.notification.NotificationRemoteSource
 import com.benidict.buy_now.source.product.ProductRemoteSource
 import dagger.Module
 import dagger.Provides
@@ -28,4 +29,9 @@ object RemoteSourceModule {
     @Singleton
     fun provideCategoryRemoteSource(firebaseService: FirebaseService) =
         CategoryRemoteSource(firebaseService)
+
+    @Provides
+    @Singleton
+    fun provideNotificationsRemoteSource(firebaseService: FirebaseService) =
+        NotificationRemoteSource(firebaseService)
 }
