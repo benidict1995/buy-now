@@ -1,5 +1,6 @@
 package com.benidict.feature_favorite
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
 fun FavoriteScreen(navController: NavHostController) {
+    Log.d("makerChecker", "FavoriteScreen")
     MainLayout(
         containerColor = GrayishWhite
     ) { paddingValues ->
@@ -32,11 +34,8 @@ fun FavoriteScreen(navController: NavHostController) {
                 .fillMaxSize()
         ) {
             Box(modifier = Modifier.fillMaxWidth()) {
-                CircleBackButton {
-                    navController.popBackStack()
-                }
                 Text(text = "Favorite", fontSize = 20.sp, fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.Center))
+                    modifier = Modifier.align(Alignment.Center).padding(top = 12.dp))
             }
 
         }

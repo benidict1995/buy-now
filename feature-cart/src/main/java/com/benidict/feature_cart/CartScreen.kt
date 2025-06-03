@@ -32,11 +32,8 @@ fun CartScreen(navController: NavHostController) {
                 .fillMaxSize()
         ) {
             Box(modifier = Modifier.fillMaxWidth()) {
-                CircleBackButton {
-                    navController.popBackStack()
-                }
                 Text(text = "Cart", fontSize = 20.sp, fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.Center))
+                    modifier = Modifier.align(Alignment.Center).padding(top = 12.dp))
             }
 
         }

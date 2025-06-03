@@ -1,6 +1,7 @@
 package com.benidict.common_ui.card
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,11 +24,12 @@ import com.benidict.buy_now.notification.Notifications
 import com.benidict.common_ui.icon.NotificationIcons
 
 @Composable
-fun NotificationCard(notification: Notifications) {
+fun NotificationCard(notification: Notifications, onClick: (Int) -> Unit) {
     Column {
         Spacer(modifier = Modifier.height(8.dp))
         Box(
             modifier = Modifier
+                .clickable { onClick(notification.id) }
                 .fillMaxWidth()
                 .height(100.dp)
                 .background(color = Color.White)
@@ -42,7 +44,7 @@ fun NotificationCard(notification: Notifications) {
                 Column {
                     Text(
                         text = notification.title,
-                        fontSize = 26.sp,
+                        fontSize = 18.sp,
                         fontWeight = if (notification.isRead) FontWeight.Normal else FontWeight.Bold,
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis

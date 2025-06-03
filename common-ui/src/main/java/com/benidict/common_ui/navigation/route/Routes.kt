@@ -40,6 +40,9 @@ object FavoriteScreenRoute
 object NotificationScreenRoute
 
 @Serializable
+data class NotificationDetailsScreenRoute(val id: Int)
+
+@Serializable
 object HomeScreenRoute
 
 @Serializable

@@ -1,5 +1,6 @@
 package com.benidict.feature_product.details
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -45,7 +46,7 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
     val product = viewModel.productState.collectAsState()
     val quantity = remember { mutableIntStateOf(0) }
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(productId) {
         viewModel.loadProductDetails(productId)
     }
     MainLayout(

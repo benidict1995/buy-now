@@ -1,5 +1,6 @@
 package com.benidict.feature_notification.list
 
+import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -26,34 +27,33 @@ import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
-fun NotificationListScreen(navController: NavHostController) {
+fun NotificationListScreen(navController: NavHostController, onNavigateToNotificationDetails: (Int) -> Unit) {
     val viewModel = hiltViewModel<NotificationListViewModel>()
     val notifications = viewModel.notificationState.collectAsState()
-
+    Log.d("makerChecker", "NotificationListScreen")
     MainLayout(
         containerColor = GrayishWhite
     ) { paddingValues ->
         Column(
             modifier = Modifier
-                .padding(paddingValues)
                 .padding(horizontal = 16.dp)
                 .systemBarsPadding()
                 .padding(bottom = 46.dp)
+                .padding(paddingValues)
                 .fillMaxSize()
         ) {
             Box(modifier = Modifier.fillMaxWidth()) {
-                CircleBackButton {
-                    navController.popBackStack()
-                }
                 Text(
                     text = "Notifications", fontSize = 20.sp, fontWeight = FontWeight.Bold,
-                    modifier = Modifier.align(Alignment.Center)
+                    modifier = Modifier.align(Alignment.Center).padding(top = 12.dp)
                 )
             }
             Spacer(modifier = Modifier.height(16.dp))
             LazyColumn {
                 items(notifications.value) { notification ->
-                    NotificationCard(notification)
+                    NotificationCard(notification, onClick = { id ->
+                        onNavigateToNotificationDetails(id)
+                    })
                 }
             }
         }

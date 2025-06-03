@@ -1,5 +1,6 @@
 package com.benidict.buy_now.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -15,6 +16,7 @@ import com.benidict.common_ui.navigation.route.FavoriteGraph
 import com.benidict.common_ui.navigation.route.FavoriteScreenRoute
 import com.benidict.common_ui.navigation.route.HomeGraph
 import com.benidict.common_ui.navigation.route.HomeScreenRoute
+import com.benidict.common_ui.navigation.route.NotificationDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.NotificationScreenRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.ProductListScreenRoute
@@ -23,6 +25,7 @@ import com.benidict.feature_cart.CartScreen
 import com.benidict.feature_category.CategoriesScreen
 import com.benidict.feature_favorite.FavoriteScreen
 import com.benidict.feature_home.home.HomeScreen
+import com.benidict.feature_notification.details.NotificationDetailsScreen
 import com.benidict.feature_notification.list.NotificationListScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
 import com.benidict.feature_product.list.ProductListScreen
@@ -106,7 +109,14 @@ fun MainNavGraph(
             onMainScreen(route == NotificationScreenRoute)
             when(route) {
                 NotificationScreenRoute -> {
-                    NotificationListScreen(navController)
+                    NotificationListScreen(navController, onNavigateToNotificationDetails = { id ->
+                        navController.navigate(NotificationDetailsScreenRoute(id = id))
+                    })
+                }
+                NotificationDetailsScreenRoute -> {
+                    val param: NotificationDetailsScreenRoute =
+                        navBackStackEntry.toRoute()
+                    NotificationDetailsScreen(id = param.id, navController = navController)
                 }
             }
         }

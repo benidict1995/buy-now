@@ -1,5 +1,6 @@
 package com.benidict.feature_home.home
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -38,7 +39,7 @@ fun HomeScreen(
     val productFilter by viewModel.productFilterState.collectAsState()
     val categories by viewModel.categoriesState.collectAsState()
     val banners by viewModel.bannersState.collectAsState()
-
+    Log.d("makerChecker", "HomeScreen")
     MainLayout(
         containerColor = GrayishWhite
     ) { paddingValues ->

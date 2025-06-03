@@ -7,6 +7,10 @@ import javax.inject.Inject
 class NotificationsRepository @Inject constructor(
     private val notificationRemoteSource: NotificationRemoteSource
 ) {
+    suspend fun getNotificationDetailsById(id: Int): Notifications {
+        return notificationRemoteSource.getNotificationDetailsById(id)
+    }
+
     suspend fun getNotificationByUserId(userId: String): List<Notifications> {
         return notificationRemoteSource.getNotificationByUserId(userId)
     }
