@@ -1,6 +1,5 @@
 package com.benidict.feature_notification.list
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -20,17 +19,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
 import com.benidict.common_ui.card.NotificationCard
-import com.benidict.common_ui.icon.CircleBackButton
 import com.benidict.common_ui.layout.MainLayout
 import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
-fun NotificationListScreen(navController: NavHostController, onNavigateToNotificationDetails: (Int) -> Unit) {
+fun NotificationListScreen(onNavigateToNotificationDetails: (Int) -> Unit) {
     val viewModel = hiltViewModel<NotificationListViewModel>()
     val notifications = viewModel.notificationState.collectAsState()
-    Log.d("makerChecker", "NotificationListScreen")
     MainLayout(
         containerColor = GrayishWhite
     ) { paddingValues ->

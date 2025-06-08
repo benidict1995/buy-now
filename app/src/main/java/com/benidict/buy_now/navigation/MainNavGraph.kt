@@ -12,6 +12,7 @@ import com.benidict.common_ui.navigation.graph.homeNavGraph
 import com.benidict.common_ui.navigation.graph.notificationNavGraph
 import com.benidict.common_ui.navigation.route.CartGraph
 import com.benidict.common_ui.navigation.route.CartScreenRoute
+import com.benidict.common_ui.navigation.route.EnterPasswordScreenRoute
 import com.benidict.common_ui.navigation.route.FavoriteGraph
 import com.benidict.common_ui.navigation.route.FavoriteScreenRoute
 import com.benidict.common_ui.navigation.route.HomeGraph
@@ -20,11 +21,14 @@ import com.benidict.common_ui.navigation.route.NotificationDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.NotificationScreenRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.ProductListScreenRoute
+import com.benidict.common_ui.navigation.route.SignInScreenRoute
+import com.benidict.common_ui.navigation.route.UserDetailsFormScreenRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryScreenRoute
 import com.benidict.feature_cart.CartScreen
 import com.benidict.feature_category.CategoriesScreen
 import com.benidict.feature_favorite.FavoriteScreen
 import com.benidict.feature_home.home.HomeScreen
+import com.benidict.feature_login.ui.signin.SignInScreen
 import com.benidict.feature_notification.details.NotificationDetailsScreen
 import com.benidict.feature_notification.list.NotificationListScreen
 import com.benidict.feature_product.details.ProductDetailsScreen
@@ -55,9 +59,19 @@ fun MainNavGraph(
                                 categoryName = categoryName
                             )
                         )
+                    }, onLogin = {
+                        navController.navigate(SignInScreenRoute)
                     })
                 }
-
+                SignInScreenRoute -> {
+                    SignInScreen(navController,
+                        onNavigateToPassword = { email ->
+                            navController.navigate(EnterPasswordScreenRoute(email = email))
+                        },
+                        onNavigateToSignUp = { email ->
+                            navController.navigate(UserDetailsFormScreenRoute(email = email))
+                        })
+                }
                 ViewAllCategoryScreenRoute -> {
                     CategoriesScreen(
                         navController,
@@ -109,7 +123,7 @@ fun MainNavGraph(
             onMainScreen(route == NotificationScreenRoute)
             when(route) {
                 NotificationScreenRoute -> {
-                    NotificationListScreen(navController, onNavigateToNotificationDetails = { id ->
+                    NotificationListScreen(onNavigateToNotificationDetails = { id ->
                         navController.navigate(NotificationDetailsScreenRoute(id = id))
                     })
                 }

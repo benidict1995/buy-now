@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.benidict.buy_now.notification.Notifications
 import com.benidict.common_ui.icon.NotificationIcons
+import com.benidict.common_ui.icon.RedDot
 
 @Composable
 fun NotificationCard(notification: Notifications, onClick: (Int) -> Unit) {
@@ -57,6 +58,9 @@ fun NotificationCard(notification: Notifications, onClick: (Int) -> Unit) {
                         overflow = TextOverflow.Ellipsis
                     )
                 }
+            }
+            if(notification.isRead.not()) {
+                RedDot(modifier =  Modifier.align(Alignment.TopEnd).padding(top = 10.dp, end = 10.dp))
             }
         }
     }

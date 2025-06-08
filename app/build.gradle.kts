@@ -68,6 +68,7 @@ dependencies {
     implementation(project(":feature-signup"))
     implementation(project(":network"))
     implementation(project(":data"))
+    implementation(project(":persistence"))
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.auth)
     implementation(libs.navigationCompose)

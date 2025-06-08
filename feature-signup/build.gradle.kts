@@ -39,6 +39,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":data"))
+    implementation(project(":model"))
     implementation(project(":common-ui"))
     implementation(project(":common-utils"))
     kapt(libs.dagger.hilt.compiler)

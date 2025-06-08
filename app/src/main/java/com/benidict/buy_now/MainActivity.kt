@@ -8,7 +8,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.benidict.buy_now.navigation.BaseNavGraph
-import com.benidict.buy_now.navigation.main.MainScreen
 import com.benidict.buy_now.ui.theme.BuynowTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,8 +19,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val navController = rememberNavController()
             BuynowTheme {
-                //BaseNavGraph(navController)
-                MainScreen()
+                BaseNavGraph(navController)
             }
         }
     }

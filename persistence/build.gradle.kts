@@ -38,7 +38,9 @@ android {
 }
 
 dependencies {
+    implementation(project(":model"))
     kapt(libs.dagger.hilt.compiler)
+    implementation(libs.data.store)
     implementation(libs.dagger.hilt.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

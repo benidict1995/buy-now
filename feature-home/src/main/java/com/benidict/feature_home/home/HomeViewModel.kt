@@ -8,23 +8,27 @@ import com.benidict.buy_now.category.Category
 import com.benidict.buy_now.filter.Filter
 import com.benidict.buy_now.filter.ProductFilter
 import com.benidict.buy_now.product.Product
+import com.benidict.data.repository.auth.AuthRepository
 import com.benidict.data.repository.banner.BannerRepository
 import com.benidict.data.repository.category.CategoryRepository
 import com.benidict.data.repository.product.ProductRepository
 import com.benidict.feature_home.home.model.HomeUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.MutableSharedFlow
 import javax.inject.Inject
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository,
     private val categoryRepository: CategoryRepository,
-    private val bannerRepository: BannerRepository
+    private val bannerRepository: BannerRepository,
+    private val authRepository: AuthRepository
 ): ViewModel() {
     private val _productFilterState: MutableStateFlow<List<Filter>> = MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
     val productFilterState = _productFilterState.asStateFlow()
@@ -44,8 +48,23 @@ class HomeViewModel @Inject constructor(
     private val _locationNameState: MutableStateFlow<String> = MutableStateFlow("Tanza, Cavite")
     val locationNameState = _locationNameState.asStateFlow()
 
+    private val _isLoggedIn: MutableSharedFlow<Boolean> = MutableSharedFlow()
+    val isLoggedIn = _isLoggedIn.asSharedFlow()
+
     init {
         loadHomeSectionData()
+    }
+
+    fun navigateToProfile() {
+        viewModelScope.launch {
+            try {
+                val isUserLoggedIn = authRepository.isUserLoggedIn().first()
+                _isLoggedIn.emit(isUserLoggedIn)
+            } catch (e: Exception) {
+                e.printStackTrace()
+                _isLoggedIn.emit(false)
+            }
+        }
     }
 
     fun filterProducts(displayName: String) {

@@ -28,7 +28,7 @@ fun QuantityPickerView(
     onUpdateQuantity: (Int) -> Unit,
     onAddToCart: (Int) -> Unit
 ) {
-    var newQuantity = remember { mutableIntStateOf(1) }
+    val newQuantity = remember { mutableIntStateOf(1) }
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center

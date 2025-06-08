@@ -5,6 +5,7 @@ import com.benidict.buy_now.source.banner.BannerRemoteSource
 import com.benidict.buy_now.source.category.CategoryRemoteSource
 import com.benidict.buy_now.source.notification.NotificationRemoteSource
 import com.benidict.buy_now.source.product.ProductRemoteSource
+import com.benidict.buy_now.source.user.UserRemoteSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object RemoteSourceModule {
+
+    @Provides
+    @Singleton
+    fun provideUserRemoteSource(firebaseService: FirebaseService) =
+        UserRemoteSource(firebaseService)
 
     @Provides
     @Singleton

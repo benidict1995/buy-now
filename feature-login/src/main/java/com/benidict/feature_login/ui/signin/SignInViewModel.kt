@@ -3,6 +3,7 @@ package com.benidict.feature_login.ui.signin
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.benidict.data.repository.user.UserRepository
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -15,7 +16,9 @@ import kotlin.coroutines.resumeWithException
 
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
-class SignInViewModel @Inject constructor() : ViewModel() {
+class SignInViewModel @Inject constructor(
+    private val userRepository: UserRepository
+) : ViewModel() {
 
     private val _state: MutableSharedFlow<SignInState> = MutableSharedFlow()
     val state = _state.asSharedFlow()
@@ -29,7 +32,7 @@ class SignInViewModel @Inject constructor() : ViewModel() {
         // Check if the email exists by trying to sign in
         viewModelScope.launch {
             try {
-                val exists = checkIfEmailExists(email)
+                val exists = userRepository.checkIfEmailExists(email).email.isNotEmpty()
                 Log.d(
                     "makerChecker",
                     "$email - ${if (exists) "Email exists!" else "Email does NOT exist."}"
@@ -46,6 +49,7 @@ class SignInViewModel @Inject constructor() : ViewModel() {
     }
 
     private suspend fun checkIfEmailExists(email: String): Boolean =
+
         suspendCancellableCoroutine { cont ->
             db.collection("users")
                 .whereEqualTo("email", email)

@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.benidict.buy_now.product.Product
+import com.benidict.data.repository.auth.AuthRepository
 import com.benidict.data.repository.product.ProductRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,7 +14,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProductDetailsViewModel @Inject constructor(
-    private val productRepository: ProductRepository
+    private val productRepository: ProductRepository,
+    private val authRepository: AuthRepository
 ): ViewModel(){
     private val _productState: MutableStateFlow<Product> = MutableStateFlow(Product())
     val productState = _productState.asStateFlow()

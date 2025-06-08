@@ -14,9 +14,12 @@
             <option value="$PROJECT_DIR$/common-ui" />
             <option value="$PROJECT_DIR$/common-utils" />
             <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/feature-cart" />
             <option value="$PROJECT_DIR$/feature-category" />
+            <option value="$PROJECT_DIR$/feature-favorite" />
             <option value="$PROJECT_DIR$/feature-home" />
             <option value="$PROJECT_DIR$/feature-login" />
+            <option value="$PROJECT_DIR$/feature-main" />
             <option value="$PROJECT_DIR$/feature-notification" />
             <option value="$PROJECT_DIR$/feature-product" />
             <option value="$PROJECT_DIR$/feature-signup" />

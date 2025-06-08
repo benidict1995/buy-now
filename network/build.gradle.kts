@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":model"))
     kapt(libs.dagger.hilt.compiler)
+    implementation(libs.firebase.auth)
     implementation(libs.firebase.store)
     implementation(libs.dagger.hilt.android)
     implementation(libs.code.gson)

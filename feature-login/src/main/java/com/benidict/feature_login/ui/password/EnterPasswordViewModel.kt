@@ -2,6 +2,7 @@ package com.benidict.feature_login.ui.password
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.benidict.data.repository.user.UserRepository
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -13,7 +14,9 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.resumeWithException
 
 @HiltViewModel
-class EnterPasswordViewModel @Inject constructor() : ViewModel() {
+class EnterPasswordViewModel @Inject constructor(
+    private val userRepository: UserRepository
+) : ViewModel() {
 
     private val _state: MutableSharedFlow<EnterPasswordState> = MutableSharedFlow()
     val state = _state.asSharedFlow()
@@ -26,7 +29,7 @@ class EnterPasswordViewModel @Inject constructor() : ViewModel() {
     fun login(email: String, password: String) {
         viewModelScope.launch {
             try {
-                validateLoginCredentials(email, password)
+                userRepository.validateLoginCredentials(email, password)
                 _state.emit(EnterPasswordState.NavigateToHome)
             } catch (e: Exception) {
                 _state.emit(EnterPasswordState.ShowError(e.message.orEmpty()))

@@ -23,9 +23,11 @@ firebaseBom = "33.12.0"
 firebaseAuth = "23.2.0"
 firebaseStore = "24.4.3"
 coil = "2.4.0"
+dataStore = "1.1.7"
 
 [libraries]
-coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil"}
+data-store = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "dataStore" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 firebase-store = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseStore" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }

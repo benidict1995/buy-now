@@ -5,9 +5,11 @@ object FirebaseKeys {
     const val CATEGORY_KEY = "category"
     const val NOTIFICATIONS_KEY = "notifications"
     const val DASHBOARD_BANNER_KEY = "dashboard-banner"
+    const val USERS_KEY = "users"
 
     const val CATEGORY_ID_FIELD = "categoryId"
     const val PRODUCT_ID_FIELD = "productId"
     const val USER_ID = "userId"
     const val NOTIFICATION_ID = "id"
+    const val EMAIL_FIELD = "email"
 }
