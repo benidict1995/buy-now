@@ -21,7 +21,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 
 @Composable
 fun FavoriteScreen(navController: NavHostController) {
-    Log.d("makerChecker", "FavoriteScreen")
     MainLayout(
         containerColor = GrayishWhite
     ) { paddingValues ->

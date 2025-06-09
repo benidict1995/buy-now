@@ -75,7 +75,7 @@ class HomeViewModel @Inject constructor(
                 val filterProducts = productRepository.getProducts(ProductFilter.entries.find { it.displayName == displayName }?: ProductFilter.ALL)
                 _productsState.value = filterProducts
             } catch (e: Exception) {
-                Log.d("makerChecker", "error-filterProducts:${e.message}")
+                e.printStackTrace()
             }
         }
     }
@@ -92,7 +92,7 @@ class HomeViewModel @Inject constructor(
                 _productsState.value = resultProducts.await()
                 renderHomeSections()
             } catch (e: Exception) {
-                Log.d("makerChecker", "error-loadproducts:${e.message}")
+                e.printStackTrace()
             }
         }
     }

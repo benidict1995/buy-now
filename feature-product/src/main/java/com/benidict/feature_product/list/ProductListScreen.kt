@@ -27,7 +27,6 @@ import com.benidict.common_ui.theme.GrayishWhite
 fun ProductListScreen(navController: NavHostController, categoryId: Int, categoryName: String, onNavigateToProductDetails: (Int) -> Unit) {
     val viewModel = hiltViewModel<ProductListViewModel>()
     val products = viewModel.productsState.collectAsState()
-    Log.d("makerChecker", "ProductListScreen")
     LaunchedEffect(Unit) {
         viewModel.loadProductsByCategoryId(categoryId)
     }

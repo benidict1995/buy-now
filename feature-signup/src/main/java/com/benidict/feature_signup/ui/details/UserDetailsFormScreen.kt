@@ -72,7 +72,6 @@ fun UserDetailsFormScreen(
                 is UserDetailsState.ShowError -> {
                     showLoader.value = false
                     errorMessage.value = state.message
-                    Log.d("makerChecker", "ShowError:${state.message}")
                 }
             }
         }

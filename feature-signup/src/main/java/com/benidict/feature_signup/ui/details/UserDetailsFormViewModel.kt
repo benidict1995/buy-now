@@ -62,7 +62,6 @@ class UserDetailsFormViewModel @Inject constructor(
                 )
 
                 withContext(Dispatchers.Main) {
-                    Log.d("makerChecker", "user-result")
                     _state.emit(
                         UserDetailsState.NavigateToHome
                     )
@@ -87,7 +86,6 @@ class UserDetailsFormViewModel @Inject constructor(
                 }
                 }**/
             } catch (e: Exception) {
-                Log.d("makerChecker", "createUser-error:${e.message}")
                 _state.emit(UserDetailsState.ShowError(e.message.orEmpty()))
             }
         }

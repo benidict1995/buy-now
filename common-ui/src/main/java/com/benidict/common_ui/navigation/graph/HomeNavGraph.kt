@@ -9,6 +9,7 @@ import com.benidict.common_ui.navigation.route.HomeGraph
 import com.benidict.common_ui.navigation.route.HomeScreenRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.ProductListScreenRoute
+import com.benidict.common_ui.navigation.route.ProfileScreenRoute
 import com.benidict.common_ui.navigation.route.SignInScreenRoute
 import com.benidict.common_ui.navigation.route.ViewAllCategoryScreenRoute
 import com.benidict.common_utils.animation.fadeInAnimation
@@ -18,6 +19,9 @@ fun NavGraphBuilder.homeNavGraph(navRoute: @Composable (NavBackStackEntry, route
     navigation<HomeGraph>(startDestination = HomeScreenRoute) {
         composable<HomeScreenRoute> {
             navRoute(it, HomeScreenRoute)
+        }
+        composable<ProfileScreenRoute> {
+            navRoute(it, ProfileScreenRoute)
         }
         composable<SignInScreenRoute> {
             navRoute(it, SignInScreenRoute)

@@ -12,8 +12,6 @@ object HomeGraph
 object LandingGraph
 @Serializable
 object NotificationGraph
-@Serializable
-object MainGraph
 
 @Serializable
 object MainRoute
@@ -41,6 +39,9 @@ object NotificationScreenRoute
 
 @Serializable
 data class NotificationDetailsScreenRoute(val id: Int)
+
+@Serializable
+object ProfileScreenRoute
 
 @Serializable
 object HomeScreenRoute

@@ -24,7 +24,7 @@ class ProductDetailsViewModel @Inject constructor(
                 val product = productRepository.getProductById(productId)
                 _productState.value = product
             } catch (e: Exception) {
-                Log.d("makerChecker", "productDetailsError:${e.message}")
+                e.printStackTrace()
             }
         }
     }

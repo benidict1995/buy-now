@@ -24,17 +24,13 @@ class SignInViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val user = userRepository.checkIfEmailExists(email)
-                Log.d(
-                    "makerChecker",
-                    "uid:${user.uid}"
-                )
                 _state.emit(
                     if (user.email.isNotEmpty()) {
                         SignInState.NavigateToPassword
                     } else SignInState.NavigateToSignUp
                 )
             } catch (e: Exception) {
-                Log.e("makerChecker", "Error checking email: ${e.message}")
+                e.printStackTrace()
             }
         }
     }

@@ -24,7 +24,6 @@ fun BaseNavGraph(
     navController: NavHostController,
     isUserLoggedIn: Boolean
 ) {
-    Log.d("makerChecker", "BaseNavGraph-isUserLoggedIn:$isUserLoggedIn")
     NavHost(navController, startDestination = if (isUserLoggedIn) MainRoute else LandingGraph) {
         landingNavGraph { navBackStackEntry, route ->
             when (route) {

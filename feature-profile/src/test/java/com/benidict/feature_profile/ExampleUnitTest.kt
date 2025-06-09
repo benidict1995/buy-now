@@ -1,4 +1,4 @@
-package com.benidict.home
+package com.benidict.feature_profile
 
 import org.junit.Test
 

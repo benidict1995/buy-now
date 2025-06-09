@@ -35,6 +35,8 @@ class UserRepository @Inject constructor(private val userRemoteSource: UserRemot
 
     suspend fun isUserLoggedIn() = userLocalSource.isUserLoggedIn()
 
+    suspend fun loadUserDetails() = userLocalSource.loadUser()
+
     suspend fun checkIfEmailExists(email: String): User {
         return userRemoteSource.checkIfEmailExists(email)
     }

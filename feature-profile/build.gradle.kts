@@ -1,10 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.dagger.hilt.android)
+    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.benidict.home"
+    namespace = "com.benidict.feature_profile"
     compileSdk = 35
 
     defaultConfig {
@@ -33,7 +36,18 @@ android {
 }
 
 dependencies {
-
+    implementation(project(":model"))
+    implementation(project(":data"))
+    implementation(project(":common-ui"))
+    implementation(project(":common-utils"))
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.material3)
+    implementation(libs.material)
+    kapt(libs.dagger.hilt.compiler)
+    implementation(libs.dagger.hilt.android)
+    implementation(libs.hiltNavigationCompose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

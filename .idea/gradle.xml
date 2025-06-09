@@ -22,8 +22,8 @@
             <option value="$PROJECT_DIR$/feature-main" />
             <option value="$PROJECT_DIR$/feature-notification" />
             <option value="$PROJECT_DIR$/feature-product" />
+            <option value="$PROJECT_DIR$/feature-profile" />
             <option value="$PROJECT_DIR$/feature-signup" />
-            <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/model" />
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/persistence" />

@@ -39,7 +39,8 @@ fun HomeScreen(
     onLogin: () -> Unit,
     onViewAllCategories: () -> Unit,
     onNavigateProductDetails: (Int) -> Unit,
-    onNavigateProductByCategory: (Int, String) -> Unit
+    onNavigateProductByCategory: (Int, String) -> Unit,
+    onNavigateProfile: () -> Unit
 ) {
     val viewModel = hiltViewModel<HomeViewModel>()
     val homeUiModelList by viewModel.homeUiModel.collectAsState(emptyList())
@@ -53,8 +54,11 @@ fun HomeScreen(
 
     LaunchedEffect(Unit) {
         viewModel.isLoggedIn.collectLatest { isLoggedIn ->
-            Log.d("makerChecker", "isLoggedIn:$isLoggedIn")
+            Log.d("makerChecker", "isLoggedIn:::$isLoggedIn")
             showUserLoggedInDialog = isLoggedIn.not()
+            if (isLoggedIn) {
+                onNavigateProfile()
+            }
         }
     }
 

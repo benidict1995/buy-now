@@ -58,6 +58,7 @@ android {
 
 dependencies {
     implementation(project(":common-ui"))
+    implementation(project(":feature-profile"))
     implementation(project(":feature-favorite"))
     implementation(project(":feature-cart"))
     implementation(project(":feature-notification"))
