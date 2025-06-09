@@ -1,5 +1,6 @@
 package com.benidict.feature_profile
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.benidict.buy_now.user.User
@@ -26,6 +27,7 @@ class ProfileViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val user = userRepository.loadUserDetails().first()
+                Log.d("makerchecker", "useruser:${user.email}")
                 _userDetailsState.value = user
             } catch (e: Exception) {
                 e.printStackTrace()

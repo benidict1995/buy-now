@@ -54,7 +54,6 @@ fun HomeScreen(
 
     LaunchedEffect(Unit) {
         viewModel.isLoggedIn.collectLatest { isLoggedIn ->
-            Log.d("makerChecker", "isLoggedIn:::$isLoggedIn")
             showUserLoggedInDialog = isLoggedIn.not()
             if (isLoggedIn) {
                 onNavigateProfile()
