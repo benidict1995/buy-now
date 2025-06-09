@@ -1,5 +1,6 @@
 package com.benidict.buy_now.navigation
 
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -20,9 +21,11 @@ import com.benidict.feature_signup.ui.details.UserDetailsFormScreen
 
 @Composable
 fun BaseNavGraph(
-    navController: NavHostController
+    navController: NavHostController,
+    isUserLoggedIn: Boolean
 ) {
-    NavHost(navController, startDestination = LandingGraph) {
+    Log.d("makerChecker", "BaseNavGraph-isUserLoggedIn:$isUserLoggedIn")
+    NavHost(navController, startDestination = if (isUserLoggedIn) MainRoute else LandingGraph) {
         landingNavGraph { navBackStackEntry, route ->
             when (route) {
                 LandingScreenRoute -> {

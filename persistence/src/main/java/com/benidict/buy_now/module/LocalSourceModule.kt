@@ -1,7 +1,6 @@
 package com.benidict.buy_now.module
 
 import com.benidict.buy_now.service.DataStoreService
-import com.benidict.buy_now.source.auth.AuthLocalSource
 import com.benidict.buy_now.source.user.UserLocalSource
 import dagger.Module
 import dagger.Provides
@@ -12,12 +11,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object LocalSourceModule {
-
-    @Singleton
-    @Provides
-    fun provideAuthLocalSource(dataStoreService: DataStoreService): AuthLocalSource {
-        return AuthLocalSource(dataStoreService)
-    }
 
     @Singleton
     @Provides

@@ -1,5 +1,6 @@
 package com.benidict.buy_now.source.user
 
+import android.util.Log
 import com.benidict.buy_now.service.FirebaseService
 import com.benidict.buy_now.service.key.FirebaseKeys
 import com.benidict.buy_now.service.key.FirebaseKeys.EMAIL_FIELD
@@ -21,10 +22,21 @@ class UserRemoteSource @Inject constructor(private val firebaseService: Firebase
         }
     }
 
-    suspend fun validateLoginCredentials(email: String, password: String): Boolean =
+    suspend fun validateLoginCredentials(email: String, password: String): User =
         suspendCoroutine { continuation ->
             firebaseService.signIn(email, password, onSuccess = {
-                continuation.resume(true)
+                firebaseService.getCollectionsWhereCondition(
+                    key = FirebaseKeys.USERS_KEY,
+                    field = EMAIL_FIELD,
+                    fieldValue = email,
+                    onSuccess = { result ->
+                        val user = result.documents.mapNotNull { it.toObject(User::class.java) }
+                        continuation.resume(user[0])
+                    },
+                    onError = { error ->
+                        continuation.resumeWithException(Exception(error))
+                    }
+                )
             }, onError = { error ->
                 continuation.resumeWithException(Exception(error))
             })

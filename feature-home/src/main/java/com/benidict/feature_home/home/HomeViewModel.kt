@@ -8,10 +8,10 @@ import com.benidict.buy_now.category.Category
 import com.benidict.buy_now.filter.Filter
 import com.benidict.buy_now.filter.ProductFilter
 import com.benidict.buy_now.product.Product
-import com.benidict.data.repository.auth.AuthRepository
 import com.benidict.data.repository.banner.BannerRepository
 import com.benidict.data.repository.category.CategoryRepository
 import com.benidict.data.repository.product.ProductRepository
+import com.benidict.data.repository.user.UserRepository
 import com.benidict.feature_home.home.model.HomeUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
@@ -28,7 +28,7 @@ class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository,
     private val categoryRepository: CategoryRepository,
     private val bannerRepository: BannerRepository,
-    private val authRepository: AuthRepository
+    private val userRepository: UserRepository
 ): ViewModel() {
     private val _productFilterState: MutableStateFlow<List<Filter>> = MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
     val productFilterState = _productFilterState.asStateFlow()
@@ -58,7 +58,7 @@ class HomeViewModel @Inject constructor(
     fun navigateToProfile() {
         viewModelScope.launch {
             try {
-                val isUserLoggedIn = authRepository.isUserLoggedIn().first()
+                val isUserLoggedIn = userRepository.isUserLoggedIn().first()
                 _isLoggedIn.emit(isUserLoggedIn)
             } catch (e: Exception) {
                 e.printStackTrace()

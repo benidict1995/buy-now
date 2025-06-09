@@ -75,7 +75,7 @@ fun HomeScreen(
             Spacer(
                 modifier = Modifier.height(10.dp)
             )
-            Log.d("makerChecker", "showIsLoggedInDialog:$showUserLoggedInDialog")
+
             SimpleAlertDialog(showUserLoggedInDialog,
                 title = "Login Required",
                 description = "Please log in to continue.",
