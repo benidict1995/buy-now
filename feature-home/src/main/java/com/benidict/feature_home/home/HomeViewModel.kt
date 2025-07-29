@@ -4,11 +4,14 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.benidict.buy_now.banner.Banner
+import com.benidict.buy_now.cart.Cart
+import com.benidict.buy_now.cart.CartProduct
 import com.benidict.buy_now.category.Category
 import com.benidict.buy_now.filter.Filter
 import com.benidict.buy_now.filter.ProductFilter
 import com.benidict.buy_now.product.Product
 import com.benidict.data.repository.banner.BannerRepository
+import com.benidict.data.repository.cart.CartRepository
 import com.benidict.data.repository.category.CategoryRepository
 import com.benidict.data.repository.product.ProductRepository
 import com.benidict.data.repository.user.UserRepository
@@ -28,9 +31,11 @@ class HomeViewModel @Inject constructor(
     private val productRepository: ProductRepository,
     private val categoryRepository: CategoryRepository,
     private val bannerRepository: BannerRepository,
-    private val userRepository: UserRepository
-): ViewModel() {
-    private val _productFilterState: MutableStateFlow<List<Filter>> = MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
+    private val userRepository: UserRepository,
+    private val cartRepository: CartRepository
+) : ViewModel() {
+    private val _productFilterState: MutableStateFlow<List<Filter>> =
+        MutableStateFlow(Filter.filter(ProductFilter.ALL.displayName))
     val productFilterState = _productFilterState.asStateFlow()
 
     private val _categoriesState: MutableStateFlow<List<Category>> = MutableStateFlow(emptyList())
@@ -70,10 +75,27 @@ class HomeViewModel @Inject constructor(
     fun filterProducts(displayName: String) {
         viewModelScope.launch {
             try {
-                _productFilterState.value = Filter.filter(filterName = displayName)
+                val productQuantity = mutableListOf<CartProduct>()
 
-                val filterProducts = productRepository.getProducts(ProductFilter.entries.find { it.displayName == displayName }?: ProductFilter.ALL)
-                _productsState.value = filterProducts
+                _productFilterState.value = Filter.filter(filterName = displayName)
+                val filterProducts =
+                    productRepository.getProducts(ProductFilter.entries.find { it.displayName == displayName }
+                        ?: ProductFilter.ALL)
+
+                if (userRepository.isUserLoggedIn().first()) {
+                    productQuantity.addAll(cartRepository.loadCart().products)
+                }
+
+                val newProducts = filterProducts.map { product ->
+                    val matchingCart = productQuantity.find { it.productId == product.productId }
+                    if (matchingCart != null) {
+                        product.copy(quantity = matchingCart.quantity)
+                    } else {
+                        product
+                    }
+                }
+
+                _productsState.value = newProducts
             } catch (e: Exception) {
                 e.printStackTrace()
             }
@@ -83,13 +105,27 @@ class HomeViewModel @Inject constructor(
     private fun loadHomeSectionData() {
         viewModelScope.launch {
             try {
+                val productQuantity = mutableListOf<CartProduct>()
                 val resultCategories = async { categoryRepository.getAllCategory() }
                 val resultProducts = async { productRepository.getProducts(ProductFilter.ALL) }
                 val resultBanners = async { bannerRepository.getBanners() }
 
+                if (userRepository.isUserLoggedIn().first()) {
+                    productQuantity.addAll(cartRepository.loadCart().products)
+                }
+
+                val newProducts = resultProducts.await().map { product ->
+                    val matchingCart = productQuantity.find { it.productId == product.productId }
+                    if (matchingCart != null) {
+                        product.copy(quantity = matchingCart.quantity)
+                    } else {
+                        product
+                    }
+                }
+
                 _bannersState.value = resultBanners.await()
                 _categoriesState.value = resultCategories.await()
-                _productsState.value = resultProducts.await()
+                _productsState.value = newProducts
                 renderHomeSections()
             } catch (e: Exception) {
                 e.printStackTrace()

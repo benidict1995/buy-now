@@ -17,11 +17,14 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductDetailsViewModel @Inject constructor(
     private val productRepository: ProductRepository,
-    private val userRepository: UserRepository,
     private val cartRepository: CartRepository
 ) : ViewModel() {
     private val _productState: MutableStateFlow<Product> = MutableStateFlow(Product())
     val productState = _productState.asStateFlow()
+
+    private val _quantityState: MutableStateFlow<Int> = MutableStateFlow(1)
+    val quantityState = _quantityState.asStateFlow()
+
 
 
     fun addToCart(productId: Int, quantity: Int) {
@@ -39,9 +42,10 @@ class ProductDetailsViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val productQuantity = cartRepository.loadCartProductById(productId)?.quantity ?: 1
+                _quantityState.value = productQuantity
 
                 val product = productRepository.getProductById(productId)
-                _productState.value = product.copy(quantity = productQuantity)
+                _productState.value = product
             } catch (e: Exception) {
                 e.printStackTrace()
             }
