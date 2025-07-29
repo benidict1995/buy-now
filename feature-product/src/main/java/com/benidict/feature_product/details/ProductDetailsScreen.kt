@@ -42,7 +42,7 @@ import com.benidict.common_utils.view.transparentLinearBrush
 import com.benidict.common_utils.view.transparentVerticalBrush
 
 @Composable
-fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
+fun ProductDetailsScreen(onBack: () -> Unit, productId: Int) {
     val viewModel = hiltViewModel<ProductDetailsViewModel>()
     val product = viewModel.productState.collectAsState()
     val quantity = remember { mutableIntStateOf(1) }
@@ -70,7 +70,7 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                         .padding(horizontal = 16.dp)
                 ) {
                     CircleClose {
-                        navController.popBackStack()
+                        onBack()
                     }
 
                     Row(

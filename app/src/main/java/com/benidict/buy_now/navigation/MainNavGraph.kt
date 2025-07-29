@@ -48,7 +48,9 @@ fun MainNavGraph(
             onMainScreen(route == HomeScreenRoute)
             when (route) {
                 HomeScreenRoute -> {
-                    HomeScreen(onViewAllCategories = {
+                    HomeScreen(
+                        navController = navController,
+                        onViewAllCategories = {
                         navController.navigate(
                             ViewAllCategoryScreenRoute
                         )
@@ -99,7 +101,13 @@ fun MainNavGraph(
                 ProductDetailsScreenRoute -> {
                     val param: ProductDetailsScreenRoute =
                         navBackStackEntry.toRoute()
-                    ProductDetailsScreen(navController, param.productId)
+                    ProductDetailsScreen(onBack = {
+                        navController.previousBackStackEntry
+                            ?.savedStateHandle
+                            ?.set("refresh", true)
+
+                        navController.popBackStack()
+                    }, param.productId)
                 }
             }
         }

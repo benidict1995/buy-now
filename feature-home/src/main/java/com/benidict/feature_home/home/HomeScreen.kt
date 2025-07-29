@@ -16,12 +16,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
 import com.benidict.common_ui.banner.BannerPager
 import com.benidict.common_ui.dialog.SimpleAlertDialog
 import com.benidict.common_ui.filter.ProductFilterView
@@ -36,6 +38,7 @@ import kotlinx.coroutines.flow.collectLatest
 
 @Composable
 fun HomeScreen(
+    navController: NavHostController,
     onLogin: () -> Unit,
     onViewAllCategories: () -> Unit,
     onNavigateProductDetails: (Int) -> Unit,
@@ -49,8 +52,21 @@ fun HomeScreen(
     val productFilter by viewModel.productFilterState.collectAsState()
     val categories by viewModel.categoriesState.collectAsState()
     val banners by viewModel.bannersState.collectAsState()
+    val selectedProductFilter = remember { mutableStateOf("") }
 
     var showUserLoggedInDialog by remember { mutableStateOf(false) }
+
+    val savedStateHandle = remember { navController.currentBackStackEntry?.savedStateHandle }
+
+    // Listen for result
+    LaunchedEffect(savedStateHandle) {
+        savedStateHandle?.getLiveData<Boolean>("refresh")?.observeForever { refresh ->
+            if (refresh == true) {
+                viewModel.filterProducts(selectedProductFilter.value) // Trigger your API refresh
+                savedStateHandle.remove<Boolean>("refresh") // Prevent repeated calls
+            }
+        }
+    }
 
     LaunchedEffect(Unit) {
         viewModel.isLoggedIn.collectLatest { isLoggedIn ->
@@ -111,6 +127,7 @@ fun HomeScreen(
                             })
 
                         is HomeUiModel.ProductFilterSection -> ProductFilterView(productFilter) {
+                            selectedProductFilter.value = it
                             viewModel.filterProducts(it)
                         }
 
