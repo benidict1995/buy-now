@@ -177,7 +177,9 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                             )
                         )
                 )
+                Log.d("makerChecker", "productDetails:${product.value}")
                 QuantityPickerView(
+                    quantity = product.value.quantity,
                     modifier = Modifier
                         .padding(top = 20.dp)
                         .padding(vertical = 10.dp)

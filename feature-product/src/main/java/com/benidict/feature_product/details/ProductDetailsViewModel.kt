@@ -19,27 +19,29 @@ class ProductDetailsViewModel @Inject constructor(
     private val productRepository: ProductRepository,
     private val userRepository: UserRepository,
     private val cartRepository: CartRepository
-): ViewModel(){
+) : ViewModel() {
     private val _productState: MutableStateFlow<Product> = MutableStateFlow(Product())
     val productState = _productState.asStateFlow()
 
 
     fun addToCart(productId: Int, quantity: Int) {
         viewModelScope.launch {
-            cartRepository.addToCart(CartProduct(
-                productId = productId,
-                quantity = quantity
-            ))
+            cartRepository.addToCart(
+                CartProduct(
+                    productId = productId,
+                    quantity = quantity
+                )
+            )
         }
     }
 
     fun loadProductDetails(productId: Int) {
         viewModelScope.launch {
             try {
-                val productQuantity = cartRepository.loadCartProductById(productId)
+                val productQuantity = cartRepository.loadCartProductById(productId)?.quantity ?: 1
 
                 val product = productRepository.getProductById(productId)
-                _productState.value = product.copy(quantity = productQuantity.quantity)
+                _productState.value = product.copy(quantity = productQuantity)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

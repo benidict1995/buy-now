@@ -41,12 +41,10 @@ class CartRepository @Inject constructor(
         cartRemoteSource.addToCart(cart)
     }
 
-    suspend fun loadCartProductById(productId: Int): CartProduct {
+    suspend fun loadCartProductById(productId: Int): CartProduct? {
         val uid = userLocalSource.loadUser().first().uid
         val cart = cartRemoteSource.loadCart(uid).products.find { it.productId == productId }
-        val localCart = userLocalSource.getUserCart()
-        //  Log.d("makerChecker", "cart:$cart\nlocalCart:$localCart")
-        return CartProduct(productId = productId, quantity = 1)
+        return cart
     }
 
     suspend fun loadCart(): Cart {

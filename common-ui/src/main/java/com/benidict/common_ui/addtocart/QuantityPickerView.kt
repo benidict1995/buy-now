@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -25,11 +26,16 @@ import com.benidict.common_ui.icon.CirclePlus
 
 @Composable
 fun QuantityPickerView(
+    quantity: Int = 1,
     modifier: Modifier,
     onUpdateQuantity: (Int) -> Unit,
     onAddToCart: (Int) -> Unit
 ) {
-    val newQuantity = remember { mutableIntStateOf(1) }
+    val newQuantity = remember { mutableIntStateOf(quantity) }
+
+    LaunchedEffect(quantity) {
+        newQuantity.intValue = quantity
+    }
     Box(
         modifier = modifier,
         contentAlignment = Alignment.Center
