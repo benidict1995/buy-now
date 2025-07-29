@@ -54,9 +54,10 @@ fun HomeScreen(
 
     LaunchedEffect(Unit) {
         viewModel.isLoggedIn.collectLatest { isLoggedIn ->
-            showUserLoggedInDialog = isLoggedIn.not()
+            //showUserLoggedInDialog = isLoggedIn.not()
+            showUserLoggedInDialog = true
             if (isLoggedIn) {
-                onNavigateProfile()
+             //   onNavigateProfile()
             }
         }
     }

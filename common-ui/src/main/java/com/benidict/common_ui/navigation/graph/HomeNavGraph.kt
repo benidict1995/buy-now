@@ -23,9 +23,6 @@ fun NavGraphBuilder.homeNavGraph(navRoute: @Composable (NavBackStackEntry, route
         composable<ProfileScreenRoute> {
             navRoute(it, ProfileScreenRoute)
         }
-        composable<SignInScreenRoute> {
-            navRoute(it, SignInScreenRoute)
-        }
         composable<ViewAllCategoryScreenRoute>(
             enterTransition = {
                 fadeInAnimation(this)

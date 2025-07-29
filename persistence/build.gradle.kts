@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(":model"))
+    implementation(libs.code.gson)
     kapt(libs.dagger.hilt.compiler)
     implementation(libs.data.store)
     implementation(libs.dagger.hilt.android)

@@ -9,4 +9,5 @@ object DataStoreKeys {
     const val LAST_NAME = "lastname"
     const val UID = "uid"
     const val LOGGED_IN = "user_logged_in"
+    const val CART = "cart"
 }

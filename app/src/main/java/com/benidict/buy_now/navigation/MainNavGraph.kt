@@ -17,6 +17,7 @@ import com.benidict.common_ui.navigation.route.FavoriteGraph
 import com.benidict.common_ui.navigation.route.FavoriteScreenRoute
 import com.benidict.common_ui.navigation.route.HomeGraph
 import com.benidict.common_ui.navigation.route.HomeScreenRoute
+import com.benidict.common_ui.navigation.route.LandingGraph
 import com.benidict.common_ui.navigation.route.NotificationDetailsScreenRoute
 import com.benidict.common_ui.navigation.route.NotificationScreenRoute
 import com.benidict.common_ui.navigation.route.ProductDetailsScreenRoute
@@ -39,6 +40,7 @@ import com.benidict.feature_profile.ProfileScreen
 @Composable
 fun MainNavGraph(
     navController: NavHostController,
+    onLandingScreen: () -> Unit,
     onMainScreen: (Boolean) -> Unit
 ) {
     NavHost(navController = navController, startDestination = HomeGraph) {
@@ -62,22 +64,13 @@ fun MainNavGraph(
                             )
                         )
                     }, onLogin = {
-                        navController.navigate(SignInScreenRoute)
+                        onLandingScreen()
                     }, onNavigateProfile = {
                         navController.navigate(ProfileScreenRoute)
                     })
                 }
                 ProfileScreenRoute -> {
                     ProfileScreen(navController)
-                }
-                SignInScreenRoute -> {
-                    SignInScreen(navController,
-                        onNavigateToPassword = { email ->
-                            navController.navigate(EnterPasswordScreenRoute(email = email))
-                        },
-                        onNavigateToSignUp = { email ->
-                            navController.navigate(UserDetailsFormScreenRoute(email = email))
-                        })
                 }
                 ViewAllCategoryScreenRoute -> {
                     CategoriesScreen(

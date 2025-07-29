@@ -26,10 +26,6 @@ class UserDetailsFormViewModel @Inject constructor(
     private val _state: MutableSharedFlow<UserDetailsState> = MutableSharedFlow()
     val state = _state.asSharedFlow()
 
-    private val auth: FirebaseAuth by lazy {
-        FirebaseAuth.getInstance()
-    }
-
     fun isFormFieldsValid(
         email: String,
         firstName: String,

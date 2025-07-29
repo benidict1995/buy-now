@@ -13,15 +13,19 @@ import com.benidict.buy_now.navigation.MainNavGraph
 import com.benidict.common_ui.bottomnav.AppBottomNavigation
 
 @Composable
-fun MainScreen() {
+fun MainScreen(onLandingScreen: () -> Unit) {
     Surface(modifier = Modifier.fillMaxSize()) {
         val navController = rememberNavController()
         val isMainScreen = remember {
             mutableStateOf(true)
         }
-        MainNavGraph(navController = navController) { mainScreen ->
+        MainNavGraph(navController = navController, onLandingScreen = {
+            onLandingScreen()
+        }, onMainScreen = { mainScreen ->
             isMainScreen.value = mainScreen
-        }
+
+        })
+
         if (isMainScreen.value) {
             Box(
                 modifier = Modifier

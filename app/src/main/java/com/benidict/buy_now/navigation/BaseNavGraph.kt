@@ -40,7 +40,8 @@ fun BaseNavGraph(
                 }
 
                 SignInScreenRoute -> {
-                    SignInScreen(navController,
+                    SignInScreen(
+                        navController,
                         onNavigateToPassword = { email ->
                             navController.navigate(EnterPasswordScreenRoute(email = email))
                         },
@@ -79,7 +80,13 @@ fun BaseNavGraph(
         }
 
         composable<MainRoute> {
-            MainScreen()
+            MainScreen {
+                navController.navigate(LandingGraph) {
+                    popUpTo(0) {
+                        inclusive = true
+                    }
+                }
+            }
         }
     }
 }

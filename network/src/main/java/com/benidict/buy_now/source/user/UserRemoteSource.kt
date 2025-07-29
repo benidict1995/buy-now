@@ -31,6 +31,7 @@ class UserRemoteSource @Inject constructor(private val firebaseService: Firebase
                     fieldValue = email,
                     onSuccess = { result ->
                         val user = result.documents.mapNotNull { it.toObject(User::class.java) }
+                        Log.d("makerChecker", "user:${user.isEmpty()}")
                         continuation.resume(user[0])
                     },
                     onError = { error ->

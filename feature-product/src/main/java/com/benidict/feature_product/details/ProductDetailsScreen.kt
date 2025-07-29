@@ -45,7 +45,7 @@ import com.benidict.common_utils.view.transparentVerticalBrush
 fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
     val viewModel = hiltViewModel<ProductDetailsViewModel>()
     val product = viewModel.productState.collectAsState()
-    val quantity = remember { mutableIntStateOf(0) }
+    val quantity = remember { mutableIntStateOf(1) }
 
     LaunchedEffect(productId) {
         viewModel.loadProductDetails(productId)
@@ -186,7 +186,12 @@ fun ProductDetailsScreen(navController: NavHostController, productId: Int) {
                     onUpdateQuantity = {
                         quantity.intValue = it
                     },
-                    onAddToCart = {})
+                    onAddToCart = {
+                        viewModel.addToCart(
+                            productId = productId,
+                            quantity = quantity.intValue
+                        )
+                    })
             }
         }
     }
