@@ -27,7 +27,6 @@ class ProfileViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val user = userRepository.loadUserDetails().first()
-                Log.d("makerchecker", "useruser:${user.email}")
                 _userDetailsState.value = user
             } catch (e: Exception) {
                 e.printStackTrace()
