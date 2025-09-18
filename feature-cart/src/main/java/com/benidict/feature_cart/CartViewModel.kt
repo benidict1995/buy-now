@@ -27,6 +27,7 @@ class CartViewModel @Inject constructor(
     private fun loadCart() {
         viewModelScope.launch {
             val cart = cartRepository.loadCart()
+            Log.d("makerChecker", "cart-screen:$cart")
             _cartState.value = cart
         }
     }
